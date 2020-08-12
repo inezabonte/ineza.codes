@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #CAD3DA;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    color: black;
+}
+
+/* Header and navigation styling */
+
+.logo a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.main-nav ul{
+    list-style: none;
+    display: flex;
+}
+
+.main-nav a{
+    text-decoration: none;
+    color: inherit;
+    font-weight: 600;
+    padding: 1rem;
+    transition: all 0.3s ease 0s;
+}
+
+.main-nav a:hover{
+    color: #B9370F;
+}
+
+.main-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+}
+
+.login{
+    text-decoration: none;
+    color: inherit;
+    font-weight: 600;
+}
+
+.login:hover{
+    color: #B9370F;
+}
+
+
+/* End of Header and Navigation styling */
+/* This CSS will be shared across the other pages I have on this website */

@@ -1,0 +1,41 @@
+.btn{
+    text-decoration: none;
+    color: white;
+    background-color: red;
+    font-weight: 600;
+    padding: .75rem 1.5rem;
+    font-size: 24px;
+}
+
+.main-home-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100vw;
+}
+
+img{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 600px;
+}
+
+.content{
+    position: absolute;
+    right: 300px;
+    bottom: 300px;
+}
+
+.introduction{
+    font-size: 48px;
+    font-weight: 600;
+}
+
+.profession-title{
+    font-size: 64px;
+    margin-bottom: 20px;
+}
+
+.colour-name{
+    color: red;
+}
