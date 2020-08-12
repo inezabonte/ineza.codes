@@ -1,3 +1,12 @@
+body{
+    min-height: 100vh;
+}
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
 .btn{
     text-decoration: none;
     color: white;
@@ -7,35 +16,110 @@
     font-size: 24px;
 }
 
-.main-home-section{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 100vw;
-}
-
-img{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 600px;
-}
-
-.content{
-    position: absolute;
-    right: 300px;
-    bottom: 300px;
-}
-
-.introduction{
-    font-size: 48px;
-    font-weight: 600;
+.full-height-grow {
+    display: flex;
+    flex-direction: column;
 }
 
 .profession-title{
-    font-size: 64px;
-    margin-bottom: 20px;
+    font-size: 3em;
+    margin-bottom: 1rem;
 }
 
-.colour-name{
-    color: red;
+.introduction{
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+.introduction span{
+    color: rgb(211, 0, 0);
+}
+
+.home-main-section{
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.home-main-section .img-wrapper{
+    flex-grow: 1;
+    flex-direction: column-reverse;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+
+}
+
+.home-main-section .my-image{
+    background-image: url(images/me.png);
+    flex-grow: 1;
+    max-height: 70vh;
+    min-width: 30vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+}
+
+
+.home-main-section .call-to-action{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 1rem;
+    align-self: center;
+}
+
+@media (max-width: 900px) {
+    .home-main-section .img-wrapper{
+        display: none;
+    }
+
+    .home-main-section{
+        justify-content: center;
+    }
+}
+
+.circle1{
+    position: absolute;
+    width: 25vw;
+    height: 25vw;
+    border-radius: 50%;
+    background-color: rgba(255, 0, 0, 0.1);
+    bottom: 5vw;
+    left: 5vw;
+    z-index: -1;
+}
+
+.circle2{
+    position: absolute;
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+    background-color: rgba(255, 0, 0, 0.1);
+    top: 15vh;
+    left: 30vw;
+    z-index: -1;
+}
+
+.circle3{
+    position: absolute;
+    overflow: hidden;
+    width: 45vw;
+    height: 45vw;
+    background-color: #CAD3DA;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    
+}
+
+.circle3::before {
+    content: "";
+    transform: translate(40%, 40%);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    background-color: rgba(255, 0, 0, 0.1);
 }
