@@ -1,11 +1,6 @@
 body{
     min-height: 100vh;
 }
-.container{
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 40px;
-}
 
 .btn{
     text-decoration: none;
@@ -27,7 +22,7 @@ body{
 }
 
 .introduction{
-    font-weight: 500;
+    font-weight: 600;
     font-size: 1.5em;
 }
 
@@ -52,7 +47,7 @@ body{
 }
 
 .home-main-section .my-image{
-    background-image: url(images/me.png);
+    background-image: url(/Images/me.png);
     flex-grow: 1;
     max-height: 70vh;
     min-width: 30vw;

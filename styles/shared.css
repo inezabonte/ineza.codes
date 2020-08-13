@@ -12,7 +12,11 @@ body{
     font-size: 1.2rem;
     color: black;
 }
-
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
 /* Header and navigation styling */
 
 .main-nav{
@@ -70,6 +74,11 @@ body{
 
     body{
         overflow-x: hidden;
+    }
+
+    .container{
+        padding: 0 5px;
+
     }
 
     .main-nav{
