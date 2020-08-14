@@ -1,0 +1,33 @@
+
+
+main div{
+    margin-bottom: 20px;
+}
+
+main h3{
+    text-align: center;
+    
+}
+
+.intro{
+    text-align: center;
+    margin-top: 20px;
+}
+
+main p{
+    padding: 20px;
+    line-height: 1.6;
+    max-width: 40vw;
+    margin: 0 auto;
+    
+}
+
+.intro span{
+    border-bottom: 5px solid black;
+}
+
+main a{
+    text-decoration: none;
+    color: black;
+    border-bottom: 2px solid red;
+}
