@@ -1,5 +1,3 @@
-
-
 main div{
     margin-bottom: 20px;
 }
@@ -30,4 +28,29 @@ main a{
     text-decoration: none;
     color: black;
     border-bottom: 2px solid red;
+}
+
+@media screen and (max-width: 1230px){
+    main p{
+        max-width: 50vw;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    main p{
+        max-width: 60vw;
+    }
+}
+
+@media screen and (max-width: 800px){
+    main p{
+        max-width: 70vw;
+    }
+}
+
+@media screen and (max-width: 530px){
+    main p{
+        max-width: 80vw;
+        padding: 10px;
+    }
 }

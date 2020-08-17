@@ -19,7 +19,7 @@ body{
 }
 /* Header and navigation styling */
 
-.main-nav{
+nav{
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -37,9 +37,8 @@ body{
     color: inherit;
 }
 
-.main-nav ul{
+.nav-links li{
     list-style: none;
-    display: flex;
 }
 
 .nav-links a{
@@ -49,13 +48,9 @@ body{
     padding: 1rem;
 }
 
-.main-nav a:hover{
+.nav-links a:hover{
     color: #B9370F;
 }
-
-
-
-
 
 .burger div{
     width: 25px;
@@ -81,7 +76,7 @@ body{
 
     }
 
-    .main-nav{
+    nav{
         justify-content: space-between;
     }
 
@@ -96,11 +91,7 @@ body{
         align-items: center;
         width: 50%;
         transform: translateX(100%);
-        transition: transform 0.5s ease-in;
-    }
-
-    .nav-links li{
-        opacity: 0;
+        display: none;
     }
 
     .burger{
@@ -110,6 +101,7 @@ body{
 
 .nav-active{
     transform: translateX(0%);
+    display: flex;
 }
 
 @keyframes navlink-fade{
