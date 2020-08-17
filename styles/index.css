@@ -47,7 +47,7 @@ body{
 }
 
 .home-main-section .my-image{
-    background-image: url(./Images/me.png);
+    background-image: url(/Images/me.png);
     flex-grow: 1;
     max-height: 70vh;
     min-width: 30vw;
