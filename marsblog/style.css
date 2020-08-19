@@ -1,0 +1,29 @@
+article{
+    background-color: #ffffffbd;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    align-items: space-between;
+}
+.blog-title{
+    margin-bottom: 20px;
+}
+img{
+    margin-bottom: 20px;
+}
+.content{
+    display: grid;
+    grid-template-columns: 800px;
+    justify-content: center;
+    gap: 40px;
+}
+
+textarea{
+    border: 0;
+    background-color: rgb(228, 226, 226);
+    font-size: 1.3rem;
+}
+
+::placeholder{
+    
+}
