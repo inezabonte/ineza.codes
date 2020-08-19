@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ineza Bonté - Log In</title>
     <link rel="stylesheet" href="../styles/shared.css">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body class="container full-height-grow">
         <nav>
@@ -14,8 +14,8 @@
             </div>
             <ul class="nav-links">
                 <li><a href="../index.html">Home</a></li>
-                <li><a href="..//about/index.html">About</a></li>
-                <li><a href="#">Blog</a></li>
+                <li><a href="../about/index.html">About</a></li>
+                <li><a href="../Blog/index.html">Blog</a></li>
                 <li><a href="../contact/index.html">Contact</a></li>
                 <li><a href="../login/index.html">Login</a></li>
             </ul>
@@ -25,6 +25,25 @@
                 <div class="line3"></div>
             </div>
         </nav>
+        <main class="grid-container">
+            <div class="media">
+                <img src="../Images/login.svg" alt="">
+            </div>
+            <div class="login-inputs">
+                <form>
+                    <div class="email">
+                        <img src="../Images/email.svg" alt="">
+                        <input type="email" name="email" id="email" placeholder="Email" required>
+                    </div>
+
+                    <div class="password">
+                        <img src="../Images/password.svg" alt="">
+                        <input type="password" name="password" id="password" required placeholder="Password">
+                    </div>
+                    <button type="submit">LOGIN</button>
+                </form>
+            </div>
+        </main>
     <script src="../app.js"></script>
 </body>
 </html>
