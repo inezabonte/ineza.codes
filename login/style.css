@@ -26,6 +26,7 @@ form{
 
 .email img{
     width: 56px;
+    height: 56px;
     background-color: #CFC7CD;
     padding: 15px;
     border-radius: 12px 0 0 12px;
@@ -42,6 +43,7 @@ form{
 
 .password img{
     width: 56px;
+    height: 56px;
     background-color: #CFC7CD;
     padding: 15px;
     border-radius: 12px 0 0 12px;
