@@ -27,7 +27,7 @@ form{
 .email img{
     width: 56px;
     height: 56px;
-    background-color: #CFC7CD;
+    background-color: #ffffff;
     padding: 15px;
     border-radius: 12px 0 0 12px;
 }
@@ -44,7 +44,7 @@ form{
 .password img{
     width: 56px;
     height: 56px;
-    background-color: #CFC7CD;
+    background-color: #ffffff;
     padding: 15px;
     border-radius: 12px 0 0 12px;
 }
@@ -56,11 +56,12 @@ form{
 input{
     width: 100%;
     height: 56px;
-    background-color: #CFC7CD;
+    background-color: #ffffff;
     border: 0;
     color: black;
     outline: none;
     border-radius: 0 12px 12px 0;
+    font-size: 1rem;
 }
 
 ::placeholder{
