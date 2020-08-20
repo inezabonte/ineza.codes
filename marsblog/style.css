@@ -8,6 +8,24 @@ article{
 .blog-title{
     margin-bottom: 20px;
 }
+
+.editing{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.management button{
+    border: 0;
+    background-color: rgb(231, 225, 225);
+    color: red;
+    font-size: 1rem;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 10px;
+    width: 100px;
+}
+
 img{
     width: 100%;
     margin-bottom: 50px;
