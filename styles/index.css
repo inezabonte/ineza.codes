@@ -9,6 +9,11 @@ body{
     font-weight: 600;
     padding: .75rem 1.5rem;
     font-size: 24px;
+    transition-duration: 0.3s;
+}
+
+.btn:hover{
+    transform: scale(1.1);
 }
 
 .full-height-grow {
