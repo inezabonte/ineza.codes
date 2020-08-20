@@ -25,12 +25,14 @@ nav{
     justify-content: space-around;
     align-items: center;
     min-height: 8vh;
+    
 }
 
 .nav-links{
     display: flex;
     justify-content: space-around;
     width: 30%;
+    
 }
 
 .logo a{
@@ -40,7 +42,10 @@ nav{
 
 .nav-links li{
     list-style: none;
+    transition-duration: 0.3s;
 }
+
+
 
 .nav-links a{
     text-decoration: none;
@@ -49,9 +54,19 @@ nav{
     padding: 1rem;
 }
 
-.nav-links a:hover{
-    color: #B9370F;
+#highlight{
+    color: #ff0000;
+    background-color: #ff00001a;
+    border-radius: 10px;
 }
+
+.nav-links li:hover{
+    color: #ff0000;
+    background-color: #ff00001a;
+    border-radius: 10px;
+}
+
+
 
 .burger div{
     width: 25px;
@@ -93,6 +108,7 @@ nav{
         width: 50%;
         transform: translateX(100%);
         display: none;
+        
     }
 
     .burger{
