@@ -17,6 +17,8 @@ article{
 
 .management button{
     border: 0;
+    outline: 0;
+    cursor: pointer;
     background-color: rgb(231, 225, 225);
     color: red;
     font-size: 1rem;
