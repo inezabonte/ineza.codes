@@ -17,7 +17,6 @@ main p{
     line-height: 1.6;
     max-width: 40vw;
     margin: 0 auto;
-    
 }
 
 .intro span{
@@ -28,6 +27,7 @@ main a{
     text-decoration: none;
     color: black;
     border-bottom: 3px solid red;
+    transition-duration: 0.3s;
 }
 
 main a:hover{

@@ -48,8 +48,23 @@ form input, textarea{
 #name, #email, textarea{
     font-size: 1rem;
     padding: 1rem;
+    outline: 0;
+    transition-duration: 0.3s;
+}
+
+#name:hover,
+#email:hover,
+textarea:hover{
     box-shadow: 0 4px 4px #00000040;
 }
+
+#name:focus,
+#email:focus,
+textarea:focus{
+    box-shadow: 0 4px 4px #00000040;
+}
+
+
 
 button{
     color: white;
@@ -60,12 +75,19 @@ button{
     font-family: 'Poppins', sans-serif;
     box-shadow: 0 4px 4px #00000040;
     font-weight: 600;
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+
+button:hover{
+    transform: scale(1.01);
 }
 
 main a{
     text-decoration: none;
     color: black;
     border-bottom: 3px solid red;
+    transition-duration: 0.3s;
 }
 
 main a:hover{
