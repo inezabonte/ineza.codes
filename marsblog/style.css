@@ -9,11 +9,12 @@ article{
     margin-bottom: 20px;
 }
 img{
-    margin-bottom: 20px;
+    width: 100%;
+    margin-bottom: 50px;
 }
 .content{
     display: grid;
-    grid-template-columns: 800px;
+    grid-template-columns: 80%;
     justify-content: center;
     gap: 40px;
 }
@@ -22,4 +23,16 @@ textarea{
     border: 0;
     background-color: rgb(228, 226, 226);
     font-size: 1.3rem;
+}
+
+@media screen and (max-width: 700px){
+    .content{
+        grid-template-columns: 90%;
+    }
+}
+
+@media screen and (max-width: 500px){
+    article{
+        padding: 20px;
+    }
 }
