@@ -41,8 +41,27 @@ img{
 
 textarea{
     border: 0;
-    background-color: rgb(228, 226, 226);
+    background-color: rgb(255, 255, 255);
     font-size: 1.3rem;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.comments{
+    display: flex;
+}
+
+.comments p{
+    font-size: 16px;
+    color: rgb(129, 129, 129);
+}
+
+.comments span{
+    font-size: 16px;
+}
+
+.comments img{
+    width: 60px;
 }
 
 @media screen and (max-width: 700px){
