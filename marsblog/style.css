@@ -28,7 +28,7 @@ article{
     width: 100px;
 }
 
-img{
+article > img{
     width: 100%;
     margin-bottom: 50px;
 }
@@ -49,6 +49,7 @@ textarea{
 
 .comments{
     display: flex;
+    align-items: center;
 }
 
 .comments p{
@@ -61,7 +62,7 @@ textarea{
 }
 
 .comments img{
-    width: 60px;
+    width: 72px;
 }
 
 @media screen and (max-width: 700px){
