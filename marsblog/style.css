@@ -8,6 +8,26 @@ article{
 .blog-title{
     margin-bottom: 20px;
 }
+
+.editing{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.management button{
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    background-color: rgb(231, 225, 225);
+    color: red;
+    font-size: 1rem;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 10px;
+    width: 100px;
+}
+
 img{
     width: 100%;
     margin-bottom: 50px;
@@ -21,8 +41,27 @@ img{
 
 textarea{
     border: 0;
-    background-color: rgb(228, 226, 226);
+    background-color: rgb(255, 255, 255);
     font-size: 1.3rem;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.comments{
+    display: flex;
+}
+
+.comments p{
+    font-size: 16px;
+    color: rgb(129, 129, 129);
+}
+
+.comments span{
+    font-size: 16px;
+}
+
+.comments img{
+    width: 60px;
 }
 
 @media screen and (max-width: 700px){
