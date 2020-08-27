@@ -39,6 +39,25 @@ article > img{
     gap: 40px;
 }
 
+.make-comment{
+    display: flex;
+    flex-direction: column;
+}
+
+.make-comment button{
+   align-self: flex-end;
+   padding: 10px;
+   border: 0;
+   background-color: red;
+   color: white;
+   font-weight: 1.3rem;
+   outline: 0;
+}
+
+.make-comment button:active{
+    transform: scale(1.01);
+}
+
 textarea{
     border: 0;
     background-color: rgb(255, 255, 255);
