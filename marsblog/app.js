@@ -18,10 +18,12 @@ const db = firebase.firestore()
 let blogPost = document.querySelector(".blog-post")
 const form = document.querySelector('.make-comment')
 const commentsSection = document.querySelector('.comments')
+let blogTitle = document.querySelector('.blog-title')
 
+//render the blog to the DOM
 function renderBlogPost(doc){
     blogPost.innerHTML = doc.data().post
-
+    blogTitle.textContent = doc.data().title
 }
 
 function renderComments(doc){
