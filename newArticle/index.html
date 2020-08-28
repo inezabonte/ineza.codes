@@ -6,6 +6,13 @@
     <title>Ineza Bonté</title>
     <link rel="stylesheet" href="../styles/shared.css">
     <link rel="stylesheet" href="./style.css">
+    
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-analytics.js"></script>
 </head>
 <body class="container full-height-grow">
     <nav>
@@ -25,20 +32,20 @@
             <div class="line3"></div>
         </div>
     </nav>
-    <main>
+    <form class="blog-form">
         <div class="image-header">
             <img src="../Images/add-photo.svg" alt="">
             <h4>Add Header Image</h4>
         </div>
         <div class="title-header">
-            <input type="text" placeholder="Write your title here">
+            <input type="text" id="title" placeholder="Add title" required>
         </div>
         <div class="content">
-            <textarea name="content" id="content" cols="108" rows="10" placeholder="Write your blog..."></textarea>
+            <textarea name="content" id="content" cols="108" rows="10" placeholder="Write something..." required></textarea>
         </div>
-        <button>Post</button>
-    </main>
-   
+        <button type="submit">Publish</button>
+    </form>
+    <script src="./app.js"></script>
     <script src="../app.js"></script>
 </body>
 </html>
