@@ -76,11 +76,10 @@ db.collection('comments').orderBy('Date').onSnapshot(snapshot => {
 //saving comment
 form.addEventListener('submit', (e) =>{
     e.preventDefault()
-    let timestamp = Date.now()
     db.collection('comments').add({
         name: form.name.value,
         content: form.comment.value,
-        Date: new Date(timestamp)
+        Date: new Date()
     })
 
     form.name.value = ""
