@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ineza Bonté - Dashboard</title>
     <link rel="stylesheet" href="./style.css">
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
 </head>
-<body class="container full-height-grow">
+<body>
         <nav>
             <div class="administrator">
                 <div class="profile-pic">
@@ -62,24 +66,33 @@
                 </div>
 
                 <div class="posts-details">
-                    <h3>Posts</h3>
+                    <h2>Posts</h2>
 
-                    <div>
-                        <di></di>
-                        <di></di>
-                        <di></di>
-                    </div>
+                    <div class="blog-post">
+                        <div class="blog-post-header">
+                            <h3 class="blog-post-title">NASA’S Mars 2020 Perserverance Rover</h3>
+                            <p>Published: Aug 6</p>
+                        </div>
 
-                    <div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
+                        <div class="blog-stats">
+                            <div class="likes unit">
+                                <img src="../Images/likes.svg" alt="">
+                                <span>6</span>
+                            </div>
+                            <div class="comments unit">
+                                <img src="../Images/comments.svg" alt="">
+                                <span>3</span>
+                            </div>
+                            <div class="views unit">
+                                <img src="../Images/views.svg" alt="">
+                                <span>10</span>
+                            </div>
+                        </div>
 
-                    <div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                        <div class="blog-edits">
+                            <span><a href="#">Manage</a></span>
+                            <span><a href="#">Edit</a></span>
+                        </div>
                     </div>
 
                 </div>

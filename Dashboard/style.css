@@ -101,7 +101,7 @@ main{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 33px;
-    width: 70%;
+    width: 60%;
 }
 
 .dashboard-details{
@@ -129,4 +129,27 @@ main{
 
 .posts-details{
     grid-column: 1/3;
+    padding: 30px;
+}
+
+.posts-details h2{
+    margin-bottom: 20px;
+}
+
+.blog-post{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.blog-stats{
+    display: flex;
+}
+
+.unit{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+
 }
