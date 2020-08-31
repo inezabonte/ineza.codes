@@ -13,6 +13,31 @@ var firebaseConfig = {
   firebase.analytics();
 
   const db = firebase.firestore()
+  const ref = firebase.storage().ref()
+
+
+  
+
+  //Upload image
+  const headerImage = document.querySelector("#cover-image")
+  const coverimg = document.querySelector(".coverimg")
+  headerImage.addEventListener("change", () => {
+      const file = headerImage.files[0]
+      const name = file.name
+
+      const metadata = {
+          contentType: file.type
+      }
+
+      const task = ref.child(name).put(file,metadata)
+
+      task
+      .then(snapshot => snapshot.ref.getDownloadURL())
+      .then(url => {
+          coverimg.src = url
+          coverimg.style.display = "flex"
+      })
+  })
 
   const blogForm = document.querySelector(".blog-form")
 
@@ -21,7 +46,8 @@ var firebaseConfig = {
       db.collection("blog-posts").add({
           Date: new Date(),
           title: blogForm.title.value,
-          post: blogForm.content.value
+          post: blogForm.content.value,
+          coverImage: coverimg.getAttribute("src")
       })
 
       blogForm.title.value = ""

@@ -19,11 +19,13 @@ let blogPost = document.querySelector(".blog-post")
 const form = document.querySelector('.make-comment')
 const commentsSection = document.querySelector('.comments')
 let blogTitle = document.querySelector('.blog-title')
+const coverImg = document.querySelector(".coverImage")
 
 //render the blog to the DOM
 function renderBlogPost(doc){
     blogPost.innerHTML = doc.data().post
     blogTitle.textContent = doc.data().title
+    coverImg.src = doc.data().coverImage
 }
 
 function renderComments(doc){
@@ -33,6 +35,7 @@ function renderComments(doc){
     let nameHead = document.createElement("h3")
     let commnetIn = document.createElement("p")
     let reply = document.createElement("span")
+    
 
     indiv.setAttribute("class", "individual-comments")
     indiv.setAttribute("data-id", doc.id)
