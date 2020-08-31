@@ -11,6 +11,28 @@ body{
     gap: 100px;
 }
 
+.login-inputs{
+    display: flex;
+    flex-direction: column;
+}
+
+.error-message{
+    display: flex;
+    align-items: center;
+    background-color: #ff00001a;
+    color: red;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px red solid;
+    border-radius: 5px;
+    font-weight: 500;
+    display: none;
+}
+
+.error-message img{
+    width: 32px;
+}
+
 form{
     display: grid;
     grid-template-columns: 1fr;
@@ -29,7 +51,7 @@ form{
     height: 56px;
     background-color: #ffffff;
     padding: 15px;
-    border-radius: 12px 0 0 12px;
+    border-radius: 10px 0 0 10px;
 }
 
 .email:focus-within{
@@ -46,7 +68,7 @@ form{
     height: 56px;
     background-color: #ffffff;
     padding: 15px;
-    border-radius: 12px 0 0 12px;
+    border-radius: 10px 0 0 10px;
 }
 
 .media img{
@@ -60,7 +82,7 @@ input{
     border: 0;
     color: black;
     outline: none;
-    border-radius: 0 12px 12px 0;
+    border-radius: 0 10px 10px 0;
     font-size: 1rem;
 }
 
@@ -79,6 +101,11 @@ button{
     font-size: 1.3rem;
     border-radius: 47px;
     outline: 0;
+    cursor: pointer;
+}
+
+button:active{
+    transform: scale(0.99);
 }
 
 @media screen and (max-width:1180px){

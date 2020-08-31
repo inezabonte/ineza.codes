@@ -26,9 +26,15 @@
       const email = loginForm['email'].value
       const password = loginForm['password'].value
 
-      auth.signInWithEmailAndPassword(email, password).then((cred) => {
+      auth.signInWithEmailAndPassword(email, password).then(() => {
           loginForm.reset()
-          window.open("../Dashboard/index.html")
+          window.location.href = "../Dashboard/index.html"
+      }).catch((e) => {
+        e = e["code"]
+        if(e == "auth/wrong-password"){
+          document.querySelector(".error-message").style.display = "flex"
+          loginForm["password"].value = ""
+        }
       })
 
   })
