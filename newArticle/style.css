@@ -1,4 +1,4 @@
-main{
+form{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,33 +13,31 @@ main{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
 }
 
 .image-header img{
-    width: 10%;
+    width: 5%;
 }
 
 .title-header{
     width: 100%;
     display: flex;
     justify-content: space-around;
-    margin: 20px;
 }
 
 .title-header input{
     border: 0;
     outline: 0;
     width: 100%;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 20px;
+    font-size: 2rem;
+    font-weight: 600;
 }
 
 .content{
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin: 10px;
 }
 
 .content textarea{
@@ -47,11 +45,11 @@ main{
     border: 0;
     font-size: 20px;
     outline: 0;
-    padding: 10px;
-    border-radius: 10px;
+    padding: 20px;
+    resize: vertical;
 }
 
-main button{
+form button{
     border: 0;
     padding: 10px;
     font-size: 1.3rem;
@@ -59,8 +57,8 @@ main button{
     align-self: flex-end;
     color: white;
     background-color: red;
-    border-radius: 10px;
     outline: 0;
     width: 100px;
     cursor: pointer;
+    margin-top: 20px;
 }

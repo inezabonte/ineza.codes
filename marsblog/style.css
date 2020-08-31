@@ -39,29 +39,63 @@ article > img{
     gap: 40px;
 }
 
+.blog-post{
+    display: grid;
+    grid-template-columns: 100%;
+    justify-content: center;
+    gap: 30px;
+}
+
+.make-comment{
+    display: flex;
+    flex-direction: column;
+}
+
+.make-comment input{
+    padding: 10px;
+    border: 0;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.make-comment button{
+   align-self: flex-end;
+   padding: 10px;
+   border: 0;
+   background-color: red;
+   color: white;
+   font-weight: 1.3rem;
+   outline: 0;
+   border-radius: 5px;
+}
+
+.make-comment button:active{
+    transform: scale(1.01);
+}
+
 textarea{
     border: 0;
     background-color: rgb(255, 255, 255);
-    font-size: 1.3rem;
-    border-radius: 10px;
+    font-size: 1.1rem;
     padding: 10px;
 }
 
-.comments{
+.individual-comments{
     display: flex;
     align-items: center;
+    margin-bottom: 20px;
 }
 
-.comments p{
+.individual-comments p{
     font-size: 16px;
     color: rgb(129, 129, 129);
 }
 
-.comments span{
+.individual-comments span{
     font-size: 16px;
 }
 
-.comments img{
+.individual-comments img{
     width: 72px;
 }
 
@@ -69,6 +103,7 @@ textarea{
     .content{
         grid-template-columns: 90%;
     }
+    
 }
 
 @media screen and (max-width: 500px){
