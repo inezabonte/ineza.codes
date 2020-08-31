@@ -28,5 +28,7 @@
 
       auth.signInWithEmailAndPassword(email, password).then((cred) => {
           loginForm.reset()
+          window.open("../Dashboard/index.html")
       })
+
   })
