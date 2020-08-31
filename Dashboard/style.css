@@ -63,8 +63,9 @@ nav{
     justify-self: center;
 }
 
-.signout{
+.logout{
     color: red;
+    cursor: pointer;
 }
 
 main{
