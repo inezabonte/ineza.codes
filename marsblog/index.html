@@ -5,70 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - Perseverance Rover</title>
     <link rel="stylesheet" href="../styles/shared.css">
-    <link rel="stylesheet" href="./style.css">
-
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-firestore.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-analytics.js"></script>
-    
+    <link rel="stylesheet" href="./style.css">    
 </head>
 <body class="container full-height-grow">
-        <nav>
-            <div class="logo">
-                <h3><a href="../index.html">Ineza Bonté</a></h3>
+    <nav>
+        <div class="logo">
+            <h3><a href="../index.html">Ineza Bonté</a></h3>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about/index.html">About</a></li>
+            <li id="highlight"><a href="../Blog/index.html">Blog</a></li>
+            <li><a href="../contact/index.html">Contact</a></li>
+            <li><a href="../login/index.html">Login</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <article>
+
+        <h2 class = "blog-title">
+            <!-- Blog Title goes here -->
+        </h2>
+
+        <div class="editing">
+            <p>By Ineza Bonté | Posted on 19 Aug 2020</p>
+            <div class="management">
+                <button>Edit</button>
+                <button>Manage</button>
             </div>
-            <ul class="nav-links">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../about/index.html">About</a></li>
-                <li id="highlight"><a href="../Blog/index.html">Blog</a></li>
-                <li><a href="../contact/index.html">Contact</a></li>
-                <li><a href="../login/index.html">Login</a></li>
-            </ul>
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
+        </div>
+
+        <!-- Cove Image goes below -->
+        <img src="" alt="" class="coverImage">
+
+        <div class="content">
+            <div class="blog-post">
+                <!-- Blog content goes here -->
             </div>
-        </nav>
+            <h3>Leave a comment</h3>
+            <form class="make-comment">
+                <input type="text" name="name" placeholder="Your name" required>
+                <textarea name="comment" id="comment" cols="30" rows="3" placeholder="Add to the discussion" required></textarea>
+                <button>Submit</button>
+            </form>
 
-        <article>
-
-            <h2 class = "blog-title">
-                <!-- Blog Title goes here -->
-            </h2>
-
-            <div class="editing">
-                <p>By Ineza Bonté | Posted on 19 Aug 2020</p>
-                <div class="management">
-                    <button>Edit</button>
-                    <button>Manage</button>
-                </div>
+            <div class="comments">
+                
             </div>
+        </div>
+        
+    </article>
 
-            <!-- Cove Image goes below -->
-            <img src="" alt="" class="coverImage">
-
-            <div class="content">
-                <div class="blog-post">
-                   <!-- Blog content goes here -->
-                </div>
-                <h3>Leave a comment</h3>
-                <form class="make-comment">
-                    <input type="text" name="name" placeholder="Your name" required>
-                    <textarea name="comment" id="comment" cols="30" rows="3" placeholder="Add to the discussion" required></textarea>
-                    <button>Submit</button>
-                </form>
-
-                <div class="comments">
-                    
-                </div>
-            </div>
-            
-        </article>
-    <script src="./app.js"></script>
-    <script src="../app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-analytics.js"></script>
+    <script src="./app.js" type="module"></script>
+    <script src="../scripts/app.js"></script>
 </body>
 </html>

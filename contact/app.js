@@ -1,4 +1,4 @@
-import firebaseConfig from '../config.js'
+import firebaseConfig from '../scripts/config.js'
   // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
