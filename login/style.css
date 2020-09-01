@@ -11,28 +11,6 @@ body{
     gap: 100px;
 }
 
-.login-inputs{
-    display: flex;
-    flex-direction: column;
-}
-
-.error-message{
-    display: flex;
-    align-items: center;
-    background-color: #ff00001a;
-    color: red;
-    padding: 5px;
-    margin-bottom: 10px;
-    border: 1px red solid;
-    border-radius: 5px;
-    font-weight: 500;
-    display: none;
-}
-
-.error-message img{
-    width: 32px;
-}
-
 form{
     display: grid;
     grid-template-columns: 1fr;
@@ -49,9 +27,9 @@ form{
 .email img{
     width: 56px;
     height: 56px;
-    background-color: #ffffff;
+    background-color: #CFC7CD;
     padding: 15px;
-    border-radius: 10px 0 0 10px;
+    border-radius: 12px 0 0 12px;
 }
 
 .email:focus-within{
@@ -66,9 +44,9 @@ form{
 .password img{
     width: 56px;
     height: 56px;
-    background-color: #ffffff;
+    background-color: #CFC7CD;
     padding: 15px;
-    border-radius: 10px 0 0 10px;
+    border-radius: 12px 0 0 12px;
 }
 
 .media img{
@@ -78,12 +56,11 @@ form{
 input{
     width: 100%;
     height: 56px;
-    background-color: #ffffff;
+    background-color: #CFC7CD;
     border: 0;
     color: black;
     outline: none;
-    border-radius: 0 10px 10px 0;
-    font-size: 1rem;
+    border-radius: 0 12px 12px 0;
 }
 
 ::placeholder{
@@ -100,12 +77,6 @@ button{
     font-weight: 700;
     font-size: 1.3rem;
     border-radius: 47px;
-    outline: 0;
-    cursor: pointer;
-}
-
-button:active{
-    transform: scale(0.99);
 }
 
 @media screen and (max-width:1180px){
