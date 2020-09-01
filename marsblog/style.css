@@ -8,7 +8,27 @@ article{
 .blog-title{
     margin-bottom: 20px;
 }
-img{
+
+.editing{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.management button{
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    background-color: rgb(231, 225, 225);
+    color: red;
+    font-size: 1rem;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 10px;
+    width: 100px;
+}
+
+article > img{
     width: 100%;
     margin-bottom: 50px;
 }
@@ -19,16 +39,71 @@ img{
     gap: 40px;
 }
 
+.blog-post{
+    display: grid;
+    grid-template-columns: 100%;
+    justify-content: center;
+    gap: 30px;
+}
+
+.make-comment{
+    display: flex;
+    flex-direction: column;
+}
+
+.make-comment input{
+    padding: 10px;
+    border: 0;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.make-comment button{
+   align-self: flex-end;
+   padding: 10px;
+   border: 0;
+   background-color: red;
+   color: white;
+   font-weight: 1.3rem;
+   outline: 0;
+   border-radius: 5px;
+}
+
+.make-comment button:active{
+    transform: scale(1.01);
+}
+
 textarea{
     border: 0;
-    background-color: rgb(228, 226, 226);
-    font-size: 1.3rem;
+    background-color: rgb(255, 255, 255);
+    font-size: 1.1rem;
+    padding: 10px;
+}
+
+.individual-comments{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.individual-comments p{
+    font-size: 16px;
+    color: rgb(129, 129, 129);
+}
+
+.individual-comments span{
+    font-size: 16px;
+}
+
+.individual-comments img{
+    width: 72px;
 }
 
 @media screen and (max-width: 700px){
     .content{
         grid-template-columns: 90%;
     }
+    
 }
 
 @media screen and (max-width: 500px){

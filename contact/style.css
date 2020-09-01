@@ -2,6 +2,8 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
 }
 
 .heading{
@@ -93,6 +95,10 @@ main a{
 main a:hover{
     border: 0;
     color: red;
+}
+
+.reach{
+    line-height: 2;
 }
 
 @media screen and (max-width: 500px){

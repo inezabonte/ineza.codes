@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ineza Bonté - Dashboard</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <nav>
+        <div class="administrator">
+            <div class="profile-pic">
+                <img src="../Images/me.png" alt="">
+            </div>
+            
+            <div class="admin-info">
+                <span class="my-name">Ineza</span>
+                <span class="my-title">Administrator</span>
+            </div>
+        </div>
+
+        <div class="current-page-div">
+            <h3 class="current-page">Dashboard</h3>
+        </div>
+
+        <div class="logout">
+            <h4>Log out</h4>
+        </div>
+    </nav>
+
+    <main>
+        <div class="menu-dashboard">
+            <ul class="nav-links">
+                <li class="highlight"><a href="#">Dashboard</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Messages</a></li>
+                <li><a href="#">Account</a></li>
+            </ul>
+        </div>
+
+        <div class="dashboard-content">
+
+            <div class="visitors dashboard-details">
+                <span class="title">Visitors</span>
+                <span class="count">40</span>
+            </div>
+
+            <div class="Subscribers dashboard-details">
+                <span class="title">Subscribers</span>
+                <span class="count">15</span>
+            </div>
+
+            <div class="posts dashboard-details">
+                <span class="title">Posts</span>
+                <span class="count">3</span>
+            </div>
+
+            <div class="unread-messages dashboard-details">
+                <span class="title">Unread messages</span>
+                <span class="count">1</span>
+            </div>
+
+            <div class="posts-details">
+                <h2>Posts</h2>
+
+                <div class="blog-post">
+                    <div class="blog-post-header">
+                        <h3 class="blog-post-title">NASA’S Mars 2020 Perserverance Rover</h3>
+                        <p>Published: Aug 6</p>
+                    </div>
+
+                    <div class="blog-stats">
+                        <div class="likes unit">
+                            <img src="../Images/likes.svg" alt="">
+                            <span>6</span>
+                        </div>
+                        <div class="comments unit">
+                            <img src="../Images/comments.svg" alt="">
+                            <span>3</span>
+                        </div>
+                        <div class="views unit">
+                            <img src="../Images/views.svg" alt="">
+                            <span>10</span>
+                        </div>
+                    </div>
+
+                    <div class="blog-edits">
+                        <span><a href="#">Manage</a></span>
+                        <span><a href="#">Edit</a></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
+    
+    <script src="./app.js" type="module"></script>
+    
+</body>
+</html>

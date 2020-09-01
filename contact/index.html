@@ -6,41 +6,48 @@
     <title>Ineza Bonté - Contact</title>
     <link rel="stylesheet" href="../styles/shared.css">
     <link rel="stylesheet" href="./style.css">
+
+    
 </head>
 <body class="container full-height-grow">
-        <nav>
-            <div class="logo">
-                <h3><a href="../index.html">Ineza Bonté</a></h3>
-            </div>
-            <ul class="nav-links">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../about/index.html">About</a></li>
-                <li><a href="../Blog/index.html">Blog</a></li>
-                <li id="highlight"><a href="../contact/index.html">Contact</a></li>
-                <li><a href="../login/index.html">Login</a></li>
-            </ul>
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
-        </nav>
+    <nav>
+        <div class="logo">
+            <h3><a href="../index.html">Ineza Bonté</a></h3>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about/index.html">About</a></li>
+            <li><a href="../Blog/index.html">Blog</a></li>
+            <li id="highlight"><a href="../contact/index.html">Contact</a></li>
+            <li><a href="../login/index.html">Login</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
 
-        <main>
-            <h2 class="heading">
-                <span>Get in touch</span>
-            </h2>
-            <p>Send me a message using the secure form below</p>
-            <form class="message">
-                <input type="text" id="name" name="name" placeholder="Your name" required>
-                <input type="email" id="email" name="email" placeholder="Your email address" required>
-                <textarea name="message" id="message" cols="30" rows="10" placeholder="Write your message here"></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-            <p>Or you can reach me at 
-                <br><a href="mailto:inezabonte@gmail.com">inezabonte@gmail.com</a>
-            </p>
-        </main>
-    <script src="../app.js"></script>
+    <main>
+        <h2 class="heading">
+            <span>Get in touch</span>
+        </h2>
+        <p>Send me a message using the secure form below</p>
+        <form class="message">
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+            <input type="email" id="email" name="email" placeholder="Your email address" required>
+            <textarea name="message" id="message" cols="30" rows="10" placeholder="Write your message here"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <p class="reach">Or you can reach me at 
+            <br><a href="mailto:inezabonte@gmail.com">inezabonte@gmail.com</a>
+        </p>
+    </main>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
+    
+    <script src="./app.js" type="module"></script>
+    <script src="../scripts/app.js"></script>
 </body>
 </html>
