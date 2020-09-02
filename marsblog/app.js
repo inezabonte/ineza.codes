@@ -6,6 +6,16 @@ firebase.analytics();
 
 //declare variables here
 const db = firebase.firestore()
+const auth = firebase.auth()
+
+auth.onAuthStateChanged(user => {
+    if(!user) {
+        document.querySelector(".management").style.display = "none"
+    }
+})
+
+
+
 let blogPost = document.querySelector(".blog-post")
 const form = document.querySelector('.make-comment')
 const commentsSection = document.querySelector('.comments')

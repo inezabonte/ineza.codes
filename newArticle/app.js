@@ -6,9 +6,13 @@ firebase.analytics();
 
 const db = firebase.firestore()
 const ref = firebase.storage().ref()
+const auth = firebase.auth()
 
-
-
+auth.onAuthStateChanged(user => {
+    if(!user){
+      window.location.href = "../login/index.html"
+    }
+  })
 
 //Upload image
 const headerImage = document.querySelector("#cover-image")
