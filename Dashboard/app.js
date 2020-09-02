@@ -6,6 +6,12 @@ firebase.analytics();
 
 const auth = firebase.auth()
 
+auth.onAuthStateChanged(user => {
+  if(!user){
+    window.location.href = "../login/index.html"
+  }
+})
+
 //Logout
 const logout = document.querySelector(".logout")
 

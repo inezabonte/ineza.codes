@@ -6,7 +6,6 @@ firebase.analytics();
 
 //make auth and firestore services
 const auth = firebase.auth()
-const db = firebase.firestore()
 
 const loginForm = document.querySelector('.login-form')
 
