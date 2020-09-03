@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ineza Bonté - Profile</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <nav>
+        <div class="administrator">
+            <div class="profile-pic">
+                <img src="../Images/me.png" alt="">
+            </div>
+            
+            <div class="admin-info">
+                <span class="my-name">Ineza</span>
+                <span class="my-title">Administrator</span>
+            </div>
+        </div>
+
+        <div class="current-page-div">
+            <h3 class="current-page">Dashboard</h3>
+        </div>
+
+        <div class="logout">
+            <h4>Log out</h4>
+        </div>
+    </nav>
+
+    <main>
+        <div class="menu-dashboard">
+            <ul class="nav-links">
+                <li><a href="../Dashboard/index.html">Dashboard</a></li>
+                <li class="highlight"><a href="#">Profile</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="../queries/index.html">Messages</a></li>
+                <li><a href="#">Account</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <div class="landing-page">
+                <h3>Landing Page Info</h3>
+                <div class="image">
+                    <label for="image-input"> Update cover image</label>
+                    <input type="file" name="image-input" id="image-input" accept="image/png, image/jpeg" required>
+                    <img src="" alt="" class="coverimg" data-id="c4WBm4sv7Q0pH1QYEOR0">
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
+    
+    <script src="./app.js" type="module"></script>
+    
+</body>
+</html>
