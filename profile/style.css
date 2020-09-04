@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #CAD3DA;
+    margin: 0 auto;
+}
+
+/* Nav bar styling */
+
+nav{
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    justify-content: space-between;
+    box-shadow: 0 3px 6px rgb(129, 129, 129);
+    margin-bottom: 100px;
+}
+
+.administrator{
+    display: flex;
+    justify-content: center;
+}
+
+.profile-pic{
+    background-color: #F3F0F0;
+    border-radius: 50px;
+    overflow: hidden;
+    width: 50px;
+    height: 50px;
+    padding-top: 6px;
+}
+
+.administrator img{
+    max-width: 100%;
+    height: auto;
+}
+
+.admin-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.my-name{
+    font-weight: 500;
+    color: #7C7C7C;
+}
+
+.my-title{
+    font-weight: 500;
+}
+
+.current-page-div{
+    justify-self: center;
+}
+
+.logout{
+    color: red;
+    cursor: pointer;
+}
+
+main{
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* End of nav bar styling */
+
+
+/* Styling of the navigation links */
+.nav-links li{
+    list-style: none;
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+}
+
+.nav-links a{
+    text-decoration: none;
+    color: inherit;
+    font-weight: 600;
+}
+
+.highlight{
+    color: red;
+    background-color: #CFC7CD;
+}
+
+
+/* End of navigation styling */
+
+.content{
+    width: 60%;
+    background-color: #EEF4F9;
+    padding: 20px;
+}
+
+.image{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+label{
+    background-color: white;
+    border: 3px solid gray;
+    padding: 10px;
+    border-radius: 5px;
+    width: 30%;
+    cursor: pointer;
+}
+
+input[type="file"]{
+    display: none;
+}
+
+.coverimg{
+    width: 30%;
+    background-color: #dee4e9;
+}
