@@ -57,3 +57,12 @@ db.collection("profile").onSnapshot(snapshot => {
     })
 })
 
+const administrator = document.querySelector(".administrator")
+const dropdown = document.querySelector(".dropdown")
+administrator.addEventListener("mouseenter", () => {
+  dropdown.style.display = "flex"
+})
+
+administrator.addEventListener("mouseleave", () => {
+  dropdown.style.display = "none"
+})

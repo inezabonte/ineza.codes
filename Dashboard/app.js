@@ -15,7 +15,7 @@ auth.onAuthStateChanged(user => {
 //Logout
 const logout = document.querySelector(".logout")
 
-logout.addEventListener("focus", (e) => {
+logout.addEventListener("click", (e) => {
   e.preventDefault()
   auth.signOut().then(() => {
     window.location.href = "../login/index.html"
