@@ -11,9 +11,42 @@ main h3{
     
 }
 
+.content{
+    display: flex;
+    flex-direction: column;
+}
+
 .intro{
     text-align: center;
     margin-top: 20px;
+}
+
+.edit{
+    position: absolute;
+    background-color: #CFC7CD;
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+    align-self: flex-end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.edit img{
+    width: 60%;
+}
+
+.save{
+    position: relative;
+    top: 50px;
+    align-self: flex-end;
+    padding: 5px;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    display: none;
 }
 
 main p{
