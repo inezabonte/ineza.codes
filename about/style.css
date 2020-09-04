@@ -37,6 +37,7 @@ main h3{
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    display: none;
 }
 
 .edit img{
