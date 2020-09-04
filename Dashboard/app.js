@@ -15,9 +15,19 @@ auth.onAuthStateChanged(user => {
 //Logout
 const logout = document.querySelector(".logout")
 
-logout.addEventListener("click", (e) => {
+logout.addEventListener("focus", (e) => {
   e.preventDefault()
   auth.signOut().then(() => {
     window.location.href = "../login/index.html"
   })
+})
+
+const administrator = document.querySelector(".administrator")
+const dropdown = document.querySelector(".dropdown")
+administrator.addEventListener("mouseenter", () => {
+  dropdown.style.display = "flex"
+})
+
+administrator.addEventListener("mouseleave", () => {
+  dropdown.style.display = "none"
 })

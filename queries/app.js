@@ -81,3 +81,13 @@ db.collection("messages").orderBy("date").get().then(snapshot => {
         renderQueries(doc)
     })
 })
+
+const administrator = document.querySelector(".administrator")
+const dropdown = document.querySelector(".dropdown")
+administrator.addEventListener("mouseenter", () => {
+  dropdown.style.display = "flex"
+})
+
+administrator.addEventListener("mouseleave", () => {
+  dropdown.style.display = "none"
+})
