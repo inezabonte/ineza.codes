@@ -14,6 +14,7 @@ main h3{
 .content{
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .intro{
@@ -21,8 +22,12 @@ main h3{
     margin-top: 20px;
 }
 
-.edit{
+.editor{
     position: absolute;
+    align-self: flex-end;
+}
+
+.edit{
     background-color: #CFC7CD;
     width: 70px;
     height: 70px;
@@ -39,14 +44,16 @@ main h3{
 }
 
 .save{
-    position: relative;
-    top: 50px;
     align-self: flex-end;
-    padding: 5px;
+    padding: 5px 10px 5px 10px;
     outline: 0;
     border: 0;
     cursor: pointer;
     display: none;
+    font-weight: bold;
+    color: red;
+    font-size: 1.1rem;
+    border-radius: 5px;
 }
 
 main p{
