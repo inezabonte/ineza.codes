@@ -14,6 +14,10 @@ auth.onAuthStateChanged(user => {
     }
 })
 
+let link = window.location.href
+link = link.split("/").reverse()
+let id = link[0]
+
 
 
 let blogPost = document.querySelector(".blog-post")
@@ -27,6 +31,17 @@ function renderBlogPost(doc){
     blogPost.innerHTML = doc.data().post
     blogTitle.textContent = doc.data().title
     coverImg.src = doc.data().coverImage
+
+    //Date formatting
+    let timestamp = doc.data().Date.toDate()
+    let dateObj = new Date(timestamp)
+    let month = dateObj.toLocaleString('en-GB', {month: "short"})
+    let year = dateObj.getFullYear()
+    let date = dateObj.toLocaleString('en-GB', {day: "2-digit"})
+    let pDate = document.createElement("p")
+    pDate.textContent = `By Ineza Bonte | Posted on ${date} ${month} ${year}`
+    let editing = document.querySelector(".editing")
+    editing.insertAdjacentElement("afterbegin", pDate)
 }
 
 function renderComments(doc){
@@ -58,14 +73,12 @@ function renderComments(doc){
 }
 
 //retreiving blog post
-db.collection('blog-posts').get().then((snapshot) => {
-    snapshot.docs.forEach(doc => {
-        renderBlogPost(doc)
-    })
+db.collection('blog-posts').doc(id).get().then((doc) => {
+    renderBlogPost(doc)
 })
 
 //retriving comments
-db.collection('comments').orderBy('Date').onSnapshot(snapshot => {
+db.collection('comments').where("blogid", "==", id).orderBy('Date').onSnapshot(snapshot => {
     let changes = snapshot.docChanges()
     changes.forEach(change => {
         if(change.type == 'added'){
@@ -83,7 +96,8 @@ form.addEventListener('submit', (e) =>{
     db.collection('comments').add({
         name: form.name.value,
         content: form.comment.value,
-        Date: new Date()
+        Date: new Date(),
+        blogid: id
     })
 
     form.name.value = ""

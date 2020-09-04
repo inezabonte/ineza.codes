@@ -29,7 +29,8 @@ article{
 }
 
 article > img{
-    width: 100%;
+    align-self: center;
+    width: 70%;
     margin-bottom: 50px;
 }
 .content{
