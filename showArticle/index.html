@@ -26,43 +26,66 @@
         </div>
     </nav>
 
-    <article>
-
-        <h2 class = "blog-title">
-            <!-- Blog Title goes here -->
-        </h2>
-
+    <main>
+        <!-- Editing tools for the blog -->
         <div class="editing">
-            <p>By Ineza Bonté | Posted on 19 Aug 2020</p>
-            <div class="management">
-                <button>Edit</button>
-                <button>Manage</button>
+            <button class="toggleEdit">Edit</button>
+        </div>
+        
+        <!-- Blog Title goes here -->
+        <div class = "blog-title editable">
+            <div class="editor">
+                <div class="edit editTitle">
+                    <img src="../Images/edit.svg" alt="">
+                </div>
+                <button class="save saveTitle">Save</button>
+            </div>
+            
+        </div>
+
+         <!-- Author and date details -->
+        <div class="blog-details">
+           
+        </div>
+
+        <!-- Cover Image goes below -->
+        <div class="coverImage">
+            <div class="edit editImage">
+                <label for="cover-image"><img src="../Images/image.svg" alt=""></label>
+                <input type="file" name="cover-image" id="cover-image" accept="image/png, image/jpeg" required>
             </div>
         </div>
 
-        <!-- Cove Image goes below -->
-        <img src="" alt="" class="coverImage">
-
-        <div class="content">
-            <div class="blog-post">
-                <!-- Blog content goes here -->
+        <!-- Blog content goes here -->
+        <div class="blog-post editable">
+            <div class="editor">
+                <div class="edit editBlog">
+                    <img src="../Images/edit.svg" alt="">
+                </div>
+                <button class="save saveBlog">Save</button>
             </div>
+            
+        </div>
+        
+        <!-- This is the comments section -->
+        <div class="comments-section">
             <h3>Leave a comment</h3>
             <form class="make-comment">
                 <input type="text" name="name" placeholder="Your name" required>
                 <textarea name="comment" id="comment" cols="30" rows="3" placeholder="Add to the discussion" required></textarea>
                 <button>Submit</button>
             </form>
-
             <div class="comments">
                 
             </div>
+
         </div>
         
-    </article>
+    </main>
 
     <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-storage.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-analytics.js"></script>
     <script src="./app.js" type="module"></script>
