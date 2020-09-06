@@ -6,6 +6,7 @@ firebase.analytics();
 
 //declare variables here
 const db = firebase.firestore()
+const ref = firebase.storage().ref()
 const auth = firebase.auth()
 
 auth.onAuthStateChanged(user => {
@@ -28,9 +29,22 @@ const coverImg = document.querySelector(".coverImage")
 
 //render the blog to the DOM
 function renderBlogPost(doc){
-    blogPost.innerHTML = doc.data().post
-    blogTitle.textContent = doc.data().title
-    coverImg.src = doc.data().coverImage
+
+    //render the title of the blog
+    let title = document.createElement("h2")
+    title.textContent = doc.data().title
+    blogTitle.insertAdjacentElement("beforeend", title)
+
+    // Render the cover image
+    let image = document.createElement("img")
+    image.setAttribute("src", doc.data().coverImage)
+    coverImg.appendChild(image)
+
+    //render the blog post itself
+    let content = document.createElement("p")
+    content.textContent = doc.data().post
+    blogPost.insertAdjacentElement("beforeend", content)
+    
 
     //Date formatting
     let timestamp = doc.data().Date.toDate()
@@ -40,10 +54,67 @@ function renderBlogPost(doc){
     let date = dateObj.toLocaleString('en-GB', {day: "2-digit"})
     let pDate = document.createElement("p")
     pDate.textContent = `By Ineza Bonte | Posted on ${date} ${month} ${year}`
-    let editing = document.querySelector(".editing")
-    editing.insertAdjacentElement("afterbegin", pDate)
+    let details = document.querySelector(".blog-details")
+    details.appendChild(pDate)
+
+    
+    //edit and upload the cover image
+    const headerImage = document.querySelector("#cover-image")
+    headerImage.addEventListener("change", () => {
+        const file = headerImage.files[0]
+        const name = file.name
+
+        const metadata = {
+            contentType: file.type
+        }
+
+        const task = ref.child(name).put(file, metadata)
+
+        task
+        .then(snapshot => snapshot.ref.getDownloadURL())
+        .then(url => {
+            db.collection("blog-posts").doc(id).update({
+                coverImage: url
+            })
+            image.setAttribute("src", url)
+        })
+    })
+    
+    // edit mode for  the title
+    const editTitle = document.querySelector(".editTitle")
+    const saveTitle = document.querySelector(".saveTitle")
+    editTitle.addEventListener("click", () => {
+        title.setAttribute("contenteditable", "true")
+        saveTitle.style.display = "flex"
+    })
+
+    saveTitle.addEventListener("click", () => {
+        title.setAttribute("contenteditable", "flase")
+        saveTitle.style.display = "none"
+        db.collection("blog-posts").doc(id).update({
+            title: title.textContent
+        })
+    })
+    // End of edit mode for the title
+
+    // edit mode for the blog itself
+    const editBlog = document.querySelector(".editBlog")
+    const saveBlog = document.querySelector(".saveBlog")
+    editBlog.addEventListener("click", () => {
+        content.setAttribute("contenteditable", "true")
+        saveBlog.style.display = "flex"
+    })
+
+    saveBlog.addEventListener("click", () => {
+        content.setAttribute("contenteditable", "false")
+        saveBlog.style.display = "none"
+        db.collection("blog-posts").doc(id).update({
+            post: content.textContent
+        })
+    })
 }
 
+//Render the comments
 function renderComments(doc){
     let indiv = document.createElement("div")
     let details = document.createElement("div")
@@ -103,3 +174,15 @@ form.addEventListener('submit', (e) =>{
     form.name.value = ""
     form.comment.value = ""
 })
+
+//--------------Editing the Blog--------------------
+const toggleEdit = document.querySelector(".toggleEdit")
+const editButton = document.getElementsByClassName("edit")
+
+toggleEdit.addEventListener("click", () => {
+    for(let i =0; i < editButton.length; i++){
+        editButton[i].style.display = "flex"
+    }
+})
+
+

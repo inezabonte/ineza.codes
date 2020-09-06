@@ -1,21 +1,17 @@
-article{
+main{
     background-color: #ffffffbd;
     display: flex;
     flex-direction: column;
     padding: 50px;
     align-items: space-between;
 }
-.blog-title{
-    margin-bottom: 20px;
-}
 
+/* Management buttons */
 .editing{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
+    align-self: flex-end;  
 }
 
-.management button{
+.toggleEdit{ 
     border: 0;
     outline: 0;
     cursor: pointer;
@@ -26,25 +22,56 @@ article{
     font-weight: bold;
     border-radius: 10px;
     width: 100px;
+    margin-bottom: 20px;
 }
 
-article > img{
-    align-self: center;
-    width: 70%;
-    margin-bottom: 50px;
+.toggleEdit:active{
+    background-color: rgba(231, 225, 225, 0.795);
+    transform: scale(0.97);
 }
-.content{
-    display: grid;
-    grid-template-columns: 80%;
+
+/* End of management buttons */
+
+.blog-title{
+    margin-bottom: 20px;
+    align-self: start;
+}
+
+.blog-details{
+    align-self: start;
+}
+
+.coverImage{
+    align-self: center;
+    display: flex;
+    flex-direction: row-reverse;
     justify-content: center;
-    gap: 40px;
+    align-items: center;
+    justify-content: space-around;
+    
+    margin: 50px 0 50px 0;
+}
+
+.coverImage img{
+    width: 70%;
 }
 
 .blog-post{
-    display: grid;
-    grid-template-columns: 100%;
+    display: flex;
     justify-content: center;
-    gap: 30px;
+    align-content: center;
+}
+
+.blog-post p{
+    width: 80%;
+}
+
+/*------------ Comments section------------ */
+
+.comments-section{
+    margin-top: 50px;
+    width: 80%;
+    align-self: center;
 }
 
 .make-comment{
@@ -98,6 +125,74 @@ textarea{
 
 .individual-comments img{
     width: 72px;
+}
+
+/* The editable class */
+.editable{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+
+/* ----------------EDIT BUTTONS------------------ */
+.edit{
+    background-color: #e9e5e8;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    display: none;
+    
+}
+
+.edit:active{
+    transform: scale(0.97);
+    background-color: #e2dde0;
+}
+
+.edit img{
+    width: 50%;
+}
+
+.save{
+    outline: 0;
+    border: 0;
+    background-color: rgb(247, 214, 214);
+    padding: 10px;
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+    
+}
+
+.save:active{
+    background-color: rgba(247, 214, 214, 0.897);
+    transform: scale(0.97);
+}
+
+.editor{
+    display: flex;
+    flex-direction: column;
+}
+
+.editImage input{
+    display: none;
+}
+
+.editImage img{
+    width: 50%;
+}
+
+.editImage label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 700px){
