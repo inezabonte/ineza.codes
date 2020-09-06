@@ -9,9 +9,9 @@ const auth = firebase.auth()
 const edit = document.getElementsByClassName('edit')
 
 auth.onAuthStateChanged(user => {
-    if(!user){
+    if(user){
       for(let i = 0; i < edit.length; i++){
-        edit[i].style.display = "none"
+        edit[i].style.display = "flex"
       }
     }
   })
