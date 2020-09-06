@@ -10,8 +10,8 @@ const ref = firebase.storage().ref()
 const auth = firebase.auth()
 
 auth.onAuthStateChanged(user => {
-    if(!user) {
-        document.querySelector(".management").style.display = "none"
+    if(user) {
+        document.querySelector(".editing").style.display = "flex"
     }
 })
 
