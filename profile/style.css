@@ -136,17 +136,19 @@ main{
 
 /* End of navigation styling */
 
-.content{
+.profile-content{
     width: 60%;
     background-color: #EEF4F9;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
-.image{
+.profile-image{
     margin-top: 20px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
 
 }
 
@@ -157,6 +159,7 @@ label{
     border-radius: 5px;
     width: 30%;
     cursor: pointer;
+    text-align: center;
 }
 
 input[type="file"]{
@@ -166,4 +169,78 @@ input[type="file"]{
 .coverimg{
     width: 30%;
     background-color: #dee4e9;
+}
+
+/* ------------------------Styling of input of the links ------------------------ */
+
+.profile-content input{
+    width: 100%;
+    height: 50px;
+    font-size: 1.2rem;
+    padding: 10px;
+}
+
+.profile-content p{
+    color: rgb(0, 0, 0);
+}
+
+.profile-contact{
+   display: grid;
+   gap: 20px;
+   margin-bottom: 30px;
+}
+
+
+.social-links{
+    display: grid;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width: 1130px){
+    nav{
+        margin-bottom: 50px;
+    }
+    main{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links{
+        display: flex;
+    }
+
+    .nav-links li{
+        text-align: center;
+        width: 100%;
+        margin: 10px 0 10px 0;
+    }
+
+}
+
+@media screen and (max-width: 900px){
+    label{
+        width: 50%;
+    }
+    .coverimg{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 650px){
+    .profile-content{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .current-page-div{
+        display: none;
+    }
+    label{
+        width: 60%;
+    }
+    .coverimg{
+        width: 60%;
+    }
 }
