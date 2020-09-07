@@ -99,7 +99,41 @@ function renderProfile (doc){
     githubDiv.insertAdjacentElement("beforeend", github)
 
 
-    
+    // The editing part
+    const edit = document.querySelector('.edit')
+    const save = document.querySelector(".save")
+    edit.addEventListener("click",  () => {
+        email.removeAttribute("readonly")
+        phone.removeAttribute("readonly")
+        location.removeAttribute("readonly")
+        twitter.removeAttribute("readonly")
+        linkedIn.removeAttribute("readonly")
+        github.removeAttribute("readonly")
+
+        save.style.display = "flex"
+
+    })
+
+    //The saving part
+    save.addEventListener("click", () => {
+        save.style.display = "none"
+
+        email.setAttribute("readonly", "true")
+        phone.setAttribute("readonly", "true")
+        location.setAttribute("readonly", "true")
+        twitter.setAttribute("readonly", "true")
+        linkedIn.setAttribute("readonly", "true")
+        github.setAttribute("readonly", "true")
+
+        db.collection('profile').doc(doc.id).update({
+            email: email.value,
+            phoneNumber: phone.value,
+            location: location.value,
+            twitterUrl: twitter.value,
+            linkedInUrl: linkedIn.value,
+            githubUrl: github.value
+        })
+    })
 }
 
 
