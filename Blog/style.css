@@ -26,7 +26,8 @@ a{
 .blog-post{
     max-width: 100%;
     width: 400px;
-    background-color: white;
+    height: 410px;
+    background-color: rgb(250, 250, 250);
     padding-bottom: 20px;
     display: grid;
     grid-template-columns: 1fr;
