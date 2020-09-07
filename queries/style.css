@@ -181,3 +181,37 @@ p span{
     text-decoration: none;
     color: inherit;
 }
+
+@media screen and (max-width: 800px){
+    nav{
+        margin-bottom: 50px;
+    }
+    main{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links{
+        display: flex;
+    }
+
+    .nav-links li{
+        text-align: center;
+        width: 100%;
+        margin: 10px 0 10px 0;
+    }
+
+    .queries{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .queries{
+        width: 100%;
+    }
+
+    .current-page-div{
+        display: none;
+    }
+}

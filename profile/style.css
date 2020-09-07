@@ -136,17 +136,19 @@ main{
 
 /* End of navigation styling */
 
-.content{
+.profile-content{
     width: 60%;
     background-color: #EEF4F9;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
-.image{
+.profile-image{
     margin-top: 20px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
 
 }
 
@@ -157,6 +159,7 @@ label{
     border-radius: 5px;
     width: 30%;
     cursor: pointer;
+    text-align: center;
 }
 
 input[type="file"]{
@@ -166,4 +169,123 @@ input[type="file"]{
 .coverimg{
     width: 30%;
     background-color: #dee4e9;
+}
+
+/* ------------------------Styling of input of the links ------------------------ */
+
+.profile-content input{
+    width: 100%;
+    height: 50px;
+    font-size: 1.2rem;
+    padding: 10px;
+}
+
+.profile-content p{
+    color: rgb(0, 0, 0);
+}
+
+.profile-contact{
+   display: grid;
+   gap: 20px;
+   margin-bottom: 30px;
+}
+
+
+.social-links{
+    display: grid;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width: 1130px){
+    nav{
+        margin-bottom: 50px;
+    }
+    main{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links{
+        display: flex;
+    }
+
+    .nav-links li{
+        text-align: center;
+        width: 100%;
+        margin: 10px 0 10px 0;
+    }
+
+}
+
+/* ---------------The edit button----------------- */
+
+.editing{
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.edit{
+   background-color: #eee5e5;
+   width: 50px;
+   height: 50px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 50px;
+   cursor: pointer;
+   transition: all 0.3s;
+}
+
+.edit img{
+    width: 60%;
+}
+
+.edit:hover{
+    background-color: #e0dada;
+}
+
+.save{
+    align-self: flex-end;
+    outline: none;
+    border: 1px solid rgb(199, 199, 199);
+    background-color: rgb(255, 255, 255);
+    color: red;
+    padding: 5px 10px 5px 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 5px;
+    display: none;
+
+}
+
+
+@media screen and (max-width: 900px){
+    label{
+        width: 50%;
+    }
+    .coverimg{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 650px){
+    .profile-content{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .current-page-div{
+        display: none;
+    }
+    label{
+        width: 60%;
+    }
+    .coverimg{
+        width: 60%;
+    }
 }

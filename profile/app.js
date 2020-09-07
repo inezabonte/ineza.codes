@@ -17,8 +17,9 @@ auth.onAuthStateChanged(user => {
 const imageInput = document.querySelector("#image-input")
 const coverImg = document.querySelector(".coverimg")  
 let id = coverImg.getAttribute("data-id")
-// upload image to storage
 
+
+// upload image to storage
 imageInput.addEventListener('change', () => {
     const file  = imageInput.files[0]
     const name = file.name
@@ -44,15 +45,104 @@ function updateImage(url){
     })
 }
 
-function renderImage (doc){
+//Render the profile data
+function renderProfile (doc){
     coverImg.src = doc.data().coverImage
+
+    //render the email data
+    const emailDiv = document.querySelector(".email")
+    let email = document.createElement("input")
+    email.setAttribute("type", "email")
+    email.setAttribute("readonly", "true")
+    email.setAttribute("value", doc.data().email)
+    emailDiv.insertAdjacentElement("beforeend", email)
+    
+    //render phone number data
+    const telDiv = document.querySelector(".phoneNumber")
+    let phone = document.createElement("input")
+    phone.setAttribute("type", "tel")
+    phone.setAttribute("readonly", "true")
+    phone.setAttribute("value", doc.data().phoneNumber)
+    telDiv.insertAdjacentElement("beforeend",  phone)
+
+    //render location data
+    const locate = document.querySelector(".location")
+    let location = document.createElement("input")
+    location.setAttribute("type", "text")
+    location.setAttribute("readonly", "true")
+    location.setAttribute("value", doc.data().location)
+    locate.insertAdjacentElement("beforeend", location)
+
+    //render Twitter url
+    const twitterDiv = document.querySelector(".twitter")
+    let twitter = document.createElement("input")
+    twitter.setAttribute("type", "url")
+    twitter.setAttribute("readonly", "true")
+    twitter.setAttribute("value", doc.data().twitterUrl)
+    twitterDiv.insertAdjacentElement("beforeend", twitter)
+
+    //render LinkedIn url
+    const linkedDiv = document.querySelector(".linkedIn")
+    let linkedIn = document.createElement("input")
+    linkedIn.setAttribute("type", "url")
+    linkedIn.setAttribute("readonly", "true")
+    linkedIn.setAttribute("value", doc.data().linkedInUrl)
+    linkedDiv.insertAdjacentElement("beforeend", linkedIn)
+
+
+    //render GitHub url
+    const githubDiv = document.querySelector(".github")
+    let github = document.createElement("input")
+    github.setAttribute("type", "url")
+    github.setAttribute("readonly", "true")
+    github.setAttribute("value", doc.data().githubUrl)
+    githubDiv.insertAdjacentElement("beforeend", github)
+
+
+    // The editing part
+    const edit = document.querySelector('.edit')
+    const save = document.querySelector(".save")
+    edit.addEventListener("click",  () => {
+        email.removeAttribute("readonly")
+        phone.removeAttribute("readonly")
+        location.removeAttribute("readonly")
+        twitter.removeAttribute("readonly")
+        linkedIn.removeAttribute("readonly")
+        github.removeAttribute("readonly")
+
+        save.style.display = "flex"
+
+    })
+
+    //The saving part
+    save.addEventListener("click", () => {
+        save.style.display = "none"
+
+        email.setAttribute("readonly", "true")
+        phone.setAttribute("readonly", "true")
+        location.setAttribute("readonly", "true")
+        twitter.setAttribute("readonly", "true")
+        linkedIn.setAttribute("readonly", "true")
+        github.setAttribute("readonly", "true")
+
+        db.collection('profile').doc(doc.id).update({
+            email: email.value,
+            phoneNumber: phone.value,
+            location: location.value,
+            twitterUrl: twitter.value,
+            linkedInUrl: linkedIn.value,
+            githubUrl: github.value
+        })
+    })
 }
 
+
+//Retrieve the profile data
 db.collection("profile").onSnapshot(snapshot => {
     let changes = snapshot.docChanges()
     changes.forEach(change => {
         if(change.type == 'added') {
-           renderImage(change.doc)
+           renderProfile(change.doc)
         }
     })
 })
