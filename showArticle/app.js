@@ -26,6 +26,7 @@ const form = document.querySelector('.make-comment')
 const commentsSection = document.querySelector('.comments')
 let blogTitle = document.querySelector('.blog-title')
 const coverImg = document.querySelector(".coverImage")
+const headTitle = document.querySelector("title")
 
 //render the blog to the DOM
 function renderBlogPost(doc){
@@ -33,6 +34,7 @@ function renderBlogPost(doc){
     //render the title of the blog
     let title = document.createElement("h2")
     title.textContent = doc.data().title
+    headTitle.textContent = doc.data().title
     blogTitle.insertAdjacentElement("beforeend", title)
 
     // Render the cover image
