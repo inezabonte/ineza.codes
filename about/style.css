@@ -1,106 +1,104 @@
-main{
-    margin: 50px 0 50px 0;
+main {
+  margin: 50px 0 50px 0;
 }
 
-main div{
-    margin-bottom: 20px;
+main div {
+  margin-bottom: 20px;
 }
 
-main h3{
-    text-align: center;
-    
+main h3 {
+  text-align: center;
 }
 
-.content{
-    display: flex;
-    flex-direction: column;
-    position: relative;
+.content {
+  display: flex;
+  flex-direction: column;
 }
 
-.intro{
-    text-align: center;
-    margin-top: 20px;
+.intro {
+  text-align: center;
+  margin-top: 20px;
 }
 
-.editor{
-    position: absolute;
-    align-self: flex-end;
+.editor {
+  position: absolute;
+  align-self: flex-end;
 }
 
-.edit{
-    background-color: #CFC7CD;
-    width: 70px;
-    height: 70px;
-    border-radius: 50px;
-    align-self: flex-end;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    display: none;
+.edit {
+  background-color: #cfc7cd;
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
+  align-self: flex-end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  display: none;
 }
 
-.edit img{
-    width: 60%;
+.edit img {
+  width: 60%;
 }
 
-.save{
-    align-self: flex-end;
-    padding: 5px 10px 5px 10px;
-    outline: 0;
-    border: 0;
-    cursor: pointer;
-    display: none;
-    font-weight: bold;
-    color: red;
-    font-size: 1.1rem;
-    border-radius: 5px;
+.save {
+  align-self: flex-end;
+  padding: 5px 10px 5px 10px;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  display: none;
+  font-weight: bold;
+  color: red;
+  font-size: 1.1rem;
+  border-radius: 5px;
 }
 
-main p{
-    padding: 20px;
-    line-height: 1.6;
-    max-width: 40vw;
-    margin: 0 auto;
+main p {
+  padding: 20px;
+  line-height: 1.6;
+  max-width: 40vw;
+  margin: 0 auto;
 }
 
-.intro span{
-    border-bottom: 5px solid black;
+.intro span {
+  border-bottom: 5px solid black;
 }
 
-main a{
-    text-decoration: none;
-    color: black;
-    border-bottom: 3px solid red;
-    transition-duration: 0.3s;
+main a {
+  text-decoration: none;
+  color: black;
+  border-bottom: 3px solid red;
+  transition-duration: 0.3s;
 }
 
-main a:hover{
-    border: 0;
-    color: red;
+main a:hover {
+  border: 0;
+  color: red;
 }
 
-@media screen and (max-width: 1230px){
-    main p{
-        max-width: 50vw;
-    }
+@media screen and (max-width: 1230px) {
+  main p {
+    max-width: 50vw;
+  }
 }
 
-@media screen and (max-width: 1024px){
-    main p{
-        max-width: 60vw;
-    }
+@media screen and (max-width: 1024px) {
+  main p {
+    max-width: 60vw;
+  }
 }
 
-@media screen and (max-width: 800px){
-    main p{
-        max-width: 70vw;
-    }
+@media screen and (max-width: 800px) {
+  main p {
+    max-width: 70vw;
+  }
 }
 
-@media screen and (max-width: 530px){
-    main p{
-        max-width: 80vw;
-        padding: 10px;
-    }
+@media screen and (max-width: 530px) {
+  main p {
+    max-width: 80vw;
+    padding: 10px;
+  }
 }
