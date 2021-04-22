@@ -12,7 +12,7 @@ export default function index() {
 						Fullstack Developer based in Kigali, Rwanda 🇷🇼
 					</p>
 				</div>
-				<Image src="/images/me.png" width={627} height={551} />
+				<Image src="/Images/me.png" width={627} height={551} />
 			</div>
 		</>
 	);
