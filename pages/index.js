@@ -5,7 +5,7 @@ export default function index() {
 	return (
 		<>
 			<Header />
-			<div className="h-screen bg-gray-100 flex flex-col justify-end items-center md:flex-row-reverse md:items-end">
+			<div className="h-screen max-w-7xl m-auto flex flex-col justify-end items-center md:flex-row-reverse md:items-end md:justify-between">
 				<div className="m-10 md:self-center">
 					<p className="font-bold text-4xl mb-2">Ineza Bonté</p>
 					<p className="text-lg">
