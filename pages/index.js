@@ -1,23 +1,28 @@
 import Header from "../components/Header";
 import Image from "next/image";
 import NavBar from "../components/NavBar";
-import {
-	MailOutlined,
-	TwitterOutlined,
-	LinkedinFilled,
-	GithubOutlined,
-} from "@ant-design/icons";
 
 export default function index() {
 	return (
 		<>
 			<Header />
 			<NavBar />
-			<main className="lg:h-screen-90vh max-w-7xl m-auto flex flex-col justify-end items-center lg:flex-row-reverse lg:items-end lg:justify-between">
-				<div className="m-10 md:self-center max-w-lg">
-					<div className="space-y-4">
-						<p className="text-base font-bold">
-							Fullstack Developer based in Kigali, Rwanda 🇷🇼
+			<main className="bg-gray-200">
+				<section className="lg:max-w-6xl  lg:m-auto p-10 flex flex-col justify-center items-center lg:flex-row  lg:justify-between ">
+					<div className="mb-10">
+						<Image
+							priority={true}
+							src="/Images/me.jpg"
+							width={200}
+							height={200}
+							alt="A potrait of Ineza Bonté smiling"
+							className="rounded-full"
+						/>
+					</div>
+					<div className=" md:self-center max-w-lg space-y-4">
+						<p className="font-bold text-2xl">I'm Ineza Bonté,</p>
+						<p className="text-base">
+							I'm a Fullstack Developer based in Kigali, Rwanda 🇷🇼
 						</p>
 						<p className="text-base">
 							I have a passion for creating dope stuff with code and having fun
@@ -34,40 +39,14 @@ export default function index() {
 						<p className="text-base">
 							⚡️ Fun fact: I am a Space Travel enthusiast
 						</p>
+						<p className="text-base">
+							📩 You can contact me by email at:{" "}
+							<a href="mailto:inezabonte" className="underline">
+								inezabonte@gmail.com
+							</a>
+						</p>
 					</div>
-					<div className="flex justify-between mt-4">
-						<a
-							target="_blank"
-							href="https://github.com/inezabonte"
-							rel="noopener noreferrer"
-						>
-							<GithubOutlined className="text-3xl" />
-						</a>
-						<a
-							target="_blank"
-							href="https://twitter.com/inezabonte"
-							rel="noopener noreferrer"
-						>
-							<TwitterOutlined className="text-3xl" />
-						</a>
-						<a
-							target="_blank"
-							href="https://www.linkedin.com/in/inezabonte/"
-							rel="noopener noreferrer"
-						>
-							<LinkedinFilled className="text-3xl" />
-						</a>
-						<a href="mailto:inezabonte@gmail.com">
-							<MailOutlined className="text-3xl" />
-						</a>
-					</div>
-				</div>
-				<Image
-					src="/Images/me.png"
-					width={627}
-					height={551}
-					alt="A potrait of Ineza Bonté smiling"
-				/>
+				</section>
 			</main>
 		</>
 	);
