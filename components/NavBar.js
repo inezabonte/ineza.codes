@@ -1,7 +1,27 @@
+import { GithubOutlined, TwitterOutlined } from "@ant-design/icons";
+
 export default function NavBar() {
 	return (
-		<div className="h-screen-10vh max-w-7xl m-auto flex items-center">
-			<p className="font-bold text-xl m-auto lg:m-10">Ineza Bonté</p>
-		</div>
+		<header className="h-screen-10vh lg:max-w-6xl px-10 lg:m-auto flex items-center justify-between ">
+			<div>
+				<p className="font-bold text-xl">Ineza Bonté</p>
+			</div>
+			<div className="space-x-4">
+				<a
+					target="_blank"
+					href="https://github.com/inezabonte"
+					rel="noopener noreferrer"
+				>
+					<GithubOutlined className="text-xl" />
+				</a>
+				<a
+					target="_blank"
+					href="https://twitter.com/inezabonte"
+					rel="noopener noreferrer"
+				>
+					<TwitterOutlined className="text-xl" />
+				</a>
+			</div>
+		</header>
 	);
 }
