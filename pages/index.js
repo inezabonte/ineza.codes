@@ -12,7 +12,7 @@ export default function index() {
 					<div className="mb-10">
 						<Image
 							priority={true}
-							src="/Images/me.jpg"
+							src="/images/me.jpg"
 							width={200}
 							height={200}
 							alt="A potrait of Ineza Bonté smiling"
