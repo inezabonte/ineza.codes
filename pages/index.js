@@ -25,12 +25,19 @@ export default function index() {
 							I'm a Fullstack Developer based in Kigali, Rwanda 🇷🇼
 						</p>
 						<p className="text-base">
-							I have a passion for creating dope stuff with code and having fun
-							while at it. I love learning and sharing my knowledge.
+							I have a passion for coding and developing Web Applications.
 						</p>
 						<p className="text-base">
-							I sometimes publish articles on DEV about concepts I've learnt in
-							Software Developement.
+							I sometimes publish articles on{" "}
+							<a
+								href="https://dev.to/inezabonte"
+								rel="noopener noreferrer"
+								target="_blank"
+								className="underline"
+							>
+								DEV
+							</a>{" "}
+							about concepts I've learnt in Software Development.
 						</p>
 						<p className="text-base">
 							Apart from the tech life I do enjoy watching movies, listening to
