@@ -19,13 +19,11 @@ export default function index() {
 							className="rounded-full"
 						/>
 					</div>
-					<div className=" md:self-center max-w-lg space-y-4">
+					<div className=" md:self-center max-w-lg">
 						<p className="font-bold text-2xl">I'm Ineza Bonté,</p>
 						<p className="text-base">
 							I'm a Fullstack Developer based in Kigali, Rwanda 🇷🇼
-						</p>
-						<p className="text-base">
-							I have a passion for coding and developing Web Applications.
+							<br />I have a passion for coding and developing Web Applications.
 						</p>
 						<p className="text-base">
 							I sometimes publish articles on{" "}
@@ -38,13 +36,6 @@ export default function index() {
 								DEV
 							</a>{" "}
 							about concepts I've learnt in Software Development.
-						</p>
-						<p className="text-base">
-							Apart from the tech life I do enjoy watching movies, listening to
-							music(EDM) and sometimes taking long walks.
-						</p>
-						<p className="text-base">
-							⚡️ Fun fact: I am a Space Travel enthusiast
 						</p>
 						<p className="text-base">
 							📩 You can contact me by email at:{" "}
