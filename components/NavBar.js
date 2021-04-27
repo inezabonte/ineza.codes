@@ -37,9 +37,12 @@ export default function NavBar() {
 						<TwitterOutlined className="text-xl" />
 					</a>
 				</div>
-				<span className=" text-2xl cursor-pointer" onClick={switchTheme}>
+				<button
+					className=" text-2xl focus:outline-none outline-none"
+					onClick={switchTheme}
+				>
 					{theme === "light" ? "🌑" : "☀️"}
-				</span>
+				</button>
 			</div>
 		</header>
 	);
