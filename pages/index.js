@@ -7,7 +7,7 @@ export default function index() {
 		<>
 			<Header />
 			<NavBar />
-			<main className="bg-gray-200">
+			<main className="bg-gray-200 dark:bg-gray-800">
 				<section className="lg:max-w-6xl  lg:m-auto p-10 flex flex-col justify-center items-center lg:flex-row  lg:justify-between ">
 					<div className="mb-10">
 						<Image
