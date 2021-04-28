@@ -17,10 +17,18 @@ export default function NavBar() {
 	};
 
 	return (
-		<header className="h-16 px-10 lg:max-w-6xl  lg:m-auto flex items-center justify-between">
+		<header className="h-16 px-10 lg:max-w-4xl  lg:m-auto flex items-center justify-between">
 			<Link href="/">
 				<a className="font-bold text-xl">Ineza Bonté</a>
 			</Link>
+			<div className="space-x-5 text-lg">
+				<Link href="/about">
+					<a>About</a>
+				</Link>
+				<Link href="/blog">
+					<a>Blog</a>
+				</Link>
+			</div>
 			<div className="space-x-4 flex justify-center ">
 				<div className="space-x-4">
 					<a
