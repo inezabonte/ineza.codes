@@ -1,12 +1,9 @@
-import Header from "../components/Header";
 import Image from "next/image";
-import NavBar from "../components/NavBar";
+import Layout from "../components/Layout";
 
 export default function index() {
 	return (
-		<>
-			<Header />
-			<NavBar />
+		<Layout page="Ineza Bonté">
 			<main className="bg-gray-200 dark:bg-gray-800">
 				<section className="lg:max-w-6xl  lg:m-auto p-10 flex flex-col justify-center items-center lg:flex-row  lg:justify-between ">
 					<div className="mb-10">
@@ -46,6 +43,6 @@ export default function index() {
 					</div>
 				</section>
 			</main>
-		</>
+		</Layout>
 	);
 }

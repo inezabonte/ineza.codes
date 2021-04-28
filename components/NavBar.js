@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { GithubOutlined, TwitterOutlined } from "@ant-design/icons";
 import { useTheme } from "next-themes";
-import Image from "next/image";
+import Link from "next/link";
+
 export default function NavBar() {
 	useEffect(() => {
 		setIsMounted(true);
@@ -17,9 +18,9 @@ export default function NavBar() {
 
 	return (
 		<header className="h-16 lg:max-w-6xl px-10 lg:m-auto flex items-center justify-between">
-			<div>
-				<p className="font-bold text-xl">Ineza Bonté</p>
-			</div>
+			<Link href="/">
+				<a className="font-bold text-xl">Ineza Bonté</a>
+			</Link>
 			<div className="space-x-4 flex justify-center ">
 				<div className="space-x-4">
 					<a

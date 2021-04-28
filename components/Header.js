@@ -1,9 +1,9 @@
 import Head from "next/head";
 
-export default function Header() {
+export default function Header({ page }) {
 	return (
 		<Head>
-			<title>Ineza Bonté</title>
+			<title>{page}</title>
 			<meta name="viewport" content="width=device-width, initial-scale=1" />
 			<link rel="icon" href="/favicon.ico" />
 		</Head>

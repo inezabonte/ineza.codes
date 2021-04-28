@@ -8,7 +8,7 @@ export default function Blog({ items }) {
 				<div>
 					<a
 						key={item.link}
-						className="block p-4 hover:border-gray-500 "
+						className="block"
 						href={item.link}
 						target="_blank"
 						rel="noopener noreferrer"
