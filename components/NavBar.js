@@ -17,7 +17,7 @@ export default function NavBar() {
 	};
 
 	return (
-		<header className="h-16 lg:max-w-6xl px-10 lg:m-auto flex items-center justify-between">
+		<header className="h-16 px-10 lg:max-w-6xl  lg:m-auto flex items-center justify-between">
 			<Link href="/">
 				<a className="font-bold text-xl">Ineza Bonté</a>
 			</Link>
