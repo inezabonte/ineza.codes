@@ -17,19 +17,12 @@ export default function NavBar() {
 	};
 
 	return (
-		<header className="h-16 px-10 lg:max-w-4xl  lg:m-auto flex items-center justify-between">
+		<header className="p-10 lg:max-w-4xl lg:m-auto grid grid-cols-2 lg:grid-cols-3 lg:grid-rows-1 gap-y-4">
 			<Link href="/">
-				<a className="font-bold text-xl">Ineza Bonté</a>
+				<a className="font-bold text-2xl">Ineza Bonté</a>
 			</Link>
-			<div className="space-x-5 text-lg">
-				<Link href="/about">
-					<a>About</a>
-				</Link>
-				<Link href="/blog">
-					<a>Blog</a>
-				</Link>
-			</div>
-			<div className="space-x-4 flex justify-center ">
+
+			<div className="space-x-4 flex justify-center justify-self-end lg:order-1">
 				<div className="space-x-4">
 					<a
 						target="_blank"
@@ -52,6 +45,14 @@ export default function NavBar() {
 				>
 					{theme === "light" ? "🌑" : "☀️"}
 				</button>
+			</div>
+			<div className="space-x-5 text-2xl col-span-2 justify-self-center lg:col-span-1">
+				<Link href="/about">
+					<a>About</a>
+				</Link>
+				<Link href="/blog">
+					<a>Blog</a>
+				</Link>
 			</div>
 		</header>
 	);

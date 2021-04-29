@@ -7,8 +7,8 @@ export default function Blog({ items }) {
 		<Layout page="Blog | Ineza Bonté">
 			<main className="lg:max-w-4xl  lg:m-auto p-10 space-y-4">
 				<div>
-					<h1 className="text-3xl font-bold dark:text-white mb-4">Blog</h1>
-					<p className="text-lg text-gray-500">
+					<h1 className="text-4xl font-bold dark:text-white mb-4">Blog</h1>
+					<p className="text-xl text-gray-600 dark:text-gray-400">
 						These are some of the articles I have written so far. I mostly write
 						tutorials about different concepts in web development. If you are
 						into that, consider reading these below
@@ -16,7 +16,7 @@ export default function Blog({ items }) {
 				</div>
 				<div className="space-y-8">
 					{items.map((item) => (
-						<div key={item.link}>
+						<div key={item.link} className="space-y-2">
 							<a
 								className="text-xl"
 								href={item.link}
@@ -25,7 +25,12 @@ export default function Blog({ items }) {
 							>
 								{item.title}
 							</a>
-							<p className="text-base text-gray-500">
+							<div className="space-x-2 text-white">
+								{item.categories.map((category) => (
+									<span className="p-1 bg-gray-500 rounded">{category}</span>
+								))}
+							</div>
+							<p className="text-lg text-gray-600 dark:text-gray-400">
 								{format(new Date(item.isoDate), "PPP")}
 							</p>
 						</div>
