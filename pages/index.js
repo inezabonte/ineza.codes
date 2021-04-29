@@ -36,7 +36,7 @@ export default function index() {
 						</p>
 						<p className="text-lg">
 							📩 You can contact me by email at:{" "}
-							<a href="mailto:inezabonte" className="underline">
+							<a href="mailto:inezabonte@gmail.com" className="underline">
 								inezabonte@gmail.com
 							</a>
 						</p>
