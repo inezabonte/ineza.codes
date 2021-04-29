@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { GithubOutlined, TwitterOutlined } from "@ant-design/icons";
 import { useTheme } from "next-themes";
-import Image from "next/image";
+import Link from "next/link";
+
 export default function NavBar() {
 	useEffect(() => {
 		setIsMounted(true);
@@ -16,11 +17,12 @@ export default function NavBar() {
 	};
 
 	return (
-		<header className="h-16 lg:max-w-6xl px-10 lg:m-auto flex items-center justify-between">
-			<div>
-				<p className="font-bold text-xl">Ineza Bonté</p>
-			</div>
-			<div className="space-x-4 flex justify-center ">
+		<header className="p-10 grid grid-cols-2 lg:grid-cols-3 lg:grid-rows-1 gap-y-4">
+			<Link href="/">
+				<a className="font-bold text-2xl">Ineza Bonté</a>
+			</Link>
+
+			<div className="space-x-4 flex justify-center justify-self-end lg:order-1">
 				<div className="space-x-4">
 					<a
 						target="_blank"
@@ -43,6 +45,14 @@ export default function NavBar() {
 				>
 					{theme === "light" ? "🌑" : "☀️"}
 				</button>
+			</div>
+			<div className="space-x-5 text-2xl col-span-2 justify-self-center lg:col-span-1">
+				<Link href="/about">
+					<a>About</a>
+				</Link>
+				<Link href="/blog">
+					<a>Blog</a>
+				</Link>
 			</div>
 		</header>
 	);
