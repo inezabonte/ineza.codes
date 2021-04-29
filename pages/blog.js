@@ -5,7 +5,7 @@ import Layout from "../components/Layout";
 export default function Blog({ items }) {
 	return (
 		<Layout page="Blog | Ineza Bonté">
-			<main className="lg:max-w-4xl  lg:m-auto p-10 space-y-4">
+			<main className="p-10 space-y-4">
 				<div>
 					<h1 className="text-4xl font-bold dark:text-white mb-4">Blog</h1>
 					<p className="text-xl text-gray-600 dark:text-gray-400">

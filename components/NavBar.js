@@ -17,7 +17,7 @@ export default function NavBar() {
 	};
 
 	return (
-		<header className="p-10 lg:max-w-4xl lg:m-auto grid grid-cols-2 lg:grid-cols-3 lg:grid-rows-1 gap-y-4">
+		<header className="p-10 grid grid-cols-2 lg:grid-cols-3 lg:grid-rows-1 gap-y-4">
 			<Link href="/">
 				<a className="font-bold text-2xl">Ineza Bonté</a>
 			</Link>

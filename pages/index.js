@@ -5,7 +5,7 @@ export default function index() {
 	return (
 		<Layout page="Ineza Bonté">
 			<main className="bg-gray-200 dark:bg-gray-800">
-				<section className="p-10 flex lg:max-w-4xl  lg:m-auto flex-col justify-center items-center lg:flex-row  lg:justify-between ">
+				<section className="p-10 flex flex-col justify-center items-center lg:flex-row  lg:justify-between ">
 					<div className="mb-10">
 						<Image
 							priority={true}
@@ -16,13 +16,13 @@ export default function index() {
 							className="rounded-full"
 						/>
 					</div>
-					<div className=" md:self-center max-w-lg">
+					<div className=" md:self-center max-w-lg space-y-4">
 						<p className="font-bold text-2xl">I'm Ineza Bonté,</p>
-						<p className="text-base">
+						<p className="text-lg">
 							I'm a Fullstack Developer based in Kigali, Rwanda 🇷🇼
 							<br />I have a passion for coding and developing Web Applications.
 						</p>
-						<p className="text-base">
+						<p className="text-lg">
 							I sometimes publish articles on{" "}
 							<a
 								href="https://dev.to/inezabonte"
@@ -34,7 +34,7 @@ export default function index() {
 							</a>{" "}
 							about concepts I've learnt in Software Development.
 						</p>
-						<p className="text-base">
+						<p className="text-lg">
 							📩 You can contact me by email at:{" "}
 							<a href="mailto:inezabonte" className="underline">
 								inezabonte@gmail.com
