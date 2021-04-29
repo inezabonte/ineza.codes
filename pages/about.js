@@ -36,7 +36,7 @@ export default function about() {
 				<h2 className="underline text-2xl my-6 dark:text-white font-bold">
 					Hobbies
 				</h2>
-				<div className="text-2xl space-y-6 text-gray-200">
+				<div className="text-2xl space-y-6 dark:text-gray-200">
 					<p>
 						As much as coding can be somehow addictive. It's healthy to take a
 						break and relax which helps improve your mental and physical
