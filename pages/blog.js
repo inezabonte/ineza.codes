@@ -26,8 +26,10 @@ export default function Blog({ items }) {
 								{item.title}
 							</a>
 							<div className="space-x-2 text-white">
-								{item.categories.map((category) => (
-									<span className="p-1 bg-gray-500 rounded">{category}</span>
+								{item.categories.map((category, index) => (
+									<span className="p-1 bg-gray-500 rounded" key={index}>
+										{category}
+									</span>
 								))}
 							</div>
 							<p className="text-lg text-gray-600 dark:text-gray-400">

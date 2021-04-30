@@ -19,7 +19,9 @@ export default function NavBar() {
 	return (
 		<header className="p-10 grid grid-cols-2 lg:grid-cols-3 lg:grid-rows-1 gap-y-4">
 			<Link href="/">
-				<a className="font-bold text-2xl">Ineza Bonté</a>
+				<a className="font-bold text-2xl">
+					<h1 className="dark:text-white">Ineza Bonté</h1>
+				</a>
 			</Link>
 
 			<div className="space-x-4 flex justify-center justify-self-end lg:order-1">
