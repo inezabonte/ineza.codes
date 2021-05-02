@@ -3,6 +3,31 @@ import { format } from "date-fns";
 import Layout from "../components/Layout";
 
 export default function Blog({ items }) {
+	const articles = {};
+	let years = [];
+	let uniqueYear;
+
+	if (items) {
+		for (let i = 0; i < items.length; i++) {
+			const year = format(new Date(items[i].isoDate), "y");
+			years.push(year);
+		}
+
+		uniqueYear = [...new Set(years)];
+
+		uniqueYear.map((item) => {
+			articles[item] = [];
+		});
+
+		for (let i = 0; i < uniqueYear.length; i++) {
+			for (let j = 0; j < items.length; j++) {
+				if (uniqueYear[i] === format(new Date(items[j].isoDate), "y")) {
+					articles[uniqueYear[i]].push(items[j]);
+				}
+			}
+		}
+	}
+
 	return (
 		<Layout page="Blog | Ineza Bonté">
 			<main className="p-10 space-y-4">
@@ -15,26 +40,31 @@ export default function Blog({ items }) {
 					</p>
 				</div>
 				<div className="space-y-8">
-					{items.map((item) => (
-						<div key={item.link} className="space-y-2">
-							<a
-								className="text-xl"
-								href={item.link}
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								{item.title}
-							</a>
-							<div className="space-x-2 text-white">
-								{item.categories.map((category, index) => (
-									<span className="p-1 bg-gray-500 rounded" key={index}>
-										{category}
-									</span>
-								))}
-							</div>
-							<p className="text-lg text-gray-600 dark:text-gray-400">
-								{format(new Date(item.isoDate), "PPP")}
-							</p>
+					{uniqueYear.map((item) => (
+						<div key={item} className="space-y-2">
+							<span>{item}</span>
+							{articles[item].map((article) => (
+								<div key={article.link}>
+									<a
+										className="text-xl"
+										href={article.link}
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										{article.title}
+									</a>
+									<div className="space-x-2 text-white">
+										{article.categories.map((category, index) => (
+											<span className="p-1 bg-gray-500 rounded" key={index}>
+												{category}
+											</span>
+										))}
+									</div>
+									<p className="text-lg text-gray-600 dark:text-gray-400">
+										{format(new Date(article.isoDate), "PPP")}
+									</p>
+								</div>
+							))}
 						</div>
 					))}
 				</div>
