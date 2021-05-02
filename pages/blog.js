@@ -27,31 +27,35 @@ export default function Blog({ items }) {
 				</div>
 				<div className="space-y-8">
 					{uniqueYear.map((year) => (
-						<div key={year} className="space-y-2">
-							<span>{year}</span>
+						<div key={year} className="space-y-8">
+							<h2 className="text-2xl font-bold dark:text-white border-gray-500 border-opacity-50 border-b-4">
+								{year}
+							</h2>
 
 							{items
 								.filter((item) => item.isoDate.startsWith(year))
 								.map((article) => (
-									<div key={article.link}>
-										<a
-											className="text-xl"
-											href={article.link}
-											target="_blank"
-											rel="noopener noreferrer"
-										>
-											{article.title}
-										</a>
-										<div className="space-x-2 text-white">
-											{article.categories.map((category, index) => (
-												<span className="p-1 bg-gray-500 rounded" key={index}>
-													{category}
-												</span>
-											))}
+									<div key={article.link} className="grid grid-cols-5">
+										<span className="text-base text-gray-600 dark:text-gray-400 mr-4 self-center">
+											{format(new Date(article.isoDate), "LLL dd")}
+										</span>
+										<div className="col-span-4">
+											<a
+												className="text-lg"
+												href={article.link}
+												target="_blank"
+												rel="noopener noreferrer"
+											>
+												{article.title}
+											</a>
+											<div className="space-x-2 text-white">
+												{article.categories.map((category, index) => (
+													<span className="p-1 bg-gray-500 rounded" key={index}>
+														{category}
+													</span>
+												))}
+											</div>
 										</div>
-										<p className="text-lg text-gray-600 dark:text-gray-400">
-											{format(new Date(article.isoDate), "PPP")}
-										</p>
 									</div>
 								))}
 						</div>
