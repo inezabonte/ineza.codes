@@ -15,8 +15,9 @@ export default function Blog({ items }) {
 					</p>
 				</div>
 				<div className="space-y-8">
-					{items.map((item) => (
-						<div key={item.link} className="space-y-2">
+					<h2 className="text-3xl font-bold dark:text-white mb-4">In 2021</h2>
+					{items['2021'].map((item) => (
+						<article key={item.link} className="space-y-2">
 							<a
 								className="text-xl"
 								href={item.link}
@@ -35,7 +36,31 @@ export default function Blog({ items }) {
 							<p className="text-lg text-gray-600 dark:text-gray-400">
 								{format(new Date(item.isoDate), "PPP")}
 							</p>
-						</div>
+						</article>
+					))}
+
+					<h2 className="text-3xl font-bold dark:text-white mb-4">In 2020</h2>
+					{items['2020'].map((item) => (
+						<article key={item.link} className="space-y-2">
+							<a
+								className="text-xl"
+								href={item.link}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								{item.title}
+							</a>
+							<div className="space-x-2 text-white">
+								{item.categories.map((category, index) => (
+									<span className="p-1 bg-gray-500 rounded" key={index}>
+										{category}
+									</span>
+								))}
+							</div>
+							<p className="text-lg text-gray-600 dark:text-gray-400">
+								{format(new Date(item.isoDate), "PPP")}
+							</p>
+						</article>
 					))}
 				</div>
 			</main>
@@ -48,7 +73,14 @@ export async function getStaticProps() {
 
 	return {
 		props: {
-			items: detailedFeed.items,
+			items: {
+				2020: detailedFeed.items.filter((item) => {
+					return item.isoDate.startsWith('2020')
+				}),
+				2021: detailedFeed.items.filter((item) => {
+					return item.isoDate.startsWith('2021')
+				}),
+			},
 		},
 		revalidate: 1,
 	};
