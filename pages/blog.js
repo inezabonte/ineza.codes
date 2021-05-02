@@ -3,6 +3,17 @@ import { format } from "date-fns";
 import Layout from "../components/Layout";
 
 export default function Blog({ items }) {
+	let years = [];
+	let uniqueYear;
+
+	if (items) {
+		for (let i = 0; i < items.length; i++) {
+			const year = format(new Date(items[i].isoDate), "y");
+			years.push(year);
+		}
+		uniqueYear = [...new Set(years)];
+	}
+
 	return (
 		<Layout page="Blog | Ineza Bonté">
 			<main className="p-10 space-y-4">
@@ -15,52 +26,39 @@ export default function Blog({ items }) {
 					</p>
 				</div>
 				<div className="space-y-8">
-					<h2 className="text-3xl font-bold dark:text-white mb-4">In 2021</h2>
-					{items['2021'].map((item) => (
-						<article key={item.link} className="space-y-2">
-							<a
-								className="text-xl"
-								href={item.link}
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								{item.title}
-							</a>
-							<div className="space-x-2 text-white">
-								{item.categories.map((category, index) => (
-									<span className="p-1 bg-gray-500 rounded" key={index}>
-										{category}
-									</span>
-								))}
-							</div>
-							<p className="text-lg text-gray-600 dark:text-gray-400">
-								{format(new Date(item.isoDate), "PPP")}
-							</p>
-						</article>
-					))}
+					{uniqueYear.map((year) => (
+						<div key={year} className="space-y-8">
+							<h2 className="text-2xl font-bold dark:text-white border-gray-500 border-opacity-50 border-b-4">
+								{year}
+							</h2>
 
-					<h2 className="text-3xl font-bold dark:text-white mb-4">In 2020</h2>
-					{items['2020'].map((item) => (
-						<article key={item.link} className="space-y-2">
-							<a
-								className="text-xl"
-								href={item.link}
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								{item.title}
-							</a>
-							<div className="space-x-2 text-white">
-								{item.categories.map((category, index) => (
-									<span className="p-1 bg-gray-500 rounded" key={index}>
-										{category}
-									</span>
+							{items
+								.filter((item) => item.isoDate.startsWith(year))
+								.map((article) => (
+									<div key={article.link} className="grid grid-cols-5">
+										<span className="text-base text-gray-600 dark:text-gray-400 mr-4 self-center">
+											{format(new Date(article.isoDate), "LLL dd")}
+										</span>
+										<div className="col-span-4">
+											<a
+												className="text-lg"
+												href={article.link}
+												target="_blank"
+												rel="noopener noreferrer"
+											>
+												{article.title}
+											</a>
+											<div className="space-x-2 text-white">
+												{article.categories.map((category, index) => (
+													<span className="p-1 bg-gray-500 rounded" key={index}>
+														{category}
+													</span>
+												))}
+											</div>
+										</div>
+									</div>
 								))}
-							</div>
-							<p className="text-lg text-gray-600 dark:text-gray-400">
-								{format(new Date(item.isoDate), "PPP")}
-							</p>
-						</article>
+						</div>
 					))}
 				</div>
 			</main>
@@ -73,14 +71,7 @@ export async function getStaticProps() {
 
 	return {
 		props: {
-			items: {
-				2020: detailedFeed.items.filter((item) => {
-					return item.isoDate.startsWith('2020')
-				}),
-				2021: detailedFeed.items.filter((item) => {
-					return item.isoDate.startsWith('2021')
-				}),
-			},
+			items: detailedFeed.items,
 		},
 		revalidate: 1,
 	};
