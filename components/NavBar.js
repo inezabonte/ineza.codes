@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { GithubOutlined, TwitterOutlined } from "@ant-design/icons";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 
@@ -25,22 +24,6 @@ export default function NavBar() {
 			</Link>
 
 			<div className="space-x-4 flex items-center justify-self-end lg:order-1">
-				<div className="space-x-4">
-					<a
-						target="_blank"
-						href="https://github.com/inezabonte"
-						rel="noopener noreferrer"
-					>
-						<GithubOutlined className="text-xl" />
-					</a>
-					<a
-						target="_blank"
-						href="https://twitter.com/inezabonte"
-						rel="noopener noreferrer"
-					>
-						<TwitterOutlined className="text-xl" />
-					</a>
-				</div>
 				<button
 					className="focus:outline-none outline-none"
 					onClick={switchTheme}
