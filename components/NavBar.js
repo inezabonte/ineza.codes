@@ -7,10 +7,10 @@ export default function NavBar() {
 	useEffect(() => setMounted(true), []);
 
 	const [mounted, setMounted] = useState(false);
-	const { theme, setTheme } = useTheme();
+	const { resolvedTheme, setTheme } = useTheme();
 
 	const switchTheme = () => {
-		setTheme(theme === "dark" ? "light" : "dark");
+		setTheme(resolvedTheme === "dark" ? "light" : "dark");
 	};
 
 	return (
@@ -46,7 +46,9 @@ export default function NavBar() {
 					type="button"
 				>
 					<title id="theme-switcher">
-						{theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+						{resolvedTheme === "dark"
+							? "Switch to light mode"
+							: "Switch to dark mode"}
 					</title>
 					{mounted && (
 						<svg
@@ -56,7 +58,7 @@ export default function NavBar() {
 							stroke="currentColor"
 							className="h-5 w-5 text-gray-800 dark:text-gray-200"
 						>
-							{theme === "dark" ? (
+							{resolvedTheme === "dark" ? (
 								<path
 									strokeLinecap="round"
 									strokeLinejoin="round"
