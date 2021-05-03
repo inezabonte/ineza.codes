@@ -41,7 +41,13 @@ export default function NavBar() {
 				<button
 					className="focus:outline-none outline-none"
 					onClick={switchTheme}
+					role="img"
+					aria-labelledby="theme-switcher"
+					type="button"
 				>
+					<title id="theme-switcher">
+						{theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+					</title>
 					{mounted && (
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
