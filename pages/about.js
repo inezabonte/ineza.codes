@@ -18,9 +18,9 @@ export default function about() {
 						become a FullStack Developer.
 					</p>
 					<p>
-						Apart from coding. I enjoy watching movies, listening to music. I'm
-						trying to learn the guitar, though it's painful in the process of
-						building my calluses.
+						Apart from coding I enjoy watching movies and listening to music.
+						I'm also trying to learn the guitar, though it's painful in the
+						process of building my calluses.
 					</p>
 				</div>
 			</main>

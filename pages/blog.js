@@ -20,9 +20,8 @@ export default function Blog({ items }) {
 				<div>
 					<h1 className="text-4xl font-bold dark:text-white mb-4">Blog</h1>
 					<p className="text-xl text-gray-600 dark:text-gray-400">
-						I sometimes publish articles on DEV about concepts I've learnt in
-						Software Development. These are some of the articles I have written
-						so far.
+						I publish articles on DEV about concepts I've learnt in Software
+						Development. These are the articles I've written so far.
 					</p>
 				</div>
 				<div className="space-y-8">
