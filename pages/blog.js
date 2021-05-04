@@ -35,10 +35,10 @@ export default function Blog({ items }) {
 								.filter((item) => item.isoDate.startsWith(year))
 								.map((article) => (
 									<div key={article.link} className="grid grid-cols-5">
-										<span className="text-sm md:text-base text-gray-600 dark:text-gray-400 mr-4 self-center">
+										<span className="text-sm md:text-base text-gray-600 dark:text-gray-400 mr-4">
 											{format(new Date(article.isoDate), "LLL dd")}
 										</span>
-										<div className="col-span-4">
+										<div className="col-span-4 space-y-2">
 											<a
 												className="text-base md:text-lg"
 												href={article.link}
