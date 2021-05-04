@@ -23,18 +23,6 @@ export default function index() {
 							<br />I have a passion for coding and developing Web Applications.
 						</p>
 						<p className="text-lg">
-							I sometimes publish articles on{" "}
-							<a
-								href="https://dev.to/inezabonte"
-								rel="noopener noreferrer"
-								target="_blank"
-								className="underline"
-							>
-								DEV
-							</a>{" "}
-							about concepts I've learnt in Software Development.
-						</p>
-						<p className="text-lg">
 							📩 You can contact me by email at:{" "}
 							<a href="mailto:inezabonte@gmail.com" className="underline">
 								inezabonte@gmail.com
