@@ -13,7 +13,7 @@ export default function NavBar() {
 	};
 
 	return (
-		<header className="px-10 py-5 lg:p-10 grid grid-cols-2 lg:grid-cols-3 lg:grid-rows-1 gap-y-2 items-center">
+		<header className="px-6 py-5 lg:p-10 grid grid-cols-2 lg:grid-cols-3 lg:grid-rows-1 gap-y-6 items-center">
 			<Link href="/">
 				<a className="font-bold text-2xl">
 					<h1 className="dark:text-white">Ineza Bonté</h1>
@@ -62,10 +62,10 @@ export default function NavBar() {
 			</div>
 			<div className="space-x-5 text-base font-bold col-span-2 justify-self-center lg:col-span-1">
 				<Link href="/blog">
-					<a>BLOG</a>
+					<a className="uppercase">Blog</a>
 				</Link>
 				<Link href="/about">
-					<a>ABOUT</a>
+					<a className="uppercase">About</a>
 				</Link>
 			</div>
 		</header>
