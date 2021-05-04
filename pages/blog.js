@@ -16,13 +16,12 @@ export default function Blog({ items }) {
 
 	return (
 		<Layout page="Blog | Ineza Bonté">
-			<main className="p-10 space-y-4">
+			<main className="p-10 space-y-8">
 				<div>
 					<h1 className="text-4xl font-bold dark:text-white mb-4">Blog</h1>
 					<p className="text-xl text-gray-600 dark:text-gray-400">
-						These are some of the articles I have written so far. I mostly write
-						tutorials about different concepts in web development. If you are
-						into that, consider reading these below
+						I publish articles on DEV about concepts I've learnt in Software
+						Development. These are the articles I've written so far.
 					</p>
 				</div>
 				<div className="space-y-8">
