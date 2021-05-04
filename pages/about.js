@@ -7,9 +7,9 @@ export default function about() {
 				<h1 className="text-4xl font-bold dark:text-white mb-4">About Me</h1>
 				<div className="text-xl space-y-6 dark:text-gray-200">
 					<p>
-						Hey there, my name I'm Bonté, welcome to my portfolio. This is my
-						corner of the internet where you get to see what I've been working
-						on and writing about.
+						Hey there, I'm Bonté, welcome to my portfolio. This is my corner of
+						the internet where you get to see what I've been working on and
+						writing about.
 					</p>
 					<p>
 						I got into web development in 2020 just as the pandemic started.
