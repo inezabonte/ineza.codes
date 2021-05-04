@@ -16,7 +16,7 @@ export default function Blog({ items }) {
 
 	return (
 		<Layout page="Blog | Ineza Bonté">
-			<main className="p-10 space-y-8">
+			<main className="p-6 space-y-8">
 				<div>
 					<h1 className="text-4xl font-bold dark:text-white mb-4">Blog</h1>
 					<p className="text-xl text-gray-600 dark:text-gray-400">
@@ -35,12 +35,12 @@ export default function Blog({ items }) {
 								.filter((item) => item.isoDate.startsWith(year))
 								.map((article) => (
 									<div key={article.link} className="grid grid-cols-5">
-										<span className="text-base text-gray-600 dark:text-gray-400 mr-4 self-center">
+										<span className="text-sm md:text-base text-gray-600 dark:text-gray-400 mr-4 self-center">
 											{format(new Date(article.isoDate), "LLL dd")}
 										</span>
 										<div className="col-span-4">
 											<a
-												className="text-lg"
+												className="text-base md:text-lg"
 												href={article.link}
 												target="_blank"
 												rel="noopener noreferrer"

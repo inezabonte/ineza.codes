@@ -5,7 +5,7 @@ export default function index() {
 	return (
 		<Layout page="Ineza Bonté">
 			<main className="bg-gray-200 dark:bg-gray-800 mb-auto">
-				<section className="p-10 flex flex-col justify-center items-center lg:flex-row  lg:justify-between ">
+				<section className="px-6 py-10 flex flex-col justify-center items-center lg:flex-row  lg:justify-between ">
 					<div className="mb-10">
 						<Image
 							priority={true}
