@@ -50,7 +50,7 @@ export default function Blog({ items }) {
 											<div className=" text-white flex flex-wrap">
 												{article.categories.map((category, index) => (
 													<span
-														className="p-1 mr-1 mb-1 bg-gray-500 rounded text-base md:text-lg"
+														className="px-1 mr-1 mb-1 bg-gray-500 rounded text-base md:text-lg"
 														key={index}
 													>
 														{category}
