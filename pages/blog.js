@@ -19,7 +19,7 @@ export default function Blog({ items }) {
 			<main className="p-6 space-y-8">
 				<div>
 					<h1 className="text-4xl font-bold dark:text-white mb-4">Blog</h1>
-					<p className="text-xl text-gray-600 dark:text-gray-400">
+					<p className="text-2xl text-gray-600 dark:text-gray-400">
 						I publish articles on DEV about concepts I've learnt in Software
 						Development. These are the articles I've written so far.
 					</p>
@@ -35,21 +35,24 @@ export default function Blog({ items }) {
 								.filter((item) => item.isoDate.startsWith(year))
 								.map((article) => (
 									<div key={article.link} className="grid grid-cols-5">
-										<span className="text-sm md:text-base text-gray-600 dark:text-gray-400 mr-4">
+										<span className="text-sm md:text-lg text-gray-600 dark:text-gray-400 mr-4">
 											{format(new Date(article.isoDate), "LLL dd")}
 										</span>
 										<div className="col-span-4 space-y-2">
 											<a
-												className="text-base md:text-lg"
+												className="text-lg md:text-xl"
 												href={article.link}
 												target="_blank"
 												rel="noopener noreferrer"
 											>
 												{article.title}
 											</a>
-											<div className="space-x-2 text-white">
+											<div className=" text-white flex flex-wrap">
 												{article.categories.map((category, index) => (
-													<span className="p-1 bg-gray-500 rounded" key={index}>
+													<span
+														className="p-1 mr-1 mb-1 bg-gray-500 rounded text-base md:text-lg"
+														key={index}
+													>
 														{category}
 													</span>
 												))}
