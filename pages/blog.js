@@ -1,6 +1,7 @@
 import { getFeed } from "../lib/rss";
 import { format } from "date-fns";
 import Layout from "../components/Layout";
+import Link from "next/link";
 
 export default function Blog({ items }) {
 	let years = [];
@@ -49,12 +50,11 @@ export default function Blog({ items }) {
 											</a>
 											<div className=" text-white flex flex-wrap">
 												{article.categories.map((category, index) => (
-													<span
-														className="px-1 mr-1 mb-1 bg-gray-500 rounded text-base md:text-lg"
-														key={index}
-													>
-														{category}
-													</span>
+													<Link href={"/tags/" + category} key={index}>
+														<a className="px-1 mr-1 mb-1 bg-gray-500 rounded text-base md:text-lg">
+															{category}
+														</a>
+													</Link>
 												))}
 											</div>
 										</div>
