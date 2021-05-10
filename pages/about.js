@@ -3,7 +3,7 @@ import Layout from "../components/Layout";
 export default function about() {
 	return (
 		<Layout page="About | Ineza Bonté">
-			<main className="p-6 mb-auto">
+			<main className="p-6">
 				<h1 className="text-4xl font-bold dark:text-white mb-4">About Me</h1>
 				<div className="text-2xl space-y-6 dark:text-gray-200 max-w-prose">
 					<p>

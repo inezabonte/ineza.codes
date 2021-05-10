@@ -12,7 +12,7 @@ const ExternalLink = ({ children, link }) => (
 
 export default function Footer() {
 	return (
-		<footer className="px-10 py-5 mt-10 flex justify-center">
+		<footer className="px-10 py-5 mt-auto flex justify-center">
 			<div className="space-x-4 text-gray-500">
 				<ExternalLink link="https://github.com/inezabonte">
 					<GithubOutlined className="text-2xl" />
