@@ -17,4 +17,3 @@ fixes #
 
 - [ ] I have performed a self-review of my own code
 - [ ] My changes generate no new warnings
-- [ ] I've added a funny image
