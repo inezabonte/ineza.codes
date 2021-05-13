@@ -32,7 +32,7 @@ export default function index({ feed }) {
 						</p>
 					</div>
 				</section>
-				<section className="space-y-4 self-center lg:self-start divide-y-2">
+				<section className="space-y-4 self-center lg:self-start divide-y-2 w-full">
 					<div className="flex justify-between items-center">
 						<h2 className="text-3xl dark:text-white font-bold">
 							Latest Articles
