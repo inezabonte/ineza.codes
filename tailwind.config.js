@@ -6,7 +6,7 @@ module.exports = {
 			fontFamily: {
 				sans: ["Josefin Sans", "Helvetica"],
 			},
-			height: (theme) => ({
+			height: () => ({
 				"screen-10vh": "calc(100vh / 10)",
 				"screen-90vh": "calc(100vh * 0.9)",
 				"screen-80vh": "calcl(100vh * 0.8)",

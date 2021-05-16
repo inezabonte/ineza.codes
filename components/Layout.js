@@ -4,7 +4,7 @@ import Footer from "./Footer";
 
 export default function Layout({ children, page }) {
 	return (
-		<div className="lg:max-w-3xl  lg:m-auto flex flex-col min-h-screen ">
+		<div className="max-w-3xl  m-auto flex flex-col min-h-screen ">
 			<Header page={page} />
 			<NavBar />
 			{children}
