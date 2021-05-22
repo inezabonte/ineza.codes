@@ -50,7 +50,7 @@ export default function index({ feed, starredRepos }) {
 						{feed.map((article) => (
 							<div className="flex flex-col" key={article.link}>
 								<a
-									className="text-xl lg:text-2xl dark:text-gray-200"
+									className="text-xl font-bold lg:text-2xl dark:text-gray-200"
 									href={article.link}
 									target="_blank"
 									rel="noopener noreferrer"
@@ -87,7 +87,7 @@ export default function index({ feed, starredRepos }) {
 										href={repo.homepage}
 										target="_blank"
 										rel="noopener noreferrer"
-										className="text-2xl"
+										className="text-xl font-bold lg:text-2xl"
 									>
 										{repo.name}
 									</a>
