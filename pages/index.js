@@ -120,7 +120,9 @@ export default function index({ feed, starredRepos, contributions }) {
 								className="p-4 border-2 border-gray-200 dark:border-gray-800 rounded space-y-2 max-w-md"
 							>
 								<div className="flex items-center justify-between">
-									<h2 className="text-2xl dark:text-white">{repo.name}</h2>
+									<h2 className="dark:text-white text-xl font-bold lg:text-2xl">
+										{repo.name}
+									</h2>
 									<a
 										href={repo.html_url}
 										target="_blank"
@@ -153,6 +155,6 @@ export const getStaticProps = async () => {
 			starredRepos: githubStarred,
 			contributions: githubContributions,
 		},
-		revalidate: 1,
+		revalidate: 60,
 	};
 };
