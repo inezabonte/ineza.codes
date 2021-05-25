@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Layout from "../components/Layout";
 import { getFeed } from "../lib/rss";
-import { getGitHubStars } from "../lib/github";
+import { getGitHubStars, getGitHubContributions } from "../lib/github";
 import { format } from "date-fns";
 import Link from "next/link";
 import { GithubOutlined } from "@ant-design/icons";
 
-export default function index({ feed, starredRepos }) {
+export default function index({ feed, starredRepos, contributions }) {
 	return (
 		<Layout page="Ineza Bonté">
 			<main className="space-y-12 px-6 py-10 flex flex-col">
@@ -64,7 +64,7 @@ export default function index({ feed, starredRepos }) {
 						))}
 					</div>
 				</section>
-				<section className="space-y-6 self-center lg:self-start w-full">
+				<section className="space-y-6 self-center lg:self-start w-full flex flex-col">
 					<div className="flex justify-between items-center border-b-2 pb-4">
 						<h2 className="text-3xl dark:text-white font-bold ">Projects</h2>
 						<a
@@ -76,7 +76,7 @@ export default function index({ feed, starredRepos }) {
 							View More
 						</a>
 					</div>
-					<div className="grid grid-cols-1 md:grid-cols-2 justify-items-center gap-4">
+					<div className="grid grid-cols-1 md:grid-cols-2 self-center gap-4">
 						{starredRepos.map((repo) => (
 							<div
 								key={repo.id}
@@ -107,6 +107,36 @@ export default function index({ feed, starredRepos }) {
 						))}
 					</div>
 				</section>
+				<section className="space-y-6 self-center lg:self-start w-full flex flex-col">
+					<div className="border-b-2 pb-4">
+						<h2 className="text-3xl dark:text-white font-bold ">
+							Contributions to OSS
+						</h2>
+					</div>
+					<div className="grid grid-cols-1 md:grid-cols-2 self-center  gap-4">
+						{contributions.map((repo) => (
+							<div
+								key={repo.id}
+								className="p-4 border-2 border-gray-200 dark:border-gray-800 rounded space-y-2 max-w-md"
+							>
+								<div className="flex items-center justify-between">
+									<h2 className="text-2xl dark:text-white">{repo.name}</h2>
+									<a
+										href={repo.html_url}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="self-start"
+									>
+										<GithubOutlined className="text-2xl" />
+									</a>
+								</div>
+								<p className="text-lg text-gray-500 dark:text-gray-400">
+									{repo.description}
+								</p>
+							</div>
+						))}
+					</div>
+				</section>
 			</main>
 		</Layout>
 	);
@@ -115,11 +145,13 @@ export default function index({ feed, starredRepos }) {
 export const getStaticProps = async () => {
 	const feed = await getFeed();
 	const githubStarred = await getGitHubStars();
+	const githubContributions = await getGitHubContributions();
 
 	return {
 		props: {
 			feed: feed.items.splice(0, 3),
 			starredRepos: githubStarred,
+			contributions: githubContributions,
 		},
 		revalidate: 1,
 	};
