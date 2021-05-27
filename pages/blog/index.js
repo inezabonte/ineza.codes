@@ -1,6 +1,6 @@
-import { getFeed } from "../lib/rss";
+import { getFeed } from "../../lib/rss";
 import { format } from "date-fns";
-import Layout from "../components/Layout";
+import Layout from "../../components/Layout";
 import Link from "next/link";
 
 export default function Blog({ items }) {
