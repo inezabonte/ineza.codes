@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Layout from "../components/Layout";
-import { getFeed } from "../lib/rss";
 import { getGitHubStars, getGitHubContributions } from "../lib/github";
-import { format } from "date-fns";
+import { getArticlesMeta } from "../lib/articles";
+import { convertDate } from "../components/date";
 import Link from "next/link";
 import { GithubOutlined } from "@ant-design/icons";
 
-export default function index({ feed, starredRepos, contributions }) {
+export default function index({ starredRepos, contributions, articles }) {
 	return (
 		<Layout page="Ineza Bonté">
 			<main className="space-y-12 px-6 py-10 flex flex-col">
@@ -47,18 +47,15 @@ export default function index({ feed, starredRepos, contributions }) {
 					</div>
 
 					<div className="space-y-4">
-						{feed.map((article) => (
-							<div className="flex flex-col" key={article.link}>
-								<a
-									className="text-xl font-bold lg:text-2xl dark:text-gray-200"
-									href={article.link}
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									{article.title}
-								</a>
+						{articles.map((article) => (
+							<div className="flex flex-col" key={article.id}>
+								<Link href={`/blog/${article.id}`}>
+									<a className="text-xl font-bold lg:text-2xl dark:text-gray-200">
+										{article.title}
+									</a>
+								</Link>
 								<span className="text-gray-600 dark:text-gray-400 text-base lg:text-lg">
-									{format(new Date(article.isoDate), "PPP")}
+									{convertDate(article.date, "PPP")}
 								</span>
 							</div>
 						))}
@@ -145,15 +142,15 @@ export default function index({ feed, starredRepos, contributions }) {
 }
 
 export const getStaticProps = async () => {
-	const feed = await getFeed();
+	const articles = getArticlesMeta();
 	const githubStarred = await getGitHubStars();
 	const githubContributions = await getGitHubContributions();
 
 	return {
 		props: {
-			feed: feed.items.splice(0, 3),
 			starredRepos: githubStarred,
 			contributions: githubContributions,
+			articles: articles.splice(0, 3),
 		},
 		revalidate: 60,
 	};

@@ -1,0 +1,53 @@
+---
+title: "My journey so far in web development."
+date: "2021-04-15"
+tags: ["devjournal", "codenewbie"]
+---
+
+It's been a year since I got into web development. It has been a heck of a journey, learning new technology, meeting people with similar ambitions and goals.
+
+I decided to write this blog post as a reflection as to how I got here and hopefully inspire someone who may be considering starting to code
+
+Learning to code is definitely not easy. With so many resources one can be confused as to where to start from. I can testify to this because it personally took me a couple of years😅 to make up my mind as to which direction I wanted to take.
+
+It's never too late to start coding so, take your time and understand the options you have. You can even try a few of them and see which ones you like then identify one that you would be comfortable working in long term.
+
+One thing you should beware of is, the biased opinions people may have towards certain frameworks or languages. It's always best to try it out yourself and see if you like it and if you do go ahead with it.
+
+### How it started 🚀
+
+Towards the end of March 2020, the spread of COVID had forced many institutions to close and cities to go under lockdown, and that's when I took the initiative of learning JavaScript. I started off with a friend of mine ([@zadock](https://twitter.com/zadock_254)) and we committed ourselves to #100DaysfCode.
+
+The daily challenges we did came from sites such as [CodeWars](https://www.codewars.com/) and [Edabit](https://edabit.com/) which helped quite a lot in understanding the syntax of JavaScript.
+
+At around 60 days into the challenges we decided to go bigger and start working on larger projects which of course were taking more than a day to complete, nevertheless they were essential in helping us test our skills in coding and in the process we got to learn a lot from the projects.
+
+Some of the projects we worked on are a [Weather App](https://inezaweatherapp.vercel.app/) and also a Twitter bot which is probably the first Nodejs Application I worked on.
+
+After completing 100 Days. I had developed a deeper understanding in JavaScript and was motivated to keep growing and learning.
+
+### Lessons I learnt ✍🏽
+
+**Help others grow**
+When you share your work publicly there is a high chance that it could help someone else who may be learning the similar topic. My good friend [André Jaenisch](https://twitter.com/AndreJaenisch) always emphasizes on documenting your learning. It could be through a blog or youtube channel where you breakdown what you have learnt or what problem you faced and how you were able to solve it. This will help you retain what you learnt and you will always have a reference to look at if you ever run into the same issue.
+
+**The basics are enough to get you started**
+A question I often get from friends who are starting out in coding is "How long will it take me to learn x?" The answer is that it depends on the learner. We all have different methods that we use when learning, some may be quick and others may be slow and also most of these languages are always evolving, aiming to learn a language 100% is quite unnecessary😅. You may find yourself rarely using some of the features these languages have to offer.
+The best advice I'd give is, understand the basics of the language/framework and apply whatever you learned on projects and that will help you gain a deeper understanding on what you are working with. When you come across a new term you can always look it up and you will find so many resources online explaining it.
+
+**Getting help on blockers**
+Whenever you run into an error, it's always a good practice to try and figure it out yourself before asking for help. Most of the time if you copy and paste the error in your search engine you will most likely find the first link going to StackOverFlow or another website where someone found the solution to your problem.
+If it seems quite difficult you can then ask for assistance followed by stating the different methods that you tried in solving the issue. This will help whoever is assisting you to get a background on the problem and be in a better position to help you.
+
+**Maintain a habit of coding regularly**
+Coding like any other skill you may want to learn requires you to do it regularly in order to get good at it. Basically practice makes perfect. And I believe that helped me a lot when I started learning JavaScript.
+
+**Take care of yourself**
+Your health contributes greatly to your performance as a developer. It should therefore be your first priority.
+As developers we often experience burnout, anxiety, fatigue or loss of motivation. This can be attributed to the fact that we spend so many hours on our computers without taking a break.
+It's a good practice to schedule time to relax away from the computer by doing some exercise, taking a walk or a fun activity to relax your mind.
+When you resume your work you will feel refreshed and motivated.
+
+This are some of the lessons I have learnt in my journey.
+
+Thank You for reading ❤️

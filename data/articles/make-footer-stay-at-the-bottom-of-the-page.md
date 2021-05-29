@@ -1,0 +1,58 @@
+---
+title: "How to make your footer stay at the bottom of the page"
+date: "2021-05-09"
+tags: ["css", "beginners", "codenewbie"]
+---
+
+I recently met an issue with positioning a footer. After finding a solution, I decided to document it in this post.
+
+Our goal is to:
+
+- Make the footer stay at the bottom even when the content is not filling the screen.
+- Make the footer appear at the end of the document when the screen is full of content (instead of overlapping the bottom section)
+
+### 1. Give your container a min-height of 100vh
+
+The body tag which holds your content should be given a minimum height of 100vh. This will ensure that the body will always take full height of the page even when its content is not filling the page. You can apply this to the body or the container which has the footer as the last tag.
+
+```css
+body {
+ min-height: 100vh;
+}
+```
+
+### 2. Make your body a flexbox
+
+Make your body a flexbox by giving it a `display` property with the value of `flex` and also change its direction by using `flex-direction` set to column
+
+```css
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+```
+
+### 3. Give the footer a margin-top of auto
+
+Assuming your body has a similar layout to this;
+
+```html
+<body>
+  <header>...</header>
+  <main>...</main>
+  <footer>...</footer>
+</body>
+```
+
+You can give your footer tag a `margin-top` property with the value of `auto`
+
+```css
+footer {
+  margin-top: auto;
+}
+```
+
+And that's it three simple steps :)
+
+Thank you for reading this article ♥️.
