@@ -14,9 +14,11 @@ You can use branches to safely develop and test new features. When the features 
 
 ### **What are pull requests?**
 
-A pull request is a feature that allows you to inform others of the changes you've made to the repository through your branch. It allows you to share screenshots and general ideas or seek help and advice when you're stuck. 
+A pull request is a feature that allows you to inform others of the changes you've made to the repository through your branch.
+It allows you to share screenshots and general ideas or seek help and advice when you're stuck.
 
-The repository owner reviews the work you've done on your branch and they can get back to you either for more info about the changes you made or point out a bug you may have missed. Once the pull request has been reviewed and has passed all the tests. The branch can then be merged with the master branch.
+The repository owner reviews the work you've done on your branch and they can get back to you either for more info about the changes you made or point out a bug you may have missed.
+Once the pull request has been reviewed and has passed all the tests. The branch can then be merged with the master branch.
 
 ### **Creating a branch**
 
@@ -34,7 +36,7 @@ The black checkmark ✔️ is also another way to know which branch you are curr
 
 ### **Making Changes**
 
-Open the README file from the `readme-edits` branch and make some changes. 
+Open the README file from the `readme-edits` branch and make some changes.
 
 After editing your document, add a *commit message*, you can also add an optional *description*, then click on **commit changes**
 
