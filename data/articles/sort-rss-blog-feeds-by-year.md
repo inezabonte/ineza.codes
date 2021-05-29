@@ -1,0 +1,140 @@
+---
+title: "Sorting RSS feeds by year using Next.js"
+date: "2021-05-24"
+tags: ["nextjs","rss"]
+---
+
+One of the [issues](https://github.com/inezabonte/inezabonte/issues/81) I created for my portfolio’s repo was to sort my blog feeds according to the year they were created in.
+
+The inspiration came from [Tania Rascia's](https://www.taniarascia.com/blog) blog section which is one of the most impressive portfolios I've come across.
+
+Assuming you already have your project setup. I'll skip right to the essential steps.
+
+### 1. Create a function to parse your RSS feed
+
+To parse RSS feeds we will make use of the [rss-parser](https://www.npmjs.com/package/rss-parser) library. For this I'll be using dev.to’s RSS feed which you can get by using:
+
+```text
+https://dev.to/feed/{username}
+```
+
+We start by importing the parsing library and then we create a function whose work will be to parse the RSS feed and return the results.
+
+```js
+//lib/rss.js
+
+import Parser from "rss-parser";
+
+export function getFeed() {
+    const parser = new Parser();
+    return parser.parseURL("https://dev.to/feed/inezabonte");
+}
+```
+
+### 2. Create a getStaticProps function
+
+In the `pages/blog.js` page we add the `getStaticProps()` function to fetch our articles. It will be using the exported function we just created above.
+
+```js
+// pages/blog.js
+
+import { getFeed } from "..lib/rss.js";
+
+export async function getStaticProps() {
+    const detailedFeed = await getFeed();
+
+    return {
+        props: {
+            items: detailedFeed.items,
+        },
+        revalidate: 60,
+    };
+}
+```
+
+After fetching the articles we return them inside the props object which will add them to the default export of the `/blog.js` file. The purpose of `revalidate` is to regenerate the page after the time given (in seconds). In our case after 60 seconds the page will regenerate. This could be useful if your RSS feed or API gets new data frequently, which you want to add on the website to keep it updated.
+
+### 3. Get available years
+
+The next step is to get the span of years across which our articles have been written. We will store the available years as strings in an array.
+
+```js
+// pages/blog.js
+
+import { getFeed } from "..lib/rss.js";
+import { format } from "date-fns";
+
+export default function Blog({ items }) {
+    let years = [];
+    let uniqueYear;
+
+    if (items) {
+        for (let i = 0; i < items.length; i++) {
+            const year = format(new Date(items[i].isoDate), "y");
+            years.push(year);
+        }
+        uniqueYear = [...new Set(years)];
+    }
+
+    return (
+  )
+}
+
+export async function getStaticProps() {
+    ...
+}
+```
+
+I make use of the `format` method from the [date-fns](https://www.npmjs.com/package/date-fns) library to extract the year from the date on which the article was created.
+
+Since this is a loop. It will basically run through all the articles' `isoDate` property and extract the year. Articles created in the same year might have their year added more than once. This introduces duplicates in the array. To prevent this we convert the array of duplicate years to a `Set`. This will implicitly remove duplicate elements then convert back to an array.
+
+### 3. Filter and render the blog articles
+
+After obtaining the years, we then map them and use the year element to filter the `items` array for articles that belong to that specific year.
+
+```js
+// pages/blog.js
+
+import { getFeed } from "..lib/rss.js";
+import { format } from "date-fns";
+
+export default function Blog({ items }) {
+  let years = [];
+  let uniqueYear;
+
+  if (items) {
+    for (let i = 0; i < items.length; i++) {
+      const year = format(new Date(items[i].isoDate), "y");
+      years.push(year);
+       }
+      uniqueYear = [...new Set(years)];
+    }
+
+    return (
+        <div>
+            {uniqueYear.map((year) => (
+                <div>
+                    <h2>{year}</h2>
+                    {items
+                    .filter((items) => item.isoDate.startsWith(year))
+                    .map((article) => (
+                        <div>{/* display data from article */}</div>
+                    ))}
+                </div>
+            ))}
+        </div>
+    );
+}
+
+export async function getStaticProps() {
+   // ...
+}
+
+```
+
+And that’s it. You can then go ahead and render data for each of your articles depending on what you want to show.
+
+I managed to solve the issue on [my portfolio](https://ineza.codes/blog). You can view my code on my [GitHub repo](https://github.com/inezabonte/inezabonte).
+
+Thank you for reading ❤️.

@@ -1,11 +1,12 @@
 ---
 title: 'How to use GitHub and Git for Beginners'
 date: '2020-08-15'
+tags: ["github", "git", "beginners"]
 ---
 
 If you are a beginner in the field of programming you must have come across the term `GitHub` and `Git` from blogs or even tutorials and wondered what they are🤔, in this blog I intend to explain them and hopefully you will get an idea of what they are and how they work.
 
-## **What is GitHub?**
+### **What is GitHub?**
 
 GitHub is a code hosting platform for `version control` and `collaboration`. Simply put, GitHub is a cloud storage platform like Google Drive or OneDrive but is built and centred around code.
 
@@ -13,11 +14,12 @@ Apart from just storing your code. GitHub allows you to collaborate with other p
 
 In my intro I used the word `version control`. And this is where Git comes in. GitHub not only just stores your code. It keeps track of every single change you make and commit, that way if you ever need to go back to a specific point in time of your project you can easily do so.
 
-## **What is Git?**
+### **What is Git?**
 
-Git is a version control system(VCS), it is in charge of tracking your source code or files for any changes made during development. Git operates locally, therefore has to be installed and linked with your GitHub account through a remote in order for it to access your projects and update them accordingly.
+Git is a version control system(VCS), it is in charge of tracking your source code or files for any changes made during development.
+Git operates locally, therefore has to be installed and linked with your GitHub account through a remote in order for it to access your projects and update them accordingly.
 
-## **Let's get started**
+### **Let's get started**
 
 In this tutorial I will teach you some of the basics you need when using Git or GitHub
 
@@ -25,7 +27,7 @@ In this tutorial I will teach you some of the basics you need when using Git or 
 Sign in into your account or create one if it's your first time. Click on the `+` icon to create a new repository
 ![A screenshot of GitHub](https://dev-to-uploads.s3.amazonaws.com/i/gym7lmubo8ixdvo0pjzu.png)
 
-- **Enter a name for your repository**. Use hyphens instead of spaces. You can add an optional Description as well. 
+- **Enter a name for your repository**. Use hyphens instead of spaces. You can add an optional Description as well.
 Check ✅ the `initialize this repository with a README`. This will allow you to be able to download/clone the repository to your local computer.
 ![creating a repository](https://dev-to-uploads.s3.amazonaws.com/i/s9rsnw0csp0e96nba799.png)
 
@@ -35,12 +37,12 @@ After that You will see your new repository with one file that is the README.md 
 - **Clone the repository to your computer**. To clone your repository. Click on the `code` button. Copy the link of your project using the clipboard icon.
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/53h2pzg7tj15eqed7nwe.png)
 
-## **Cloning a Repository with Git**
+### **Cloning a Repository with Git**
 
 To clone the repository to your computer. Open the terminal or git cli on your computer depending on what OS you use and run `git`
 > git
 
-If the command is not recognised then download git from https://git-scm.com
+If the command is not recognised then download git from this [Link](https://git-scm.com)
 
 Navigate to the directory you would like to clone your project in and run `git clone` followed by the link to your repository.
 `Example`  
@@ -48,7 +50,7 @@ Navigate to the directory you would like to clone your project in and run `git c
 
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/h55swyn2abppchvdrocz.png)
 
-## **Making a Commit**
+### **Making a Commit**
 
 Commits are snapshots of changes made to your project. Each change you commit is referenced with a unique alphanumeric code that can be used if you ever need to go back to a specific commit.
 
@@ -64,7 +66,7 @@ After saving your changes, go back to terminal and navigate to your project. Aft
 
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/cbl0jiaajrrska7c1zyr.png)
 
-## **Committing Changes**
+### **Committing Changes**
 
 In order to push our changes to GitHub, we need to:
 

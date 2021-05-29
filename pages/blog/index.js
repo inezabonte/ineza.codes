@@ -1,15 +1,14 @@
-import { getFeed } from "../../lib/rss";
-import { format } from "date-fns";
+import { convertDate } from "../../components/date";
 import Layout from "../../components/Layout";
 import Link from "next/link";
+import { getArticlesMeta } from "../../lib/articles";
 
-export default function Blog({ items }) {
+export default function Blog({ articles }) {
 	let years = [];
 	let uniqueYear;
-
-	if (items) {
-		for (let i = 0; i < items.length; i++) {
-			const year = format(new Date(items[i].isoDate), "y");
+	if (articles) {
+		for (let i = 0; i < articles.length; i++) {
+			const year = convertDate(articles[i].date, "y");
 			years.push(year);
 		}
 		uniqueYear = [...new Set(years)];
@@ -32,31 +31,17 @@ export default function Blog({ items }) {
 								{year}
 							</h2>
 
-							{items
-								.filter((item) => item.isoDate.startsWith(year))
+							{articles
+								.filter((item) => item.date.startsWith(year))
 								.map((article) => (
-									<div key={article.link} className="grid grid-cols-5">
+									<div key={article.id} className="grid grid-cols-5">
 										<span className="text-sm md:text-lg text-gray-600 dark:text-gray-400 mr-4">
-											{format(new Date(article.isoDate), "LLL dd")}
+											{convertDate(article.date, "LLL dd")}
 										</span>
 										<div className="col-span-4 space-y-2">
-											<a
-												className="text-lg md:text-xl"
-												href={article.link}
-												target="_blank"
-												rel="noopener noreferrer"
-											>
-												{article.title}
-											</a>
-											<div className=" text-white flex flex-wrap">
-												{article.categories.map((category, index) => (
-													<Link href={"/tags/" + category} key={index}>
-														<a className="px-1 mr-1 mb-1 bg-gray-500 rounded text-base md:text-lg">
-															{category}
-														</a>
-													</Link>
-												))}
-											</div>
+											<Link href={`/blog/${article.id}`}>
+												<a className="text-lg md:text-xl">{article.title}</a>
+											</Link>
 										</div>
 									</div>
 								))}
@@ -69,12 +54,11 @@ export default function Blog({ items }) {
 }
 
 export async function getStaticProps() {
-	const detailedFeed = await getFeed();
+	const articlesMeta = getArticlesMeta();
 
 	return {
 		props: {
-			items: detailedFeed.items,
+			articles: articlesMeta,
 		},
-		revalidate: 1,
 	};
 }
