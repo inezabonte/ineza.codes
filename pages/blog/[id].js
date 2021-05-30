@@ -19,7 +19,7 @@ export default function Article({ articleData }) {
 				/>
 			</Head>
 			<article className=" md:m-auto px-8  my-4 md:my-16 max-w-2xl">
-				<h2 className="text-4xl font-bold dark:text-gray-300 mb-6">
+				<h2 className="text-4xl font-bold dark:text-gray-100 mb-6">
 					{articleData.title}
 				</h2>
 				<div className="text-xl mb-4">
