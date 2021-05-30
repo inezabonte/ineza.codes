@@ -5,7 +5,7 @@ export default function about() {
 		<Layout page="About | Ineza Bonté">
 			<main className="p-6">
 				<h1 className="text-4xl font-bold dark:text-white mb-4">About Me</h1>
-				<div className="text-2xl space-y-6 dark:text-gray-200 max-w-prose">
+				<div className="prose prose-lg dark:prose-dark md:prose-2xl">
 					<p>
 						Hey there, I'm Bonté, welcome to my portfolio. This is my corner of
 						the internet where you get to see what I've been working on and
