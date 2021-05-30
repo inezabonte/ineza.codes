@@ -23,7 +23,7 @@ export default function index({ starredRepos, contributions, articles }) {
 					<div className=" md:self-center max-w-lg space-y-4 lg:self-start">
 						<p className="font-bold text-2xl">I'm Ineza Bonté,</p>
 						<p className="text-lg">
-							I'm a Fullstack Developer based in Kigali, Rwanda
+							A Fullstack Developer based in Kigali, Rwanda
 							<br />I have a passion for coding and developing Web Applications.
 						</p>
 						<p className="text-lg">

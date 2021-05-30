@@ -39,12 +39,14 @@ export const getStaticProps = async (context) => {
 export default function Tag({ articles, id }) {
 	return (
 		<Layout>
-			<main className="mb-auto p-6 space-y-4">
-				<h1 className="dark:text-white text-2xl">Posts tagged: #{id}</h1>
+			<main className="mb-auto p-6 space-y-4 prose prose-lg dark:prose-dark md:prose-xl">
+				<h2>
+					Posts tagged: <span className="text-blue-400">{`#${id}`}</span>
+				</h2>
 				<div className="space-y-4">
-					<h2 className="text-xl dark:text-white">
+					<h3>
 						{articles.length} post{articles.length > 1 ? "s" : ""} found
-					</h2>
+					</h3>
 
 					<div className=" space-y-6">
 						{articles.map((item) => (

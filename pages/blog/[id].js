@@ -2,6 +2,7 @@ import Layout from "../../components/Layout";
 import { getAllArticleIds, getArticleData } from "../../lib/articles";
 import Head from "next/head";
 import { convertDate } from "../../components/date";
+import Link from "next/link";
 
 export default function Article({ articleData }) {
 	return (
@@ -17,16 +18,31 @@ export default function Article({ articleData }) {
 					rel="stylesheet"
 				/>
 			</Head>
-			<article className="prose prose-lg dark:prose-dark md:m-auto px-8 md:prose-xl my-4 md:my-16 max-w-2xl">
-				<h2>{articleData.title}</h2>
-				<div className="flex justify-between">
-					<span className="text-gray-500">
+			<article className=" md:m-auto px-8  my-4 md:my-16 max-w-2xl">
+				<h2 className="text-4xl font-bold dark:text-gray-300 mb-6">
+					{articleData.title}
+				</h2>
+				<div className="text-xl mb-4">
+					<p className="text-gray-500">
 						{convertDate(articleData.date, "PPP")}
-					</span>
-					<span className="text-gray-500">{articleData.readTime.text}</span>
+						{" • "}
+						<span className="text-gray-500">{articleData.readTime.text}</span>
+					</p>
+				</div>
+				<div className="mb-8">
+					{articleData.tags.map((tag) => (
+						<Link href={`/tags/${tag}`}>
+							<a className="mr-2 bg-gray-300 dark:bg-gray-800 p-2 rounded text-base no-underline">
+								{tag}
+							</a>
+						</Link>
+					))}
 				</div>
 
-				<div dangerouslySetInnerHTML={{ __html: articleData.contentHtml }} />
+				<div
+					className="prose prose-lg dark:prose-dark md:prose-xl"
+					dangerouslySetInnerHTML={{ __html: articleData.contentHtml }}
+				/>
 			</article>
 		</Layout>
 	);
