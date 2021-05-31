@@ -11,16 +11,17 @@ export default function index({ starredRepos, contributions, articles }) {
 		<Layout page="Ineza Bonté">
 			<main className="space-y-12 px-6 py-10 flex flex-col">
 				<section className="flex flex-col justify-center items-center lg:flex-row  lg:justify-between ">
-					<div className="mb-10">
+					<div className="mb-10 border-4 border-gray-400 dark:border-gray-200 rounded-full flex items-center">
 						<Image
 							priority={true}
 							src="/Images/me.jpg"
 							width={200}
 							height={200}
 							alt="A potrait of Ineza Bonté smiling"
+							className="rounded-full"
 						/>
 					</div>
-					<div className=" md:self-center max-w-lg space-y-4 lg:self-start">
+					<div className="md:self-center max-w-lg space-y-4">
 						<p className="font-bold text-2xl">I'm Ineza Bonté,</p>
 						<p className="text-lg">
 							A Fullstack Developer based in Kigali, Rwanda
