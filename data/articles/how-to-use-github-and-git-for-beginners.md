@@ -30,23 +30,27 @@ Sign in into your account or create one if it's your first time. Click on the `+
 - **Enter a name for your repository**. Use hyphens instead of spaces. You can add an optional Description as well.
 Check ✅ the `initialize this repository with a README`. This will allow you to be able to download/clone the repository to your local computer.
 ![creating a repository](https://dev-to-uploads.s3.amazonaws.com/i/s9rsnw0csp0e96nba799.png)
-
-After that You will see your new repository with one file that is the README.md file. This file is mostly used when one wants to give more details or give instructions about their projects.
+After that you will see your new repository with one file that is the README.md file. This file is mostly used when one wants to give more details or give instructions about their projects.
 ![Newly created repository](https://dev-to-uploads.s3.amazonaws.com/i/bl287dv215r91c2xd05a.png)
 
-- **Clone the repository to your computer**. To clone your repository. Click on the `code` button. Copy the link of your project using the clipboard icon.
+- **Clone the repository to your computer**. To clone your repository. Click on the `code` button. Copy the link of your repository using the clipboard icon.
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/53h2pzg7tj15eqed7nwe.png)
 
 ### **Cloning a Repository with Git**
 
 To clone the repository to your computer. Open the terminal or git cli on your computer depending on what OS you use and run `git`
-> git
+
+```git
+git
+```
 
 If the command is not recognised then download git from this [Link](https://git-scm.com)
 
-Navigate to the directory you would like to clone your project in and run `git clone` followed by the link to your repository.
-`Example`  
-> `git clone https://github.com/inezabonte/first-app.git`
+[Navigate](https://datacarpentry.org/shell-genomics/02-the-filesystem/index.html) to the directory you would like to clone your project in and run `git clone` followed by the link to your repository.
+
+```git
+git clone https://github.com/inezabonte/first-app.git
+```
 
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/h55swyn2abppchvdrocz.png)
 
@@ -60,7 +64,9 @@ In order to make changes to our repository. Open the cloned repository in a text
 
 After saving your changes, go back to terminal and navigate to your project. After that run;
 
-> git status
+```git
+git status
+```
 
 `git status` shows us which files have been changed, which files are tracked, etc. As you can see below, it tells us that there is a file that has been `modified` which is the README.md file
 
@@ -72,15 +78,21 @@ In order to push our changes to GitHub, we need to:
 
 **1. Stage Changes for commit**. To do this we use the command `git add` followed by the file you want to add.
 
-> git add README.md
+```git
+git add README.md
+```
 
 **2. Commit with a message**. This is done using the `git commit -m` command followed by a short message in quotes explaining the changes you made, to whoever might be looking at the project.
 
-> git commit -m "My first commit"
+```git
+git commit -m "My first commit"
+```
 
 **3. Push to GitHub**. Finally we can now push our changes to GitHub. To do this we use the command `git push origin master`
 
-> git push origin master
+```git
+git push origin master
+```
 
 **`NB`** If this is your first push you may be required to enter your GitHub `username` and `password`. It's a one-time process.
 
