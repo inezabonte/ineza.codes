@@ -2,6 +2,7 @@
 title: "Layers Of Web Development for beginners"
 date: "2020-09-19"
 tags: ["beginners"]
+cover_image: "https://res.cloudinary.com/tizzertuna/image/upload/v1622757803/Articles/article_1_2x_xrixj6.png"
 ---
 
 The development of websites consists of two main layers which are frontend and backend. Each layer has its purpose to fulfil and are both dependent on each other to produce a product which a user can interact with. My goal in this article is to expound on these two layers and their significance in the development of a website.

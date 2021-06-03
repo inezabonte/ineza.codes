@@ -2,6 +2,7 @@
 title: "Introduction to Branches and Pull Requests for Beginners."
 date: "2020-08-23"
 tags: ["beginners", "github", "git"]
+cover_image: "https://res.cloudinary.com/tizzertuna/image/upload/v1622758170/Articles/article_3_2x_rfbswk.png"
 ---
 
 Branches and pull requests are essential to the GitHub workflow, they help developers work together in a better and organised way. If you've never heard of them that's okay. My goal in this tutorial is to help you understand what they are and how they are used when working on repositories.

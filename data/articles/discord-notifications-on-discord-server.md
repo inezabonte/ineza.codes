@@ -2,6 +2,7 @@
 title: "How to get GitHub notifications on your Discord server"
 date: "2021-05-01"
 tags: ["github", "tutorial", "webhooks", "discord"]
+cover_image: "https://res.cloudinary.com/tizzertuna/image/upload/v1622756559/Articles/iPhone_12_12_Pro_2_2x_xngvv5.png"
 ---
 
 GitHub provides us with a way to allow other applications such as discord to connect it and receive POST requests whenever any action is done on your repository.

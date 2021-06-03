@@ -2,6 +2,7 @@
 title: 'How to use GitHub and Git for Beginners'
 date: '2020-08-15'
 tags: ["github", "git", "beginners"]
+cover_image: "https://res.cloudinary.com/tizzertuna/image/upload/v1622757998/Articles/article_2_2x_mqkaqj.png"
 ---
 
 If you are a beginner in the field of programming you must have come across the term `GitHub` and `Git` from blogs or even tutorials and wondered what they are🤔, in this blog I intend to explain them and hopefully you will get an idea of what they are and how they work.
