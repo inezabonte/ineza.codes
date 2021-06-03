@@ -2,6 +2,7 @@
 title: "Sorting RSS feeds by year using Next.js"
 date: "2021-05-24"
 tags: ["nextjs","rss"]
+cover_image: "https://res.cloudinary.com/tizzertuna/image/upload/v1622756315/Articles/sort-rss_2x_qzal8u.png"
 ---
 
 One of the [issues](https://github.com/inezabonte/inezabonte/issues/81) I created for my portfolio’s repo was to sort my blog feeds according to the year they were created in.

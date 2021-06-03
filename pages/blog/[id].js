@@ -17,6 +17,14 @@ export default function Article({ articleData }) {
 					href={`https://unpkg.com/prismjs@0.0.1/themes/prism-okaidia.css`}
 					rel="stylesheet"
 				/>
+				<meta property="og:title" content={articleData.title} />
+				<meta property="og:image" content={articleData.cover_image} />
+				<meta property="og:image:width" content="1200" />
+				<meta property="og:image:height" content="630" />
+				<meta name="twitter:card" content="summary_large_image" />
+				<meta name="twitter:title" content={articleData.title}></meta>
+				<meta name="twitter:image" content={articleData.cover_image} />
+				<meta name="twitter:image:alt" content={articleData.title} />
 			</Head>
 			<article className=" md:m-auto px-8  my-4 md:my-16 max-w-2xl">
 				<h2 className="text-4xl font-bold dark:text-gray-100 mb-6">

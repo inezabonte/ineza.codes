@@ -2,6 +2,7 @@
 title: "My journey so far in web development."
 date: "2021-04-15"
 tags: ["devjournal", "codenewbie"]
+cover_image: "https://res.cloudinary.com/tizzertuna/image/upload/v1622756559/Articles/iPhone_12_12_Pro_2_2x_xngvv5.png"
 ---
 
 It's been a year since I got into web development. It has been a heck of a journey, learning new technology, meeting people with similar ambitions and goals.
