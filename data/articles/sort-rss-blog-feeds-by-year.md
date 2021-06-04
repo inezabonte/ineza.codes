@@ -3,6 +3,7 @@ title: "Sorting RSS feeds by year using Next.js"
 date: "2021-05-24"
 tags: ["nextjs","rss"]
 cover_image: "https://res.cloudinary.com/tizzertuna/image/upload/v1622756315/Articles/sort-rss_2x_qzal8u.png"
+description: "Learn how you can sort blog articles by year of creation"
 ---
 
 One of the [issues](https://github.com/inezabonte/inezabonte/issues/81) I created for my portfolio’s repo was to sort my blog feeds according to the year they were created in.
@@ -135,6 +136,9 @@ export async function getStaticProps() {
 ```
 
 And that’s it. You can then go ahead and render data for each of your articles depending on what you want to show.
+
+Here is the final outcome of what I was able to make.
+![Screenshot of the blog section on my portfolio](https://res.cloudinary.com/tizzertuna/image/upload/v1622802721/Articles/Screen_Shot_2021-06-04_at_12.31.43_htuv6q.png)
 
 I managed to solve the issue on [my portfolio](https://ineza.codes/blog). You can view my code on my [GitHub repo](https://github.com/inezabonte/inezabonte).
 
