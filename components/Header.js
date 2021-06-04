@@ -9,7 +9,7 @@ export default function Header({ page }) {
 			<meta property="og:title" content={page} />
 			<meta
 				property="og:image"
-				content="https://res.cloudinary.com/tizzertuna/image/upload/v1622804350/Articles/Custom_Size_1_2x_vzbshi.png"
+				content="https://res.cloudinary.com/tizzertuna/image/upload/v1622809072/Articles/Custom_Size_1_2x_qgdmz9.png"
 			/>
 			<meta
 				property="og:description"
@@ -28,7 +28,7 @@ export default function Header({ page }) {
 
 			<meta
 				name="twitter:image"
-				content="https://res.cloudinary.com/tizzertuna/image/upload/v1622804350/Articles/Custom_Size_1_2x_vzbshi.png"
+				content="https://res.cloudinary.com/tizzertuna/image/upload/v1622809072/Articles/Custom_Size_1_2x_qgdmz9.png"
 			/>
 		</Head>
 	);
