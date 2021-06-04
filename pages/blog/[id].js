@@ -3,10 +3,11 @@ import { getAllArticleIds, getArticleData } from "../../lib/articles";
 import Head from "next/head";
 import { convertDate } from "../../components/date";
 import Link from "next/link";
+import Header from "../../components/Header";
 
 export default function Article({ articleData }) {
 	return (
-		<Layout page={articleData.title}>
+		<Layout>
 			<Head>
 				<link
 					rel="preload"
@@ -18,6 +19,11 @@ export default function Article({ articleData }) {
 					rel="stylesheet"
 				/>
 			</Head>
+			<Header
+				title={articleData.title}
+				image={articleData.cover_image}
+				description={articleData.description}
+			/>
 			<article className=" md:m-auto px-8  my-4 md:my-16 max-w-2xl">
 				<h2 className="text-4xl font-bold dark:text-gray-100 mb-6">
 					{articleData.title}
@@ -31,7 +37,7 @@ export default function Article({ articleData }) {
 				</div>
 				<div className="mb-8">
 					{articleData.tags.map((tag) => (
-						<Link href={`/tags/${tag}`}>
+						<Link href={`/tags/${tag}`} key={tag}>
 							<a className="mr-2 bg-gray-300 dark:bg-gray-800 p-2 rounded text-base no-underline">
 								{tag}
 							</a>

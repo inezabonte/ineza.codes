@@ -1,8 +1,8 @@
 import Layout from "../../components/Layout";
-import { format } from "date-fns";
 import { getArticlesMeta } from "../../lib/articles";
 import Link from "next/link";
 import { convertDate } from "../../components/date";
+import Header from "../../components/Header";
 
 export const getStaticPaths = async () => {
 	const articlesMeta = getArticlesMeta();
@@ -39,6 +39,7 @@ export const getStaticProps = async (context) => {
 export default function Tag({ articles, id }) {
 	return (
 		<Layout>
+			<Header title={`Tag | ${id}`} />
 			<main className="mb-auto p-6 space-y-4 prose prose-lg dark:prose-dark md:prose-2xl">
 				<h2>
 					Posts tagged: <span className="text-blue-400">{`#${id}`}</span>

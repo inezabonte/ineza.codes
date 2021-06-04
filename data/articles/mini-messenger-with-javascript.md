@@ -1,7 +1,9 @@
 ---
-title: 'How to: Make a Mini Messenger with JavaScript For Beginners'
+title: 'How to make a Mini Messenger with JavaScript For Beginners'
 date: '2020-05-25'
 tags: ["javascript", "html", "css", "beginners"]
+cover_image: "https://res.cloudinary.com/tizzertuna/image/upload/v1622758301/Articles/article_4_2x_i1vixh.png"
+description: "A fun simple project where you'll create a mini messenger with disappearing text."
 ---
 
 Hey there, welcome to my first post. So, in this post our goal is to make a **Mini Messenger**.

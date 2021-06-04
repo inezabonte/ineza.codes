@@ -2,6 +2,8 @@
 title: "How to make your footer stay at the bottom of the page"
 date: "2021-05-09"
 tags: ["css", "beginners", "codenewbie"]
+cover_image: "https://res.cloudinary.com/tizzertuna/image/upload/v1622757466/Articles/iPhone_12_12_Pro_3_2x_nny9v1.png"
+description: "A hack that can help you keep the footer at the bottom; when content is not filling the screen and always appear last when scrolling through longer content."
 ---
 
 I recently met an issue with positioning a footer. After finding a solution, I decided to document it in this post.

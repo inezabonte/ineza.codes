@@ -2,6 +2,7 @@ import { convertDate } from "../../components/date";
 import Layout from "../../components/Layout";
 import Link from "next/link";
 import { getArticlesMeta } from "../../lib/articles";
+import Header from "../../components/Header";
 
 export default function Blog({ articles }) {
 	let years = [];
@@ -15,7 +16,8 @@ export default function Blog({ articles }) {
 	}
 
 	return (
-		<Layout page="Blog | Ineza Bonté">
+		<Layout>
+			<Header title="Blog | Ineza Bonté" />
 			<main className="p-6 space-y-8">
 				<div>
 					<h1 className="text-4xl font-bold dark:text-white mb-4">Blog</h1>
