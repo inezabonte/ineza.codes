@@ -1,8 +1,10 @@
 import Layout from "../components/Layout";
+import Header from "../components/Header";
 
 export default function about() {
 	return (
-		<Layout page="About | Ineza Bonté">
+		<Layout>
+			<Header title="About | Ineza Bonté" />
 			<main className="p-6">
 				<h1 className="text-4xl font-bold dark:text-white mb-4">About Me</h1>
 				<div className="prose prose-lg dark:prose-dark md:prose-2xl">

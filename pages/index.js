@@ -5,10 +5,12 @@ import { getArticlesMeta } from "../lib/articles";
 import { convertDate } from "../components/date";
 import Link from "next/link";
 import { GithubOutlined } from "@ant-design/icons";
+import Header from "../components/Header";
 
 export default function index({ starredRepos, contributions, articles }) {
 	return (
-		<Layout page="Ineza Bonté">
+		<Layout>
+			<Header title="Ineza Bonté" />
 			<main className="space-y-12 px-6 py-10 flex flex-col">
 				<section className="flex flex-col justify-center items-center lg:flex-row  lg:justify-between ">
 					<div className="mb-10 border-4 border-gray-400 dark:border-gray-200 rounded-full flex items-center">
