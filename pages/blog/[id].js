@@ -24,31 +24,26 @@ export default function Article({ articleData }) {
 				image={articleData.cover_image}
 				description={articleData.description}
 			/>
-			<article className=" md:m-auto px-8  my-4 md:my-16 max-w-2xl">
-				<h2 className="text-4xl font-bold dark:text-gray-100 mb-6">
-					{articleData.title}
-				</h2>
-				<div className="text-xl mb-4">
-					<p className="text-gray-500">
+			<article className=" md:m-auto px-6  my-4 md:my-16 max-w-3xl prose prose-2xl dark:prose-dark">
+				<h2>{articleData.title}</h2>
+				<div>
+					<p>
 						{convertDate(articleData.date, "PPP")}
 						{" • "}
-						<span className="text-gray-500">{articleData.readTime.text}</span>
+						<span>{articleData.readTime.text}</span>
 					</p>
 				</div>
 				<div className="mb-8">
 					{articleData.tags.map((tag) => (
 						<Link href={`/tags/${tag}`} key={tag}>
-							<a className="mr-2 bg-gray-300 dark:bg-gray-800 p-2 rounded text-base no-underline">
+							<a className="mr-2 bg-gray-300 dark:bg-gray-800 p-2 rounded text-base">
 								{tag}
 							</a>
 						</Link>
 					))}
 				</div>
 
-				<div
-					className="prose prose-lg dark:prose-dark md:prose-xl"
-					dangerouslySetInnerHTML={{ __html: articleData.contentHtml }}
-				/>
+				<div dangerouslySetInnerHTML={{ __html: articleData.contentHtml }} />
 			</article>
 		</Layout>
 	);

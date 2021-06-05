@@ -12,8 +12,8 @@ export default function index({ starredRepos, contributions, articles }) {
 		<Layout>
 			<Header title="Ineza Bonté" />
 			<main className="space-y-12 px-6 py-10 flex flex-col">
-				<section className="flex flex-col justify-center items-center lg:flex-row  lg:justify-between ">
-					<div className="mb-10 border-4 border-gray-400 dark:border-gray-200 rounded-full flex items-center">
+				<section className="flex flex-col justify-center items-center lg:flex-row  lg:justify-around ">
+					<div className="mb-10 border-8 border-gray-400 dark:border-gray-200 rounded-full flex items-center">
 						<Image
 							priority={true}
 							src="/Images/me.jpg"
@@ -23,13 +23,13 @@ export default function index({ starredRepos, contributions, articles }) {
 							className="rounded-full"
 						/>
 					</div>
-					<div className="md:self-center max-w-lg space-y-4">
-						<p className="font-bold text-2xl">I'm Ineza Bonté,</p>
-						<p className="text-lg">
+					<div className="md:self-center max-w-lg space-y-4 prose dark:prose-dark prose-lg md:prose-xl">
+						<h2>I'm Ineza Bonté,</h2>
+						<p>
 							A Fullstack Developer based in Kigali, Rwanda
 							<br />I have a passion for coding and developing Web Applications.
 						</p>
-						<p className="text-lg">
+						<p>
 							You can reach me by email at:{" "}
 							<a href="mailto:inezabonte@gmail.com" className="underline">
 								inezabonte@gmail.com
