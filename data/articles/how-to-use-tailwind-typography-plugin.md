@@ -1,5 +1,5 @@
 ---
-title: "How to use the tailwindcss/typography plugin"
+title: "How to use the tailwindcss typography plugin"
 date: "2021-06-05"
 tags: ["tailwindcss"]
 cover_image: "https://res.cloudinary.com/tizzertuna/image/upload/v1622889341/Articles/article_5_2x_vspcfv.png"
