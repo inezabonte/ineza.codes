@@ -1,5 +1,5 @@
 ---
-title: "How to use the tailwindcss/typography plugin"
+title: "How to use the tailwindcss typography plugin"
 date: "2021-06-05"
 tags: ["tailwindcss"]
 cover_image: "https://res.cloudinary.com/tizzertuna/image/upload/v1622889341/Articles/article_5_2x_vspcfv.png"
@@ -12,7 +12,7 @@ This plugin provides a beautiful set of `prose` classes which you can use to add
 This article assumes you have basic knowledge in TailwindCSS. If you are new to TailwindCSS you can have a look at their [installation guide](https://tailwindcss.com/docs/installation)
 and here is a great course from [Scrimba](https://scrimba.com/learn/tailwind) that can help you learn the basics.
 
-### 1. Install the tailwindcss/typography plugin
+### 1. Install the tailwindcss typography plugin
 
 To install the plugin you can either use yarn or npm
 

@@ -19,11 +19,11 @@ export default function Blog({ articles }) {
 		<Layout>
 			<Header title="Blog | Ineza Bonté" />
 			<main className="p-6 space-y-8">
-				<div>
+				<div className="max-w-3xl">
 					<h1 className="text-4xl font-bold dark:text-white mb-4">Blog</h1>
 					<p className="text-2xl text-gray-600 dark:text-gray-400">
-						I publish articles on DEV about concepts I've learnt in Software
-						Development. These are the articles I've written so far.
+						I write articles about concepts I've learnt in Software Development.
+						These are the articles I've written so far.
 					</p>
 				</div>
 				<div className="space-y-8">

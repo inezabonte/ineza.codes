@@ -3,7 +3,7 @@ import Footer from "./Footer";
 
 export default function Layout({ children }) {
 	return (
-		<div className="max-w-3xl  m-auto flex flex-col min-h-screen mt-6 lg:mt-0">
+		<div className="max-w-4xl  m-auto flex flex-col min-h-screen mt-6 lg:mt-0">
 			<NavBar />
 			{children}
 			<Footer />
