@@ -6,6 +6,7 @@ import { convertDate } from "../components/date";
 import Link from "next/link";
 import { GithubOutlined } from "@ant-design/icons";
 import Header from "../components/Header";
+import profilePic from "../public/Images/me.jpg";
 
 export default function index({ starredRepos, contributions, articles }) {
 	return (
@@ -16,11 +17,12 @@ export default function index({ starredRepos, contributions, articles }) {
 					<div className="mb-10 border-8 border-gray-400 dark:border-gray-200 rounded-full flex items-center">
 						<Image
 							priority={true}
-							src="/Images/me.jpg"
-							width={200}
+							src={profilePic}
 							height={200}
+							width={200}
 							alt="A potrait of Ineza Bonté smiling"
 							className="rounded-full"
+							placeholder="blur"
 						/>
 					</div>
 					<div className="md:self-center max-w-lg space-y-4 prose dark:prose-dark prose-lg md:prose-xl">
