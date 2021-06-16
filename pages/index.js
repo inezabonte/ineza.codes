@@ -22,7 +22,6 @@ export default function index({ starredRepos, contributions, articles }) {
 							width={200}
 							alt="A potrait of Ineza Bonté smiling"
 							className="rounded-full"
-							placeholder="blur"
 						/>
 					</div>
 					<div className="md:self-center max-w-lg space-y-4 prose dark:prose-dark prose-lg md:prose-xl">
