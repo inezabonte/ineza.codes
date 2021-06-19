@@ -12,7 +12,7 @@ export default function index({ starredRepos, contributions, articles }) {
 	return (
 		<Layout>
 			<Header title="Ineza Bonté" />
-			<main className="space-y-12 px-6 py-10 flex flex-col">
+			<main className="space-y-12 px-6 py-10 flex flex-col self-center">
 				<section className="flex flex-col justify-center items-center lg:flex-row  lg:justify-around ">
 					<div className="mb-10 border-8 border-gray-400 dark:border-gray-200 rounded-full flex items-center">
 						<Image
@@ -39,7 +39,7 @@ export default function index({ starredRepos, contributions, articles }) {
 					</div>
 				</section>
 				<section className="space-y-6 self-center lg:self-start w-full">
-					<div className="flex justify-between items-center  border-b-2 pb-4">
+					<div className="flex justify-between items-center  border-b-2 border-gray-300 pb-4">
 						<h2 className="text-3xl dark:text-white font-bold">
 							Latest Articles
 						</h2>
@@ -54,7 +54,7 @@ export default function index({ starredRepos, contributions, articles }) {
 						{articles.map((article) => (
 							<div className="flex flex-col" key={article.id}>
 								<Link href={`/blog/${article.id}`}>
-									<a className="text-xl font-bold lg:text-2xl dark:text-gray-200">
+									<a className="text-xl font-bold lg:text-xl dark:text-gray-200">
 										{article.title}
 									</a>
 								</Link>
@@ -66,7 +66,7 @@ export default function index({ starredRepos, contributions, articles }) {
 					</div>
 				</section>
 				<section className="space-y-6 self-center lg:self-start w-full flex flex-col">
-					<div className="flex justify-between items-center border-b-2 pb-4">
+					<div className="flex justify-between items-center border-b-2 border-gray-300 pb-4">
 						<h2 className="text-3xl dark:text-white font-bold ">Projects</h2>
 						<a
 							href="https://github.com/inezabonte?tab=repositories"
@@ -77,11 +77,11 @@ export default function index({ starredRepos, contributions, articles }) {
 							View More
 						</a>
 					</div>
-					<div className="grid grid-cols-1 md:grid-cols-2 self-center gap-4">
+					<div className="grid grid-cols-1 md:grid-cols-2 self-center gap-4 lg:gap-6">
 						{starredRepos.map((repo) => (
 							<div
 								key={repo.id}
-								className="p-4 border-2 border-gray-200 dark:border-gray-800 rounded space-y-2 max-w-md"
+								className="p-4 border-2 border-gray-300 dark:border-gray-700 rounded space-y-2 max-w-md"
 							>
 								<div className="flex items-center justify-between">
 									<a
@@ -109,16 +109,16 @@ export default function index({ starredRepos, contributions, articles }) {
 					</div>
 				</section>
 				<section className="space-y-6 self-center lg:self-start w-full flex flex-col">
-					<div className="border-b-2 pb-4">
+					<div className="border-b-2 border-gray-300 pb-4">
 						<h2 className="text-3xl dark:text-white font-bold ">
 							Contributions to OSS
 						</h2>
 					</div>
-					<div className="grid grid-cols-1 md:grid-cols-2 self-center  gap-4">
+					<div className="grid grid-cols-1 md:grid-cols-2 self-center  gap-4 lg:gap-6">
 						{contributions.map((repo) => (
 							<div
 								key={repo.id}
-								className="p-4 border-2 border-gray-200 dark:border-gray-800 rounded space-y-2 max-w-md"
+								className="p-4 border-2 border-gray-300 dark:border-gray-700 rounded space-y-2 max-w-md"
 							>
 								<div className="flex items-center justify-between">
 									<h2 className="dark:text-white text-xl font-bold lg:text-2xl">

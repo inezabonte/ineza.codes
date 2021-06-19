@@ -4,7 +4,7 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: ["Josefin Sans", "Helvetica"],
+				sans: ["Fira Sans", "sans-serif"],
 			},
 			height: () => ({
 				"screen-10vh": "calc(100vh / 10)",

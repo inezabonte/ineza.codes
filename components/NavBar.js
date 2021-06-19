@@ -60,7 +60,7 @@ export default function NavBar() {
 					)}
 				</button>
 			</div>
-			<div className="space-x-5 text-base font-bold col-span-2 justify-self-center lg:col-span-1">
+			<div className="space-x-5 text-lg font-bold col-span-2 justify-self-center lg:col-span-1">
 				<Link href="/blog">
 					<a className="uppercase">Blog</a>
 				</Link>

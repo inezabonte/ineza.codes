@@ -24,26 +24,31 @@ export default function Article({ articleData }) {
 				image={articleData.cover_image}
 				description={articleData.description}
 			/>
-			<article className=" md:m-auto px-6  my-4 md:my-16 max-w-3xl prose prose-2xl dark:prose-dark">
-				<h2>{articleData.title}</h2>
-				<div>
-					<p>
-						{convertDate(articleData.date, "PPP")}
-						{" • "}
-						<span>{articleData.readTime.text}</span>
-					</p>
-				</div>
-				<div className="mb-8">
-					{articleData.tags.map((tag) => (
-						<Link href={`/tags/${tag}`} key={tag}>
-							<a className="mr-2 bg-gray-300 dark:bg-gray-800 p-2 rounded text-base">
-								{tag}
-							</a>
-						</Link>
-					))}
+			<article className=" self-center px-6 w-full  md:my-4 max-w-2xl lg:max-w-3xl prose prose-xl dark:prose-dark">
+				<div className="border-b-2 border-gray-400">
+					<h2>{articleData.title}</h2>
+					<div>
+						<p>
+							{convertDate(articleData.date, "PPP")}
+							{" • "}
+							<span>{articleData.readTime.text}</span>
+						</p>
+					</div>
+					<div className="mb-8">
+						{articleData.tags.map((tag) => (
+							<Link href={`/tags/${tag}`} key={tag}>
+								<a className="mr-2 bg-gray-300 dark:bg-gray-800 p-2 rounded text-base">
+									{tag}
+								</a>
+							</Link>
+						))}
+					</div>
 				</div>
 
-				<div dangerouslySetInnerHTML={{ __html: articleData.contentHtml }} />
+				<div
+					className="w-full"
+					dangerouslySetInnerHTML={{ __html: articleData.contentHtml }}
+				/>
 			</article>
 		</Layout>
 	);
