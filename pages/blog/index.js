@@ -18,7 +18,7 @@ export default function Blog({ articles }) {
 	return (
 		<Layout>
 			<Header title="Blog | Ineza Bonté" />
-			<main className="p-6 space-y-8">
+			<main className="p-6 space-y-8 self-center">
 				<div className="max-w-3xl">
 					<h1 className="text-4xl font-bold dark:text-white mb-4">Blog</h1>
 					<p className="text-2xl text-gray-600 dark:text-gray-400">
