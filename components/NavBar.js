@@ -12,6 +12,8 @@ export default function NavBar() {
 		setTheme(resolvedTheme === "dark" ? "light" : "dark");
 	};
 
+	if (!mounted) return null;
+
 	return (
 		<header className="px-6 py-5 lg:py-10 grid grid-cols-2 lg:grid-cols-3 lg:grid-rows-1 gap-y-6 items-center">
 			<Link href="/">
