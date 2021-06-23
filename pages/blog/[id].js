@@ -4,8 +4,9 @@ import Head from "next/head";
 import { convertDate } from "../../components/date";
 import Link from "next/link";
 import Header from "../../components/Header";
+import { MDXRemote } from "next-mdx-remote";
 
-export default function Article({ articleData }) {
+export default function Article({ frontMatter, readTime, mdxSource }) {
 	return (
 		<Layout>
 			<Head>
@@ -20,22 +21,22 @@ export default function Article({ articleData }) {
 				/>
 			</Head>
 			<Header
-				title={articleData.title}
-				image={articleData.cover_image}
-				description={articleData.description}
+				title={frontMatter.title}
+				image={frontMatter.cover_image}
+				description={frontMatter.description}
 			/>
 			<article className=" self-center px-6 w-full  md:my-4 max-w-2xl lg:max-w-3xl prose prose-xl dark:prose-dark">
 				<div className="border-b-2 border-gray-400">
-					<h2>{articleData.title}</h2>
+					<h2>{frontMatter.title}</h2>
 					<div>
 						<p>
-							{convertDate(articleData.date, "PPP")}
+							{convertDate(frontMatter.date, "PPP")}
 							{" • "}
-							<span>{articleData.readTime.text}</span>
+							<span>{readTime.text}</span>
 						</p>
 					</div>
 					<div className="mb-8">
-						{articleData.tags.map((tag) => (
+						{frontMatter.tags.map((tag) => (
 							<Link href={`/tags/${tag}`} key={tag}>
 								<a className="mr-2 bg-gray-300 dark:bg-gray-800 p-2 rounded text-base">
 									{tag}
@@ -45,10 +46,9 @@ export default function Article({ articleData }) {
 					</div>
 				</div>
 
-				<div
-					className="w-full"
-					dangerouslySetInnerHTML={{ __html: articleData.contentHtml }}
-				/>
+				<div className="w-full">
+					<MDXRemote {...mdxSource} />
+				</div>
 			</article>
 		</Layout>
 	);
@@ -66,7 +66,7 @@ export async function getStaticProps({ params }) {
 	const articleData = await getArticleData(params.id);
 	return {
 		props: {
-			articleData,
+			...articleData,
 		},
 	};
 }
