@@ -4,7 +4,7 @@ import { getGitHubStars, getGitHubContributions } from "../lib/github";
 import { getArticlesMeta } from "../lib/articles";
 import { convertDate } from "../components/date";
 import Link from "next/link";
-import { GithubOutlined } from "@ant-design/icons";
+import { FaGithub } from "react-icons/fa";
 import Header from "../components/Header";
 import profilePic from "../public/Images/me.jpg";
 
@@ -83,7 +83,7 @@ export default function index({ starredRepos, contributions, articles }) {
 								key={repo.id}
 								className="p-4 border-2 border-gray-300 dark:border-gray-700 rounded space-y-2 max-w-md"
 							>
-								<div className="flex items-center justify-between">
+								<div className="flex justify-between">
 									<a
 										href={repo.homepage}
 										target="_blank"
@@ -98,7 +98,7 @@ export default function index({ starredRepos, contributions, articles }) {
 										rel="noopener noreferrer"
 										className="self-start"
 									>
-										<GithubOutlined className="text-2xl" />
+										<FaGithub className="text-2xl" />
 									</a>
 								</div>
 								<p className="text-lg text-gray-500 dark:text-gray-400">
@@ -120,7 +120,7 @@ export default function index({ starredRepos, contributions, articles }) {
 								key={repo.id}
 								className="p-4 border-2 border-gray-300 dark:border-gray-700 rounded space-y-2 max-w-md"
 							>
-								<div className="flex items-center justify-between">
+								<div className="flex justify-between">
 									<h2 className="dark:text-white text-xl font-bold lg:text-2xl">
 										{repo.name}
 									</h2>
@@ -130,7 +130,7 @@ export default function index({ starredRepos, contributions, articles }) {
 										rel="noopener noreferrer"
 										className="self-start"
 									>
-										<GithubOutlined className="text-2xl" />
+										<FaGithub className="text-2xl" />
 									</a>
 								</div>
 								<p className="text-lg text-gray-500 dark:text-gray-400">

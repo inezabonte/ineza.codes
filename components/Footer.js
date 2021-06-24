@@ -1,8 +1,4 @@
-import {
-	GithubOutlined,
-	TwitterOutlined,
-	LinkedinFilled,
-} from "@ant-design/icons";
+import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa";
 
 const ExternalLink = ({ children, link }) => (
 	<a target="_blank" rel="noopener noreferrer" href={link}>
@@ -13,15 +9,15 @@ const ExternalLink = ({ children, link }) => (
 export default function Footer() {
 	return (
 		<footer className="px-10 py-5 mt-auto flex justify-center">
-			<div className="space-x-4 text-gray-500">
+			<div className="space-x-4 text-gray-500 flex">
 				<ExternalLink link="https://github.com/inezabonte">
-					<GithubOutlined className="text-2xl" />
+					<FaGithub className="text-2xl" />
 				</ExternalLink>
 				<ExternalLink link="https://twitter.com/inezabonte">
-					<TwitterOutlined className="text-2xl" />
+					<FaTwitter className="text-2xl" />
 				</ExternalLink>
 				<ExternalLink link="https://www.linkedin.com/in/inezabonte/">
-					<LinkedinFilled className="text-2xl" />
+					<FaLinkedin className="text-2xl" />
 				</ExternalLink>
 			</div>
 		</footer>
