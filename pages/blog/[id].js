@@ -1,10 +1,11 @@
 import Layout from "../../components/Layout";
-import { getAllArticleIds, getArticleData } from "../../lib/articles";
+import { getAllArticleIds } from "../../lib/articles";
 import Head from "next/head";
 import { convertDate } from "../../components/date";
 import Link from "next/link";
 import Header from "../../components/Header";
 import { MDXRemote } from "next-mdx-remote";
+import { parseMDXContent } from "../../lib/parseMdxContent";
 
 export default function Article({ frontMatter, readTime, mdxSource }) {
 	return (
@@ -63,7 +64,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-	const articleData = await getArticleData(params.id);
+	const articleData = await parseMDXContent(params.id, "content/articles");
 	return {
 		props: {
 			...articleData,
