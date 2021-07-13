@@ -10,11 +10,6 @@ const ExternalLink = ({ children, link }) => (
 export default function Footer() {
 	return (
 		<footer className="items-center px-10 py-5 mt-auto flex flex-col space-y-8 border-t-2 border-gray-300 dark:border-gray-700 mx-6">
-			<div className="flex justify-center space-x-4 text-gray-500">
-				<Link href="/now">
-					<a>Now</a>
-				</Link>
-			</div>
 			<div className="space-x-4 text-gray-500 flex">
 				<ExternalLink link="https://github.com/inezabonte">
 					<FaGithub className="text-2xl" />

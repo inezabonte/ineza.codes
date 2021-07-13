@@ -51,6 +51,9 @@ export default function NavBar() {
 				<Link href="/about">
 					<a className="uppercase">About</a>
 				</Link>
+				<Link href="/now">
+					<a className="uppercase">Now</a>
+				</Link>
 			</div>
 		</header>
 	);
