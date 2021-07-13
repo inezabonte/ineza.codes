@@ -6,7 +6,7 @@ export default function Layout({ children }) {
 		<div className="max-w-4xl  m-auto flex flex-col min-h-screen mt-6 lg:mt-0">
 			<NavBar />
 			{children}
-			<hr className="border-gray-300 dark:border-gray-700" />
+			<hr className="border-gray-300 dark:border-gray-700 mx-6" />
 			<Footer />
 		</div>
 	);
