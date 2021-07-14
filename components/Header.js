@@ -5,7 +5,7 @@ export default function Header({ title, description, image }) {
 		"https://res.cloudinary.com/tizzertuna/image/upload/v1622809072/Articles/Custom_Size_1_2x_qgdmz9.png";
 
 	const backupDescription =
-		"Software developer, writer and Open Source Contributor 🚀";
+		"Software developer who enjoys contributing to Open Source and sharing knowledge 🚀";
 
 	return (
 		<Head>
