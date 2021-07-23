@@ -1,7 +1,7 @@
 import { convertDate } from "../../components/date";
 import Layout from "../../components/Layout";
 import Link from "next/link";
-import { getArticlesMeta } from "../../lib/articles";
+import { getAllFilesFrontMatter } from "../../lib/articles";
 import Header from "../../components/Header";
 
 export default function Blog({ articles }) {
@@ -56,7 +56,7 @@ export default function Blog({ articles }) {
 }
 
 export async function getStaticProps() {
-	const articlesMeta = getArticlesMeta();
+	const articlesMeta = getAllFilesFrontMatter("articles");
 
 	return {
 		props: {
