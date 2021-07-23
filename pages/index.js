@@ -1,12 +1,13 @@
 import Image from "next/image";
 import Layout from "../components/Layout";
 import { getGitHubStars, getGitHubContributions } from "../lib/github";
-import { getArticlesMeta } from "../lib/articles";
+import { getAllFilesFrontMatter } from "../lib/articles";
 import { convertDate } from "../components/date";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 import Header from "../components/Header";
 import profilePic from "../public/Images/me.jpg";
+import generateRssFeed from "../lib/rss";
 
 export default function index({ starredRepos, contributions, articles }) {
 	return (
@@ -146,9 +147,10 @@ export default function index({ starredRepos, contributions, articles }) {
 }
 
 export const getStaticProps = async () => {
-	const articles = getArticlesMeta();
+	const articles = getAllFilesFrontMatter("articles");
 	const githubStarred = await getGitHubStars();
 	const githubContributions = await getGitHubContributions();
+	await generateRssFeed();
 
 	return {
 		props: {
