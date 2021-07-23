@@ -1,11 +1,11 @@
 import Layout from "../../components/Layout";
-import { getArticlesMeta } from "../../lib/articles";
+import { getAllFilesFrontMatter } from "../../lib/articles";
 import Link from "next/link";
 import { convertDate } from "../../components/date";
 import Header from "../../components/Header";
 
 export const getStaticPaths = async () => {
-	const articlesMeta = getArticlesMeta();
+	const articlesMeta = getAllFilesFrontMatter("articles");
 
 	let paths = [];
 	articlesMeta.map((article) => {
@@ -24,7 +24,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
 	const id = context.params.id;
-	const articlesMeta = getArticlesMeta();
+	const articlesMeta = getAllFilesFrontMatter("articles");
 	const articles = articlesMeta.filter((item) => item.tags.includes(id));
 
 	return {
