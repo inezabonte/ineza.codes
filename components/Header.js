@@ -19,6 +19,10 @@ export default function Header({ title, description, image }) {
 				property="og:description"
 				content={description ? description : backupDescription}
 			/>
+			<meta
+				name="description"
+				content={description ? description : backupDescription}
+			/>
 			<meta property="og:image:width" content="1200" />
 			<meta property="og:image:height" content="630" />
 			<meta name="twitter:creator" content="@inezabonte" />
