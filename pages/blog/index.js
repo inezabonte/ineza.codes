@@ -21,7 +21,7 @@ export default function Blog({ articles }) {
 			<main className="p-6 space-y-8 self-center">
 				<div className="max-w-3xl">
 					<h1 className="text-4xl font-bold dark:text-white mb-4">Blog</h1>
-					<p className="text-2xl text-gray-600 dark:text-gray-400">
+					<p className="text-2xl text-gray-700 dark:text-gray-300">
 						I write articles about concepts I've learnt in Software Development.
 						These are the articles I've written so far.
 					</p>
@@ -37,7 +37,7 @@ export default function Blog({ articles }) {
 								.filter((item) => item.date.startsWith(year))
 								.map((article) => (
 									<div key={article.id} className="grid grid-cols-5">
-										<span className="text-sm md:text-lg text-gray-600 dark:text-gray-400 mr-4">
+										<span className="text-sm md:text-lg text-gray-700 dark:text-gray-300 mr-4">
 											{convertDate(article.date, "LLL dd")}
 										</span>
 										<div className="col-span-4 space-y-2">
