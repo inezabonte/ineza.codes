@@ -17,7 +17,7 @@ export default function NavBar() {
 	if (!mounted) return null;
 
 	return (
-		<header className="px-6 py-5 lg:py-10 grid grid-cols-2 lg:grid-cols-3 lg:grid-rows-1 gap-y-6 items-center">
+		<nav className="px-6 py-5 lg:py-10 grid grid-cols-2 lg:grid-cols-3 lg:grid-rows-1 gap-y-6 items-center">
 			<Link href="/">
 				<a className="font-bold text-2xl">
 					<h1 className="dark:text-white">Ineza Bonté</h1>
@@ -55,6 +55,6 @@ export default function NavBar() {
 					<a className="uppercase">Now</a>
 				</Link>
 			</div>
-		</header>
+		</nav>
 	);
 }

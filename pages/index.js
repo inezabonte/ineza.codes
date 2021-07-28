@@ -59,7 +59,7 @@ export default function index({ starredRepos, contributions, articles }) {
 										{article.title}
 									</a>
 								</Link>
-								<span className="text-gray-600 dark:text-gray-400 text-base lg:text-lg">
+								<span className="text-gray-700 dark:text-gray-400 text-base lg:text-lg">
 									{convertDate(article.date, "PPP")}
 								</span>
 							</div>
@@ -98,11 +98,12 @@ export default function index({ starredRepos, contributions, articles }) {
 										target="_blank"
 										rel="noopener noreferrer"
 										className="self-start"
+										aria-label="Github repo (opens in new tab)"
 									>
 										<FaGithub className="text-2xl" />
 									</a>
 								</div>
-								<p className="text-lg text-gray-500 dark:text-gray-400">
+								<p className="text-lg text-gray-700 dark:text-gray-400">
 									{repo.description}
 								</p>
 							</div>
@@ -130,11 +131,12 @@ export default function index({ starredRepos, contributions, articles }) {
 										target="_blank"
 										rel="noopener noreferrer"
 										className="self-start"
+										aria-label="GitHub repo (opens in new tab)"
 									>
 										<FaGithub className="text-2xl" />
 									</a>
 								</div>
-								<p className="text-lg text-gray-500 dark:text-gray-400">
+								<p className="text-lg text-gray-700 dark:text-gray-400">
 									{repo.description}
 								</p>
 							</div>
