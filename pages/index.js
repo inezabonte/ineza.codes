@@ -98,8 +98,10 @@ export default function index({ starredRepos, contributions, articles }) {
 										target="_blank"
 										rel="noopener noreferrer"
 										className="self-start"
-										aria-label="Github repo (opens in new tab)"
 									>
+										<span className="sr-only">
+											Github repo (opens in new tab)
+										</span>
 										<FaGithub className="text-2xl" />
 									</a>
 								</div>
@@ -131,8 +133,10 @@ export default function index({ starredRepos, contributions, articles }) {
 										target="_blank"
 										rel="noopener noreferrer"
 										className="self-start"
-										aria-label="GitHub repo (opens in new tab)"
 									>
+										<span className="sr-only">
+											GitHub repo (opens in new tab)
+										</span>
 										<FaGithub className="text-2xl" />
 									</a>
 								</div>

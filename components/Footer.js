@@ -7,7 +7,6 @@ const ExternalLink = ({ children, link, aria }) => (
 		rel="noopener noreferrer"
 		className="underline"
 		href={link}
-		aria-label={aria}
 	>
 		{children}
 	</a>
@@ -18,22 +17,16 @@ export default function Footer() {
 		<footer className="py-5 mt-auto flex flex-col items-center space-y-4 text-gray-700 dark:text-gray-300 text-sm">
 			<div className="flex flex-col space-y-4 items-center">
 				<div className="space-x-4 flex">
-					<ExternalLink
-						link="https://github.com/inezabonte"
-						aria="GitHub (opens in a new tab)"
-					>
+					<ExternalLink link="https://github.com/inezabonte">
+						<span className="sr-only">GitHub (opens in a new tab)</span>
 						<FaGithub className="text-2xl" />
 					</ExternalLink>
-					<ExternalLink
-						link="https://twitter.com/inezabonte"
-						aria="Twitter (opens in a new tab)"
-					>
+					<ExternalLink link="https://twitter.com/inezabonte">
+						<span className="sr-only">Twitter (opens in a new tab)</span>
 						<FaTwitter className="text-2xl" />
 					</ExternalLink>
-					<ExternalLink
-						link="https://www.linkedin.com/in/inezabonte/"
-						aria="LinkedIn (opens in a new tab)"
-					>
+					<ExternalLink link="https://www.linkedin.com/in/inezabonte/">
+						<span className="sr-only">LinkedIn (opens in a new tab)</span>
 						<FaLinkedin className="text-2xl" />
 					</ExternalLink>
 				</div>
