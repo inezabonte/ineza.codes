@@ -1,8 +1,8 @@
 import Layout from "components/Layout";
-import { getGitHubStars, getGitHubContributions } from "../lib/github";
-import { getAllFilesFrontMatter } from "../lib/articles";
+import { getGitHubStars, getGitHubContributions } from "lib/github";
+import { getAllFilesFrontMatter } from "lib/articles";
 import Header from "components/Header";
-import generateRssFeed from "../lib/rss";
+import generateRssFeed from "lib/rss";
 import IntroSection from "components/IntroSection";
 import LatestArticles from "components/LatestArticles";
 import ProjectsSection from "components/ProjectsSection";
