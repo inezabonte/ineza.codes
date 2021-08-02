@@ -1,6 +1,6 @@
-import Layout from "../components/Layout";
-import Header from "../components/Header";
-import { parseMDXContent } from "../lib/parseMdxContent";
+import Layout from "components/Layout";
+import Header from "components/Header";
+import { parseMDXContent } from "lib/parseMdxContent";
 import { MDXRemote } from "next-mdx-remote";
 
 export default function now({ frontMatter, mdxSource }) {
