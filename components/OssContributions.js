@@ -5,7 +5,7 @@ export default function OssContributions({ contributions }) {
 		<section className="space-y-6 self-center lg:self-start w-full flex flex-col">
 			<div className="border-b-2 border-gray-300 pb-4">
 				<h2 className="text-3xl dark:text-white font-bold ">
-					Contributions to OSS
+					Open Source contributions
 				</h2>
 			</div>
 			<div className="grid grid-cols-1 md:grid-cols-2 self-center  gap-4 lg:gap-6">
