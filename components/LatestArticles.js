@@ -4,13 +4,8 @@ import { convertDate } from "components/date";
 export default function LatestArticles({ articles }) {
 	return (
 		<section className="space-y-6 self-center lg:self-start w-full">
-			<div className="flex justify-between items-center  border-b-2 border-gray-300 pb-4">
+			<div className="border-b-2 border-gray-300 pb-4">
 				<h2 className="text-3xl dark:text-white font-bold">Latest Articles</h2>
-				<Link href="/blog">
-					<a className="text-base bg-gray-200 dark:bg-gray-800 p-2 rounded">
-						View More
-					</a>
-				</Link>
 			</div>
 
 			<div className="space-y-4">
@@ -26,6 +21,11 @@ export default function LatestArticles({ articles }) {
 						</span>
 					</div>
 				))}
+			</div>
+			<div className="flex justify-end">
+				<Link href="/blog">
+					<a className="font-medium text-lg">Read all blog posts → </a>
+				</Link>
 			</div>
 		</section>
 	);

@@ -1,18 +1,11 @@
 import { FaGithub } from "react-icons/fa";
+import { FiExternalLink } from "react-icons/fi";
 
 export default function ProjectsSection({ starredRepos }) {
 	return (
 		<section className="space-y-6 self-center lg:self-start w-full flex flex-col">
-			<div className="flex justify-between items-center border-b-2 border-gray-300 pb-4">
+			<div className="border-b-2 border-gray-300 pb-4">
 				<h2 className="text-3xl dark:text-white font-bold ">Projects</h2>
-				<a
-					href="https://github.com/inezabonte?tab=repositories"
-					target="_blank"
-					rel="noopener noreferrer"
-					className="text-base bg-gray-200 dark:bg-gray-800 p-2 rounded"
-				>
-					View More
-				</a>
 			</div>
 			<div className="grid grid-cols-1 md:grid-cols-2 self-center gap-4 lg:gap-6">
 				{starredRepos.map((repo) => (
@@ -44,6 +37,16 @@ export default function ProjectsSection({ starredRepos }) {
 						</p>
 					</div>
 				))}
+			</div>
+			<div className="flex justify-end">
+				<a
+					href="https://github.com/inezabonte?tab=repositories"
+					target="_blank"
+					rel="noopener noreferrer"
+					className="flex items-center font-medium text-lg"
+				>
+					See all projects <FiExternalLink />
+				</a>
 			</div>
 		</section>
 	);
