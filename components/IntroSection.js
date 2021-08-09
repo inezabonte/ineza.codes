@@ -4,14 +4,14 @@ import profilePic from "../public/Images/me.jpg";
 export default function IntroSection() {
 	return (
 		<section className="flex flex-col justify-center items-center lg:flex-row  lg:justify-around ">
-			<div className="mb-10 border-8 border-gray-400 dark:border-gray-200 rounded-full flex items-center">
+			<div className="mb-10  border-gray-400 dark:border-gray-200 rounded-full flex items-center">
 				<Image
 					priority={true}
 					src={profilePic}
-					height={200}
-					width={200}
+					height={300}
+					width={300}
 					alt="A potrait of Ineza Bonté smiling"
-					className="rounded-full"
+					className="rounded"
 				/>
 			</div>
 			<div className="md:self-center max-w-lg space-y-4 prose dark:prose-dark prose-lg md:prose-xl">
