@@ -2,7 +2,7 @@ import Head from "next/head";
 
 export default function Header({ title, description, image }) {
 	const backupImage =
-		"https://res.cloudinary.com/tizzertuna/image/upload/v1622809072/Articles/Custom_Size_1_2x_qgdmz9.png";
+		"https://res.cloudinary.com/tizzertuna/image/upload/v1628544041/Articles/OG_2x_lkjpvb.png";
 
 	const backupDescription =
 		"Software developer who enjoys contributing to Open Source and sharing knowledge 🚀";
