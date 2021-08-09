@@ -12,7 +12,7 @@ export default function index({ starredRepos, contributions, articles }) {
 	return (
 		<Layout>
 			<Header title="Ineza Bonté" />
-			<main className="space-y-24 px-6 py-10 flex flex-col self-center">
+			<main className="space-y-16 px-6 py-10 flex flex-col self-center">
 				<IntroSection />
 				<LatestArticles articles={articles} />
 				<ProjectsSection starredRepos={starredRepos} />
