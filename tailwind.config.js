@@ -3,6 +3,9 @@ module.exports = {
 	darkMode: "class",
 	theme: {
 		extend: {
+			colors: {
+				"dark-body": "#121212",
+			},
 			fontFamily: {
 				sans: ["Fira Sans", "sans-serif"],
 			},
