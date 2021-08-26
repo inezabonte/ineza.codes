@@ -21,8 +21,8 @@ export default function IntroSection() {
 				<Image
 					priority={true}
 					src={profilePic}
-					height={300}
-					width={300}
+					height={250}
+					width={250}
 					alt="A potrait of Ineza Bonté smiling"
 					className="rounded"
 				/>
