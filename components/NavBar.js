@@ -19,7 +19,7 @@ export default function NavBar() {
 	return (
 		<nav className="px-6 py-5 lg:py-10 grid grid-cols-2 lg:grid-cols-3 lg:grid-rows-1 gap-y-6 items-center">
 			<Link href="/">
-				<a className="font-bold text-2xl">
+				<a className="font-bold text-2xl justify-self-start">
 					<h1 className="dark:text-white">Ineza Bonté</h1>
 				</a>
 			</Link>
@@ -54,6 +54,14 @@ export default function NavBar() {
 				<Link href="/now">
 					<a className="uppercase">Now</a>
 				</Link>
+				<a
+					href="https://garden.ineza.codes/"
+					target="_blank"
+					rel="noopener noreferrer"
+					className="uppercase"
+				>
+					Garden
+				</a>
 			</div>
 		</nav>
 	);
