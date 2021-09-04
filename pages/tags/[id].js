@@ -40,27 +40,25 @@ export default function Tag({ articles, id }) {
 	return (
 		<Layout>
 			<Header title={`Tag | ${id}`} />
-			<main className="mb-auto p-6 space-y-4 prose prose-lg dark:prose-dark md:prose-2xl">
-				<h2>
-					Posts tagged: <span className="text-blue-400">{`#${id}`}</span>
-				</h2>
-				<div className="space-y-4">
-					<h3>
+			<main className="mb-auto p-6 space-y-4">
+				<div className="flex flex-col">
+					<span className="text-xl font-semibold">
+						Posts tagged: <span className="text-blue-400">{`#${id}`}</span>
+					</span>
+					<span className="font-light">
 						{articles.length} post{articles.length > 1 ? "s" : ""} found
-					</h3>
+					</span>
+				</div>
 
-					<div className=" space-y-6">
-						{articles.map((item) => (
-							<div className="flex flex-col" key={item.id}>
-								<Link href={`/blog/${item.id}`}>
-									<a className=" no-underline">{item.title}</a>
-								</Link>
-								<span className="text-base">
-									{convertDate(item.date, "PPP")}
-								</span>
-							</div>
-						))}
-					</div>
+				<div className="space-y-6 max-w-xl">
+					{articles.map((item) => (
+						<div className="flex flex-col" key={item.id}>
+							<Link href={`/blog/${item.id}`}>
+								<a className="font-semibold text-lg">{item.title}</a>
+							</Link>
+							<span className="font-light">{item.description}</span>
+						</div>
+					))}
 				</div>
 			</main>
 		</Layout>
