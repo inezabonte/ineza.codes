@@ -34,6 +34,6 @@ export const getStaticProps = async () => {
 			contributions: githubContributions,
 			articles: articles.splice(0, 3),
 		},
-		revalidate: 60,
+		revalidate: 1,
 	};
 };
