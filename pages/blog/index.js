@@ -40,10 +40,13 @@ export default function Blog({ articles }) {
 										<span className="text-sm md:text-lg text-gray-700 dark:text-gray-300 mr-4">
 											{convertDate(article.date, "LLL dd")}
 										</span>
-										<div className="col-span-4 space-y-2">
+										<div className="col-span-4 space-y-2 flex flex-col">
 											<Link href={`/blog/${article.id}`}>
 												<a className="text-lg md:text-xl">{article.title}</a>
 											</Link>
+											<span className="text-lg text-gray-700 dark:text-gray-400">
+												{article.description}
+											</span>
 										</div>
 									</div>
 								))}
