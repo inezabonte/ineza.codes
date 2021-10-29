@@ -1,0 +1,130 @@
+---
+title: "Setting up a MySQL database using Prisma"
+date: "2021-10-29"
+tags: ["prisma", "serverless"]
+cover_image: "https://res.cloudinary.com/tizzertuna/image/upload/v1635504339/Articles/Custom_Size_2_2x_fxtkyf.png"
+description: "A walkthrough on how to set up a MySQL database using Prisma ORM through serverless functions"
+---
+
+## What is Prisma?
+
+Prisma is an open-source Node.js and Typescript ORM (Object Relational Mapper) it acts as a sort of middleware between your application and the database helping you to manage and work with your database. It currently supports PostgreSQL, MySQL, SQL Server, SQLite and some of its features also support MongoDB.
+
+I was recently tasked with setting up a MySQL database with a Next.js application. My goal was to connect the database using Next.js’ serverless capabilities.
+
+Below are the steps I followed to achieve that.
+
+## Install and invoke Prisma
+
+In order to use Prisma in a project, first install its CLI as a dev dependency.
+
+```bash
+npm install prisma --save-dev
+```
+
+The next step is to initialize Prisma. You only need to do this once during the setup process.
+
+```bash
+npx prisma init
+```
+
+At this point, the Prisma CLI created some files in your root directory. The `schema.prisma` file in the `prisma`folder is where we define our datasource provider and the schema of the tables in our database. However if you already have an existing database, you don’t need to create a schema from scratch, cause Prisma handles that for you 😉. I’ll show you how shortly.
+
+## Connect to the database
+
+The first step is to modify the datasource provider in the `schema.prisma` file to look like this.
+
+```
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+```
+
+I set `provider` to the type of database I’m using. In my case it’s `mysql`. The `url` property will take the value of the connection url which is defined in the `.env`file created by Prisma.
+
+```
+DATABASE_URL="mysql://USER:PASSWORD@HOST:PORT/DATABASE"
+```
+
+Above is the format of how to write your connection url.
+
+## Generate data models
+
+The next step is to generate the data models/schema. How this happens is; Prisma uses the connection url you provided to connect to the database. Prisma and the database have a short chat, then Prisma comes back with models of your database’s structure i.e data types, relationships and whatever else it needs to know about your database 😄
+
+To do this we run the command
+
+```bash
+npx prisma db pull
+```
+
+If the command has run successfully Prisma will generate models from MySQL into Prisma data model which is saved in the `prisma.schema` file. If the Prisma schema is new to you, have a look at their [documentation](https://www.prisma.io/docs/concepts/components/prisma-schema/data-model)
+
+## Read data from the database
+
+In order to perform CRUD (Create, Read, Update, Delete) operations with Prisma we need to install the `@prisma/client` package.
+
+```bash
+npm install @prisma/client
+```
+
+### Create a Prisma instance
+
+After installing the package the next important step is to create a single Prisma instance that will be imported wherever we need to use it. The reason we need a single instance is because every time we initialize Prisma client in a file it creates a connector to the database, if initialized in multiple files it could exhaust the database connection limit.
+
+```js
+// utils/prisma.js
+
+import { PrismaClient } from "@prisma/client";
+let prisma;
+
+if (process.env.NODE_ENV === "production") {
+	prisma = new PrismaClient();
+}
+// `stg` or `dev`
+else {
+	if (!global.prisma) {
+		global.prisma = new PrismaClient();
+	}
+
+	prisma = global.prisma;
+}
+
+export default prisma;
+```
+
+### Fetch data from the database
+
+**N/B** Prisma Client works from the backend so we have to call it from a serverless function or a Nodejs application.
+
+```js
+// /pages/api/fetchUsers.js
+
+import prisma from "../../utils/prisma";
+
+export default async function handler(req, res) {
+	try {
+		const results = await prisma.users.findMany();
+		return res.status(200).json(results);
+	} catch (error) {
+		return res.status(500).json({ message: error.message });
+	}
+}
+```
+
+Above is a simple example of fetching all records from the users table. I start by calling the prisma instance followed by the table name and finally the function I’d like to run.
+
+Super easy and clean compared to writing raw sql queries. You can learn more prisma functions by looking at their docs which I have included in the reference section below.
+
+I tested the above with Next.js api routes, however the same can be applied to Gatsby serverless functions or a Nodejs application..
+
+Thank you for reading ❤️
+
+## Reference
+
+[CRUD operations with prisma client](https://www.prisma.io/docs/concepts/components/prisma-client/crud)
+
+[Invoking a single prisma instance](https://github.com/prisma/prisma/issues/5007#issuecomment-618433162)
+
+[Add Prisma to an existing project](https://www.prisma.io/docs/getting-started/setup-prisma/add-to-existing-project)
