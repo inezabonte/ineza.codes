@@ -29,43 +29,42 @@ yarn add @tailwindcss/typography
 ```js
 // tailwind.config.js
 module.exports = {
-  purge: [],
-  darkMode: false,
-  theme: {
-    extend: {},
-  },
-  variants: {
-    extend: {},
-  },
-  plugins: [require("@tailwindcss/typography")],
-}
+	purge: [],
+	darkMode: false,
+	theme: {
+		extend: {},
+	},
+	variants: {
+		extend: {},
+	},
+	plugins: [require("@tailwindcss/typography")],
+};
 ```
 
 ### Add prose class to your html
 
-Start by adding the base `prose` class then followed by the size-modifiers for example  `prose-sm`,  `prose-lg`,  `prose-xl` and `prose-2xl`.
+Start by adding the base `prose` class then followed by the size-modifiers for example `prose-sm`, `prose-lg`, `prose-xl` and `prose-2xl`.
 Without the base `prose` class it will not work.
 
 ```html
 <article class="prose prose-lg">
-    <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-    Pellentesque nec lacued eu odio nec nisl varius placerat. 
-    In dapibus a lacus vitae fringilla.
-    </p>
-    <p>
-    Donec condimentum tellus augue, eu lacinia est facilisis eu.
-    Suspent ipPris a, cursus augue. Sed vitae dictum diam, id interdum ex.
-    </p>
-    <p>
-    Nunc in nunc sed urna congue facilisis. In ullamcorper,
-    nunc eget convallis imperdiet, quam felis rhoncus leo, id rhoncus erat leo vel 
-    </p>
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec
+		lacued eu odio nec nisl varius placerat. In dapibus a lacus vitae fringilla.
+	</p>
+	<p>
+		Donec condimentum tellus augue, eu lacinia est facilisis eu. Suspent ipPris
+		a, cursus augue. Sed vitae dictum diam, id interdum ex.
+	</p>
+	<p>
+		Nunc in nunc sed urna congue facilisis. In ullamcorper, nunc eget convallis
+		imperdiet, quam felis rhoncus leo, id rhoncus erat leo vel
+	</p>
 </article>
 ```
 
 And that’s pretty much it. You will now have styled content and not have to worry about styling each element individually.
 
-Here is a live [demo](https://tailwindcss-typography.netlify.app/) of content that is styled using this plugin.
+Here is a live [demo](https://tailwindcss-typography.vercel.app/) of content that is styled using this plugin.
 
 Thank you for reading ❤️
