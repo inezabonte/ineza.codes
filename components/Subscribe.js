@@ -26,8 +26,8 @@ export default function Subscribe() {
 		<div className="border-2 border-gray-400 dark:border-gray-600 rounded p-4 space-y-4">
 			<h1 className="text-xl font-bold mb-4">Subscribe to my newsletter </h1>
 			<span className="text-lg text-gray-700 dark:text-gray-400">
-				Receive monthly newsletters from me about things I did that month,
-				resources I found useful and what I'm currently working on 📩
+				Receive a monthly newsletter from me about what I've been working on,
+				resources I found useful and whatever else I'd like to share 📩
 			</span>
 			<form onSubmit={handleSubmit} className="flex flex-col space-y-4">
 				<input
