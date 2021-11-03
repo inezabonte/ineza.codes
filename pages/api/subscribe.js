@@ -19,12 +19,11 @@ export default async function handler(req, res) {
 			}
 		);
 		return res.status(200).json({
-			message: "You have successfully subscribed to my newsletter 🥳",
+			message: "success",
 		});
 	} catch (error) {
 		return res.status(400).json({
-			error:
-				"You are probably already subscribed or haven't confirmed your subscription",
+			error: error.message,
 		});
 	}
 }

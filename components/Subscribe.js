@@ -3,10 +3,7 @@ import axios from "axios";
 
 export default function Subscribe() {
 	const [email, setEmail] = useState("");
-	const [status, setStatus] = useState({
-		message: "",
-		status: "",
-	});
+	const [success, showSuccess] = useState(false);
 
 	const handleChange = (e) => {
 		setEmail(e.target.value);
@@ -15,15 +12,13 @@ export default function Subscribe() {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const { data } = await axios.post("/api/subscribe", { email });
-			setStatus({ ...status, message: data.message, status: "success" });
+			await axios.post("/api/subscribe", { email });
 			setEmail("");
+			showSuccess(true);
 		} catch (error) {
-			setStatus({
-				...status,
-				message: error.response.data.error,
-				status: "error",
-			});
+			setEmail("");
+			showSuccess(true);
+			console.log(error.message);
 		}
 	};
 
@@ -47,19 +42,15 @@ export default function Subscribe() {
 				/>
 				<button
 					type="submit"
-					className="bg-black dark:bg-white text-white dark:text-black  rounded p-2 font-medium "
+					className="bg-black hover:bg-gray-900 dark:bg-white text-white dark:text-black  rounded p-2 font-medium dark:hover:bg-gray-100"
 				>
 					Subscribe
 				</button>
-				<span
-					className={`text-sm font-medium ${
-						status.status === "success"
-							? "text-blue-600 dark:text-blue-400"
-							: "text-red-600 dark:text-red-400"
-					}`}
-				>
-					{status.message}
-				</span>
+				{success && (
+					<span className="text-green-600 dark:text-green-400">
+						✅ Expect emails from me soon
+					</span>
+				)}
 			</form>
 		</div>
 	);
