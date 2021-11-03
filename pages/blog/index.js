@@ -42,7 +42,9 @@ export default function Blog({ articles }) {
 										</span>
 										<div className="col-span-4 space-y-2 flex flex-col">
 											<Link href={`/blog/${article.id}`}>
-												<a className="text-lg md:text-xl">{article.title}</a>
+												<a className="text-lg font-medium md:text-xl">
+													{article.title}
+												</a>
 											</Link>
 											<span className="text-lg text-gray-700 dark:text-gray-400">
 												{article.description}

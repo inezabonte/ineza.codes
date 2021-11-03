@@ -7,6 +7,7 @@ import IntroSection from "components/IntroSection";
 import LatestArticles from "components/LatestArticles";
 import ProjectsSection from "components/ProjectsSection";
 import OssContributions from "components/OssContributions";
+import Subscribe from "components/Subscribe";
 
 export default function index({ starredRepos, contributions, articles }) {
 	return (
@@ -17,6 +18,7 @@ export default function index({ starredRepos, contributions, articles }) {
 				<LatestArticles articles={articles} />
 				<ProjectsSection starredRepos={starredRepos} />
 				<OssContributions contributions={contributions} />
+				<Subscribe />
 			</main>
 		</Layout>
 	);
