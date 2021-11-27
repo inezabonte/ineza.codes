@@ -10,7 +10,7 @@ I am a FullStack Developer from Kigali 🇷🇼. I am passionate about learning 
 
 I write blogs on stuff I learn check them out 👉🏽 [Link](https://dev.to/inezabonte)
 
-⚡️ Open to work/internship opportunities
+⚡️ Open to work 📩
 
 ## You can react out to me on 💬
 
