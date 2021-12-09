@@ -3,7 +3,8 @@ import axios from "axios";
 
 export default function Subscribe() {
 	const [email, setEmail] = useState("");
-	const [success, showSuccess] = useState(false);
+	const [message, setMessage] = useState("");
+	const [success, setSucess] = useState(false);
 
 	const handleChange = (e) => {
 		setEmail(e.target.value);
@@ -14,11 +15,12 @@ export default function Subscribe() {
 		try {
 			await axios.post("/api/subscribe", { email });
 			setEmail("");
-			showSuccess(true);
+			setMessage("✅ Expect emails from me soon");
+			setSucess(true);
 		} catch (error) {
 			setEmail("");
-			showSuccess(true);
-			console.log(error.message);
+			setMessage("🚩" + error.response.data.error);
+			setSucess(false);
 		}
 	};
 
@@ -46,9 +48,15 @@ export default function Subscribe() {
 				>
 					Subscribe
 				</button>
-				{success && (
-					<span className="text-green-600 dark:text-green-400">
-						✅ Expect emails from me soon
+				{message && (
+					<span
+						className={
+							success
+								? "text-green-600 dark:text-green-400"
+								: "text-red-600 dark:text-red-400"
+						}
+					>
+						{message}
 					</span>
 				)}
 			</form>
