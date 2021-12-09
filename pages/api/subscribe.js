@@ -8,13 +8,13 @@ export default async function handler(req, res) {
 
 	try {
 		await axios.post(
-			"https://api.buttondown.email/v1/subscribers",
+			"https://www.getrevue.co/api/v2/subscribers",
 			{
 				email,
 			},
 			{
 				headers: {
-					Authorization: `Token ${process.env.BUTTONDOWN_API_KEY}`,
+					Authorization: `Token ${process.env.REVUE_API_KEY}`,
 				},
 			}
 		);
@@ -23,7 +23,7 @@ export default async function handler(req, res) {
 		});
 	} catch (error) {
 		return res.status(400).json({
-			error: error.message,
+			error: error.response.data.error.email[0],
 		});
 	}
 }
