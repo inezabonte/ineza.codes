@@ -1,6 +1,6 @@
 # Hey I'm Bonte 👋🏽
 
-I am a Frontend Developer from Kigali 🇷🇼. I am passionate about learning and sharing my knowledge with as many people as I can.
+I am a Fullstack Developer from Kigali 🇷🇼. I am passionate about learning and sharing my knowledge with as many people as I can.
 
 ## ⚙️ Technologies
 
