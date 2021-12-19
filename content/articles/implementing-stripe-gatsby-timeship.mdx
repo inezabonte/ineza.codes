@@ -177,7 +177,7 @@ and also the status of the payment. The function returns an object with details 
 
 async function checkEventAndStatus(type, data) {
 	if (type !== "checkout.session.completed") {
-		throw createError(405, "Event type not allowed");
+		throw createError(401, "Event type not allowed");
 	}
 
 	const stripeSession = await stripe.checkout.sessions.retrieve(data.object.id);
@@ -212,7 +212,7 @@ async function checkTicketReuse(sessionId) {
 	);
 
 	if (foundTicket) {
-		throw createError(406, "This ticket has already been used");
+		throw createError(401, "This ticket has already been used");
 	}
 }
 ```
