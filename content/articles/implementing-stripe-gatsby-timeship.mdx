@@ -89,7 +89,7 @@ export default async handler(req, res){
 
 - The `success_url` is the page stripe redirects to when payment is successful. If the user clicks on the “back” button, stripe redirects them to the `cancel_url`
 - `payment_method_types` specifies the method we would like customers to use to pay us.
-- `line_items` lists items the customer wants to buy. In our case it’s just one time travel ticket. The `price` property is set to the `pricing api id` of the product we created earlier in step 2.
+- `line_items`, lists items the customer wants to buy. In our case it’s just one time travel ticket. The `price` property is set to the `pricing api id` of the product we created earlier in step 2.
 
 ![](https://res.cloudinary.com/tizzertuna/image/upload/v1639850028/pricing-id_lhcooz.png)
 
