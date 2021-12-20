@@ -1,7 +1,7 @@
 ---
 title: "Sorting RSS feeds by year using Next.js"
 date: "2021-05-24"
-tags: ["nextjs","rss"]
+tags: ["nextjs", "rss"]
 cover_image: "https://res.cloudinary.com/tizzertuna/image/upload/v1622756315/Articles/sort-rss_2x_qzal8u.png"
 description: "Learn how you can sort blog articles by year of creation"
 ---
@@ -28,8 +28,8 @@ We start by importing the parsing library and then we create a function whose wo
 import Parser from "rss-parser";
 
 export function getFeed() {
-    const parser = new Parser();
-    return parser.parseURL("https://dev.to/feed/inezabonte");
+	const parser = new Parser();
+	return parser.parseURL("https://dev.to/feed/inezabonte");
 }
 ```
 
@@ -43,14 +43,14 @@ In the `pages/blog.js` page we add the `getStaticProps()` function to fetch our 
 import { getFeed } from "..lib/rss.js";
 
 export async function getStaticProps() {
-    const detailedFeed = await getFeed();
+	const detailedFeed = await getFeed();
 
-    return {
-        props: {
-            items: detailedFeed.items,
-        },
-        revalidate: 60,
-    };
+	return {
+		props: {
+			items: detailedFeed.items,
+		},
+		revalidate: 60,
+	};
 }
 ```
 
@@ -102,37 +102,36 @@ import { getFeed } from "..lib/rss.js";
 import { format } from "date-fns";
 
 export default function Blog({ items }) {
-  let years = [];
-  let uniqueYear;
+	let years = [];
+	let uniqueYear;
 
-  if (items) {
-    for (let i = 0; i < items.length; i++) {
-      const year = format(new Date(items[i].isoDate), "y");
-      years.push(year);
-       }
-      uniqueYear = [...new Set(years)];
-    }
+	if (items) {
+		for (let i = 0; i < items.length; i++) {
+			const year = format(new Date(items[i].isoDate), "y");
+			years.push(year);
+		}
+		uniqueYear = [...new Set(years)];
+	}
 
-    return (
-        <div>
-            {uniqueYear.map((year) => (
-                <div>
-                    <h2>{year}</h2>
-                    {items
-                    .filter((items) => item.isoDate.startsWith(year))
-                    .map((article) => (
-                        <div>{/* display data from article */}</div>
-                    ))}
-                </div>
-            ))}
-        </div>
-    );
+	return (
+		<div>
+			{uniqueYear.map((year) => (
+				<div>
+					<h2>{year}</h2>
+					{items
+						.filter((items) => item.isoDate.startsWith(year))
+						.map((article) => (
+							<div>{/* display data from article */}</div>
+						))}
+				</div>
+			))}
+		</div>
+	);
 }
 
 export async function getStaticProps() {
-   // ...
+	// ...
 }
-
 ```
 
 And that’s it. You can then go ahead and render data for each of your articles depending on what you want to show.
