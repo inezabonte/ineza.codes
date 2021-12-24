@@ -36,7 +36,7 @@ export default function Article({ frontMatter, readTime, mdxSource }) {
 							<span>{readTime.text}</span>
 						</p>
 					</div>
-					<div className="mb-8">
+					<div className="mb-8 not-prose text-black dark:text-white">
 						{frontMatter.tags.map((tag) => (
 							<Link href={`/tags/${tag}`} key={tag}>
 								<a className="mr-2 bg-gray-300 dark:bg-gray-800 p-2 rounded text-base">

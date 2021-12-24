@@ -11,10 +11,8 @@ export default function IntroSection() {
 					<br />I have a passion for coding and developing Web Applications.
 				</p>
 				<p>
-					<a href="mailto:inezabonte@gmail.com" className="underline">
-						Shoot me an email
-					</a>{" "}
-					if you would like to work together.
+					<a href="mailto:inezabonte@gmail.com">Shoot me an email</a> if you
+					would like to work together.
 				</p>
 			</div>
 			<div>
