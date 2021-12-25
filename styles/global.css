@@ -159,7 +159,7 @@ code {
 }
 
 .prose pre code {
-	@apply dark:text-yellow-300;
+	@apply text-black dark:text-yellow-300;
 }
 
 .token.comment,
