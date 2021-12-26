@@ -159,7 +159,7 @@ code {
 }
 
 .prose pre code {
-	@apply text-black dark:text-yellow-300;
+	@apply text-black dark:text-yellow-300 text-sm;
 }
 
 .token.comment,
@@ -221,4 +221,12 @@ code[class*="language-"],
 pre[class*="language-"] {
 	@apply text-gray-800 dark:text-gray-50;
 	text-shadow: none;
+}
+
+.rehype-code-title {
+	@apply px-5 py-3 font-mono text-sm font-bold text-gray-800 bg-gray-200  rounded-t-lg dark:text-gray-200  dark:bg-gray-800;
+}
+
+.rehype-code-title + pre {
+	@apply mt-0 rounded-t-none;
 }

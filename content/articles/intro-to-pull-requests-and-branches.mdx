@@ -29,7 +29,7 @@ Once the pull request has been reviewed and approved, the branch is merged with 
 
 In order to create a branch. Open the repository on your computer and then open terminal or git cli and use the following command.
 
-```bash
+```bash:terminal
 git branch readme-edits
 ```
 
@@ -41,9 +41,9 @@ Branch names cannot include spaces, the command will fail if you do so.
 ### Switch to the branch
 
 To switch to the branch you just created use the command
- `git checkout`
+`git checkout`
 
-```bash
+```bash:terminal
 git checkout readme-edits
 ```
 
@@ -56,30 +56,30 @@ The branch highlighted in green with an asterisk is your current working branch.
 Open the README.md file make some changes then save the file.
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rfj10c5gf32pn1obreht.png)
 
-After editing the file, we can now push the new branch we just created to GitHub along with the changes  we just made to the README file.
+After editing the file, we can now push the new branch we just created to GitHub along with the changes we just made to the README file.
 
 - **Add the file to staging.**
 
-    ```bash
-    git add README.md
-    ```
+  ```bash:terminal
+  git add README.md
+  ```
 
 - **Commit the changes with a message**
 
-    ```bash
-    git commit -m "Updated the readme file"
-    ```
+  ```bash:terminal
+  git commit -m "Updated the readme file"
+  ```
 
 - **Push the changes to GitHub**
 
-    Since we are pushing a new branch to the repo we will use the `--set-upstream` flag to create a new branch on our `origin` remote.
-    Lastly we specify the name of the branch which should be the same as the one created locally.
+  Since we are pushing a new branch to the repo we will use the `--set-upstream` flag to create a new branch on our `origin` remote.
+  Lastly we specify the name of the branch which should be the same as the one created locally.
 
-    ```bash
-    git push --set-upstream origin readme-edits
-    ```
+  ```bash:terminal
+  git push --set-upstream origin readme-edits
+  ```
 
-    This command is used when pushing changes in a branch for the first time. You only need to set the upstream once, afterwards you can just use `git push`.
+  This command is used when pushing changes in a branch for the first time. You only need to set the upstream once, afterwards you can just use `git push`.
 
 ### Opening a Pull Request
 
@@ -114,23 +114,23 @@ Even though we have merged the branch on GitHub, locally the changes haven’t b
 
 - **1. Switch to main branch**
 
-    ```bash
-    git checkout main
-    ```
+  ```bash:terminal
+  git checkout main
+  ```
 
 - **2. Pull in the changes from GitHub**
 
-    ```bash
-    git pull
-    ```
+  ```bash:terminal
+  git pull
+  ```
 
 - **3. Delete the merged branch locally**
 
-    Delete the branch locally using `git branch` followed by the `-d` flag and lastly the name of the branch to delete.
+  Delete the branch locally using `git branch` followed by the `-d` flag and lastly the name of the branch to delete.
 
-    ```bash
-    git branch -d readme-edits
-    ```
+  ```bash:terminal
+  git branch -d readme-edits
+  ```
 
 These are the basics you need to know when creating branches and opening pull requests.
 

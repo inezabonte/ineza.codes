@@ -55,7 +55,7 @@ The next step is to generate the data models/schema. How this happens is; Prisma
 
 To do this we run the command
 
-```bash
+```bash:terminal
 npx prisma db pull
 ```
 
@@ -65,7 +65,7 @@ If the command has run successfully Prisma will generate models from MySQL into 
 
 In order to perform CRUD (Create, Read, Update, Delete) operations with Prisma we need to install the `@prisma/client` package.
 
-```bash
+```bash:terminal
 npm install @prisma/client
 ```
 
@@ -73,9 +73,7 @@ npm install @prisma/client
 
 After installing the package the next important step is to create a single Prisma instance that will be imported wherever we need to use it. The reason we need a single instance is because every time we initialize Prisma client in a file it creates a connector to the database, if initialized in multiple files it could exhaust the database connection limit.
 
-```js
-// utils/prisma.js
-
+```js:utils/prisma.js
 import { PrismaClient } from "@prisma/client";
 let prisma;
 
@@ -98,9 +96,7 @@ export default prisma;
 
 **N/B** Prisma Client works from the backend so we have to call it from a serverless function or a Nodejs application.
 
-```js
-// /pages/api/fetchUsers.js
-
+```js:pages/api/fetchUsers.js
 import prisma from "../../utils/prisma";
 
 export default async function handler(req, res) {

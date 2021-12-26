@@ -38,7 +38,7 @@ The product our customers will be paying for is the Timeship ticket. So, we add 
 
 Install Stripe using npm or yarn.
 
-```bash
+```bash:terminal
 yarn add stripe
 ```
 
@@ -51,9 +51,7 @@ Get the Stripe secret key from the “API Keys” section on the dashboard and s
 A checkout session is what the customer will see, as they pay for their ticket through the Stripe checkout page we'll redirect them to.
 Below is a serverless function that accepts a POST request with customer details and returns a checkout url.
 
-```js
-// src/api/checkout-sessions.js
-
+```js:src/api/checkout-sessions.js
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
 
 export default async handler(req, res){
@@ -106,8 +104,7 @@ Once the payment is successful, Stripe redirects the user to the success url. St
 
 Before we show the success message, we make a GET request to our serverless function with the session id in the params to confirm the payment status.
 
-```js
-// src/api/checkout-sessions.js
+```js:src/api/checkout-sessions.js
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
 
 export default async handler(req, res){
@@ -120,13 +117,9 @@ export default async handler(req, res){
     	if (session.payment_status !== "paid") {
         throw new Error("You haven't paid for your ticket 👮🏽‍♀️🚨");
     	}
-   	res.status(200).json({
-        message: `You travelled to ${session.metadata.location} in the year ${session.metadata.year}`,
-    });
-
+   	res.status(200).json({ message: "Success");
 	}
 }
-
 ```
 
 ### Step 6: Create webhook endpoint
@@ -136,8 +129,7 @@ This is the most important part because it determines whether you get to travel.
 I created an endpoint that Stripe makes POST request to immediately payment is complete. The serverless function runs
 three functions when called which I will dive into individually.
 
-```js
-// src/api/webhook
+```js:src/api/webhook
 import axios from "axios";
 import createError from "http-errors";
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
@@ -172,9 +164,7 @@ The first function `checkEventAndStatus`receives the `type` and `data` propertie
 and uses them to identify the type of event coming from a Stripe webhook,
 and also the status of the payment. The function returns an object with details about the checkout session.
 
-```js
-// src/api/webhook
-
+```js:src/api/webhook
 async function checkEventAndStatus(type, data) {
 	if (type !== "checkout.session.completed") {
 		throw createError(401, "Event type not allowed");
@@ -192,9 +182,7 @@ async function checkEventAndStatus(type, data) {
 The second function `checkTicketReuse` accepts the session id which it uses to cross-check with past completed
 session ids on my airtable base in case someone tries to re-use a ticket.
 
-```js
-// src/api/webhook
-
+```js:src/api/webhook
 async function checkTicketReuse(sessionId) {
 	const travellers = await axios.get(
 		`https://api.airtable.com/v0/${process.env.AIRTABLE_BASE_KEY}/users`,
@@ -220,9 +208,7 @@ async function checkTicketReuse(sessionId) {
 The last function `saveToAirtable` accepts the session object to retrieve the metadata which we stored
 earlier in Step 4 and saves the travel details to Airtable.
 
-```js
-// src/api/webhook
-
+```js:src/api/webhook
 async function saveToAirtable(session) {
 	const currentTimestamp = Math.floor(Date.now() / 1000);
 	await axios.post(

@@ -22,9 +22,7 @@ https://dev.to/feed/{username}
 
 We start by importing the parsing library and then we create a function whose work will be to parse the RSS feed and return the results.
 
-```js
-//lib/rss.js
-
+```js:lib/rss.js
 import Parser from "rss-parser";
 
 export function getFeed() {
@@ -37,9 +35,7 @@ export function getFeed() {
 
 In the `pages/blog.js` page we add the `getStaticProps()` function to fetch our articles. It will be using the exported function we just created above.
 
-```js
-// pages/blog.js
-
+```js:pages/blog.js
 import { getFeed } from "..lib/rss.js";
 
 export async function getStaticProps() {
@@ -60,9 +56,7 @@ After fetching the articles we return them inside the props object which will ad
 
 The next step is to get the span of years across which our articles have been written. We will store the available years as strings in an array.
 
-```js
-// pages/blog.js
-
+```js:pages/blog.js
 import { getFeed } from "..lib/rss.js";
 import { format } from "date-fns";
 
@@ -95,9 +89,7 @@ Since this is a loop. It will basically run through all the articles' `isoDate` 
 
 After obtaining the years, we then map them and use the year element to filter the `items` array for articles that belong to that specific year.
 
-```js
-// pages/blog.js
-
+```js:pages/blog.js
 import { getFeed } from "..lib/rss.js";
 import { format } from "date-fns";
 
