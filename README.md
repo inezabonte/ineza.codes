@@ -1,6 +1,6 @@
 # Hey I'm Bonte 👋🏽
 
-I am a Fullstack Developer from Kigali 🇷🇼. I am passionate about learning and sharing my knowledge with as many people as I can.
+I'm a Fullstack Developer based in Quebec, Canada 🇨🇦. I'm passionate about learning and sharing my knowledge.
 
 ## ⚙️ Technologies
 
@@ -8,7 +8,7 @@ I am a Fullstack Developer from Kigali 🇷🇼. I am passionate about learning 
 - **Databases** - Firebase, Postgresql, MongoDB 📀
 - **Frontend** - React, Next.js, Tailwind, MaterialUI, Ant-Design 🎨
 
-I write blogs on stuff I learn check them out 👉🏽 [Link](https://ineza.codes)
+I write blogs on concepts that I've learnt. Check them out 👉🏽 [Link](https://ineza.codes)
 
 ⚡️ Open to work 📩
 
