@@ -7,7 +7,7 @@ export default function IntroSection() {
 			<div className="lg:self-end max-w-lg space-y-4 prose dark:prose-dark prose-lg md:prose-xl">
 				<h2>I'm Ineza Bonté,</h2>
 				<p>
-					A Fullstack Developer based in Quebec, Canada 🇨🇦
+					A Fullstack Developer based in Canada 🇨🇦
 					<br />I have a passion for coding and developing Web Applications.
 				</p>
 				<p>

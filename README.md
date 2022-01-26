@@ -1,6 +1,6 @@
 # Hey I'm Bonte 👋🏽
 
-I'm a Fullstack Developer based in Quebec, Canada 🇨🇦. I'm passionate about learning and sharing my knowledge.
+I'm a Fullstack Developer, passionate about learning and sharing my knowledge.
 
 ## ⚙️ Technologies
 
