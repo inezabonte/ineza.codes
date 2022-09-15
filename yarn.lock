@@ -2608,7 +2608,7 @@ regexpp@^3.2.0:
   resolved "https://registry.yarnpkg.com/regexpp/-/regexpp-3.2.0.tgz#0425a2768d8f23bad70ca4b90461fa2f1213e1b2"
   integrity sha512-pq2bWo9mVD43nbts2wGv17XLiNLya+GklZ8kaDLV2Z08gDCsGpnKn9BFMepvWuHCbyVvY7J5o5+BVvoQbmlJLg==
 
-rehype-code-titles@^1.0.3:
+rehype-code-titles@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/rehype-code-titles/-/rehype-code-titles-1.1.0.tgz#de9c01a0008d7b0fc26da87b88ff6648ad8f74a3"
   integrity sha512-muit6KQWNafowXA0HTUeQtUT+UuP0ra34xty1tuF8WsdjcSm++HswgRAFGXH8CAGe8axuGUxg13+I4yFHFnmfQ==
