@@ -41,7 +41,7 @@ export default function Blog({ articles }) {
 											{convertDate(article.date, "LLL dd")}
 										</span>
 										<div className="col-span-4 space-y-2 flex flex-col">
-											<Link href={`/blog/${article.id}`}>
+											<Link href={`/blog/${article.id}`} passHref>
 												<a className="text-lg font-medium md:text-xl">
 													{article.title}
 												</a>

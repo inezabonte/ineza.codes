@@ -11,7 +11,7 @@ export default function LatestArticles({ articles }) {
 			<div className="space-y-4">
 				{articles.map((article) => (
 					<div className="flex flex-col" key={article.id}>
-						<Link href={`/blog/${article.id}`}>
+						<Link href={`/blog/${article.id}`} passHref legacyBehavior>
 							<a className="text-xl font-bold lg:text-xl dark:text-gray-200">
 								{article.title}
 							</a>
@@ -23,7 +23,7 @@ export default function LatestArticles({ articles }) {
 				))}
 			</div>
 			<div className="flex justify-end">
-				<Link href="/blog">
+				<Link href="/blog" passHref legacyBehavior>
 					<a className="font-medium text-lg">Read all blog posts → </a>
 				</Link>
 			</div>

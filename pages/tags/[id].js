@@ -53,7 +53,7 @@ export default function Tag({ articles, id }) {
 				<div className="space-y-6 max-w-xl">
 					{articles.map((item) => (
 						<div className="flex flex-col" key={item.id}>
-							<Link href={`/blog/${item.id}`}>
+							<Link href={`/blog/${item.id}`} passHref>
 								<a className="font-semibold text-lg">{item.title}</a>
 							</Link>
 							<span className="font-light">{item.description}</span>

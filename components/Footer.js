@@ -31,9 +31,7 @@ export default function Footer() {
 					</ExternalLink>
 				</div>
 				<div>
-					<Link href="/rss/feed.xml">
-						<a>RSS</a>
-					</Link>
+					<a href="/rss/feed.xml">RSS</a>
 				</div>
 			</div>
 			<div>
