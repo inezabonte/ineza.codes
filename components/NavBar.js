@@ -18,7 +18,7 @@ export default function NavBar() {
 
 	return (
 		<nav className="px-6 py-5 lg:py-10 grid grid-cols-2 lg:grid-cols-3 lg:grid-rows-1 gap-y-6 items-center">
-			<Link href="/">
+			<Link href="/" passHref legacyBehavior>
 				<a className="font-bold text-2xl justify-self-start">
 					<h1 className="dark:text-white">Ineza Bonté</h1>
 				</a>
@@ -45,13 +45,13 @@ export default function NavBar() {
 				</button>
 			</div>
 			<div className="space-x-5 text-lg font-bold col-span-2 justify-self-center lg:col-span-1">
-				<Link href="/blog">
+				<Link href="/blog" passHref legacyBehavior>
 					<a className="uppercase">Blog</a>
 				</Link>
-				<Link href="/about">
+				<Link href="/about" passHref legacyBehavior>
 					<a className="uppercase">About</a>
 				</Link>
-				<Link href="/now">
+				<Link href="/now" passHref legacyBehavior>
 					<a className="uppercase">Now</a>
 				</Link>
 				<a
