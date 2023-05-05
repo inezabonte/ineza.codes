@@ -189,7 +189,7 @@ code {
 .token.char,
 .token.builtin,
 .token.inserted {
-	@apply text-fuchsia-500;
+	@apply text-green-600;
 }
 
 .token.operator,
