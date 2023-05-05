@@ -1,0 +1,197 @@
+---
+title: "Notifications in Progressive Web Apps using  Web Push"
+date: "2023-05-05"
+tags: ["pwa", "web-push", "notifications"]
+cover_image: "https://res.cloudinary.com/tizzertuna/image/upload/v1683262411/Articles/notifications_a9zuwb.png"
+description: "Learn the basics of setting up push notifications in your progressive web app"
+---
+
+Notifications are an essential part of any web application. They help to keep users informed about important updates, events, and offers. In a Progressive Web App (PWA), notifications can be used to engage users and enhance their experience. In this article we'll go over the APIs depended on by PWAs and how to implement push notifications in your own web application. Let's get started!
+
+Notifications in PWAs depend on these 3 technologies in order to work.
+
+- [Push API](https://developer.mozilla.org/en-US/docs/Web/API/Push_API) - gives web applications the ability to receive messages pushed to them from a server, whether or not the web app is in the foreground, or even currently loaded, on a user agent
+- [Notifications API](https://developer.mozilla.org/en-US/docs/Web/API/notification) - allows web pages to control the display of system notifications to the end user. It is designed to be compatible with existing notification systems, across different platforms.
+- [Service Workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) - Service workers are special javascript files that act as proxies between web browsers and web servers.
+
+In addition to these 3 technologies we will also be using the [web-push](https://www.npmjs.com/package/web-push) library. This library allows us to generate application server keys and it also abstracts all the complexity that comes with pushing data via the Web Push Protocol
+
+To send Notifications in a PWA there are several steps we have to go through to make it possible;
+
+## Feature Detection
+
+It’s advisable to ensure that the necessary technologies are available in the user's browser before going any further. Specifically, we need to check for support of the Push API, the Notifications API, and Service Workers. If any of these features are not supported, we should provide a fallback experience or notify the user that notifications are not available.
+
+```js
+if (!('Notification' in window)) {
+	// Notification API isn't supported
+}
+
+if (!('serviceWorker' in navigator)) {
+  // Service Workers aren't supported
+  return;
+}
+
+if (!('PushManager' in window)) {
+  // Push API isn't supported
+  return;
+}
+```
+
+## Register a service worker
+
+Registering a service worker is our way of telling the browser where the service worker file is. After registering a service worker the browser will give it access to service worker APIs including Push.
+
+```js
+function registerServiceWorker() {
+  return navigator.serviceWorker
+    .register("/worker.js")
+    .then(function (registration) {
+      console.log("Service worker successfully registered.");
+      return registration;
+    })
+    .catch(function (err) {
+      console.error("Unable to register service worker.", err);
+    });
+}
+```
+
+## Request Permission
+
+The next step would be to ask for permission from the user to display notifications. The `Notification.requestPermission()` recently changed from using callbacks to promises that is why we cover both callbacks and promises in the example below (we never know which version of the api a browser implemented). 
+
+The promise resolves to a string with the possible values being `granted`, `denied` or `default`
+
+```js
+function requestPermission() {
+  return new Promise((resolve, reject) => {
+    const permissionResult = Notification.requestPermission((result) => {
+      resolve(result);
+    });
+    if (permissionResult) {
+      permissionResult.then(resolve, reject);
+    }
+  }).then((permissionResult) => {
+    if (permissionResult !== "granted") {
+      throw new Error("Permission denied");
+    }
+
+    subscribeUserToPush();
+  });
+}
+```
+
+You should only request consent to display notifications in response to a user gesture (e.g. clicking a button. This is the best practice. 
+
+## Subscribe a user with PushManager
+
+After registering our service worker and getting user permission we can now subscribe the user to the Push API by calling `registration.pushManager.subscribe()` 
+
+```js
+async function subscribeUserToPush() {
+  const registration = await registerServiceWorker();
+
+  const subscribeOptions = {
+    userVisibleOnly: true,
+    applicationServerKey: PUBLIC_VAPID_KEY,
+  };
+
+  const pushSubscription = await registration.pushManager.subscribe(
+    subscribeOptions
+  );
+
+  axios
+    .post("/api/subscription", pushSubscription)
+    .then((response) => {
+      console.log(response);
+    })
+    .catch((error) => console.log(error));
+  return pushSubscription;
+}
+```
+
+In the example above several things are happening:
+
+1. We are calling the `registerServiceWorker()` function for the second time, this is to activate the service worker. A service worker won't receive events like `fetch` and `push` until it successfully finishes installing and becomes "active".
+2. Within the `registration.pushManager.subscribe()` function we are passing an object with two properties
+    1. **userVisibleOnly** - A boolean that must be set to `true` indicating that the user will be notified every time a push message is sent. Silent messages are not allowed.
+    2. **applicationServerKey -** This is a public key generated in a pair along with a private key and are unique to your app. Application server keys otherwise knowns as VAPID keys are used by a push service to identify the application subscribing a user and ensure that the same application is messaging that user. 
+3. After subscribing the user we get a subscription object that we can then send to our server to save in our database. This subscription is what we will be using to send push messages from the server. 
+
+Here is an example of what the subscription object looks like.
+
+```json
+{
+  "endpoint": "https://some.pushservice.com/something-unique",
+  "keys": {
+    "p256dh": "CeXl1dn18gSJ1WAkAPIxr4gK0_dQds4yiI=",
+    "auth":"QyGdcjWInHVndSTdbKFw=="
+  }
+}
+```
+
+## Send messages from server
+
+After saving a client's push subscription we are now ready to send messages with [web-push](https://www.npmjs.com/package/web-push) library. Since web-push is a node library this part of the application will be implemented on the server. Frameworks like Next and Gatsby allow you to create api routes which are easy to configure.
+
+We start by adding our vapid keys to web-push along with a `mailto:` string. The string can be a mailto email address or a URL. This is done so that if the push service needs to get in contact with the sender, they have information that enables them to.
+
+```js
+import webpush from "web-push";
+
+const vapidKeys = {
+  publicKey: process.env.PUBLIC_KEY,
+  privateKey: process.env.PRIVATE_KEY,
+};
+
+webpush.setVapidDetails(
+  "mailto:ineza@ineza.codes",
+  vapidKeys.publicKey,
+  vapidKeys.privateKey
+);
+
+export default function handler(req, res) {
+  if (req.method === "POST") {
+    const { subscription, dataToSend } = req.body;
+    return webpush
+      .sendNotification(subscription, JSON.stringify(dataToSend))
+      .then(() => {
+        return res.status(200).json({ message: "Notification sent!" });
+      })
+      .catch((err) => {
+        return res.status(400).json({ error: err });
+      });
+  }
+
+  return res.status(401).json({ message: "Method not allowed" });
+}
+```
+
+Through the api route we created above, we are able to receive the subscription that we saved somewhere (a database for example) alongside the message we would like to send to the user. Using the `sendNotification()` method from web-push we are able to send our request.
+
+## Display Notification
+
+Inside our Service worker we add a push event listener that listens for the `push` event. We need to display the notification to the user, and to tell the event to wait until the browser has shown it before the function can terminate. In the code snippet below we are using the Notification API to display notifications to the user’s device. 
+
+```js
+self.addEventListener("push", function (event) {
+  const data = event.data.json();
+  const promiseChain = self.registration.showNotification(data.title, {
+    body: data.body,
+    icon: "/icons/manifest-icon-192.maskable.png",
+    badge: "/icons/badge_72x72.png",
+  });
+  event.waitUntil(promiseChain);
+});
+```
+
+We extend the event lifetime until the browser has done displaying the notification (until the promise has been resolved), otherwise the Service Worker could be stopped in the middle of your processing.
+
+And there you go. Your notifications are ready to go. 🙂
+
+If you are looking to learn more or dive deeper into this topic. I highly recommend the [Push Notification overview](https://web.dev/push-notifications-overview/) by web.dev
+
+### NB
+
+- As of March 27th [Web Push is now supported in WebKit](https://webkit.org/blog/13966/webkit-features-in-safari-16-4/) in Safari 16.4. At the time of writing the features are still experimental, so you have to dig into Safari settings to enable the Push and Notification APIs. Also worth noting that push notifications are supported in apps that are added to the Home screen.
+- It should also be noted that the `Notification.requestPermission()` is available only in secure contexts (HTTPS).
