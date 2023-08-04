@@ -20,19 +20,19 @@ To send Notifications in a PWA there are several steps we have to go through to 
 
 ## Feature Detection
 
-It’s advisable to ensure that the necessary technologies are available in the user's browser before going any further. Specifically, we need to check for support of the Push API, the Notifications API, and Service Workers. If any of these features are not supported, we should provide a fallback experience or notify the user that notifications are not available.
+It's advisable to ensure that the necessary technologies are available in the user's browser before going any further. Specifically, we need to check for support of the Push API, the Notifications API, and Service Workers. If any of these features are not supported, we should provide a fallback experience or notify the user that notifications are not available.
 
 ```js
-if (!('Notification' in window)) {
-	// Notification API isn't supported
+if (!("Notification" in window)) {
+  // Notification API isn't supported
 }
 
-if (!('serviceWorker' in navigator)) {
+if (!("serviceWorker" in navigator)) {
   // Service Workers aren't supported
   return;
 }
 
-if (!('PushManager' in window)) {
+if (!("PushManager" in window)) {
   // Push API isn't supported
   return;
 }
@@ -58,7 +58,7 @@ function registerServiceWorker() {
 
 ## Request Permission
 
-The next step would be to ask for permission from the user to display notifications. The `Notification.requestPermission()` recently changed from using callbacks to promises that is why we cover both callbacks and promises in the example below (we never know which version of the api a browser implemented). 
+The next step would be to ask for permission from the user to display notifications. The `requestPermission()` function recently changed from using callbacks to promises that is why we cover both callbacks and promises in the example below (we never know which version of the api a browser implemented).
 
 The promise resolves to a string with the possible values being `granted`, `denied` or `default`
 
@@ -81,11 +81,11 @@ function requestPermission() {
 }
 ```
 
-You should only request consent to display notifications in response to a user gesture (e.g. clicking a button. This is the best practice. 
+You should only request consent to display notifications in response to a user gesture (e.g. clicking a button. This is the best practice.
 
 ## Subscribe a user with PushManager
 
-After registering our service worker and getting user permission we can now subscribe the user to the Push API by calling `registration.pushManager.subscribe()` 
+After registering our service worker and getting user permission we can now subscribe the user to the Push API.
 
 ```js
 async function subscribeUserToPush() {
@@ -113,10 +113,10 @@ async function subscribeUserToPush() {
 In the example above several things are happening:
 
 1. We are calling the `registerServiceWorker()` function for the second time, this is to activate the service worker. A service worker won't receive events like `fetch` and `push` until it successfully finishes installing and becomes "active".
-2. Within the `registration.pushManager.subscribe()` function we are passing an object with two properties
-    1. **userVisibleOnly** - A boolean that must be set to `true` indicating that the user will be notified every time a push message is sent. Silent messages are not allowed.
-    2. **applicationServerKey -** This is a public key generated in a pair along with a private key and are unique to your app. Application server keys otherwise knowns as VAPID keys are used by a push service to identify the application subscribing a user and ensure that the same application is messaging that user. 
-3. After subscribing the user we get a subscription object that we can then send to our server to save in our database. This subscription is what we will be using to send push messages from the server. 
+2. Within the subscription function we are passing an object with two properties
+   - **userVisibleOnly** - A boolean that must be set to `true` indicating that the user will be notified every time a push message is sent. Silent messages are not allowed.
+   - **applicationServerKey -** This is a public key generated in a pair along with a private key and are unique to your app. Application server keys otherwise knowns as VAPID keys are used by a push service to identify the application subscribing a user and ensure that the same application is messaging that user.
+3. After subscribing the user we get a subscription object that we can then send to our server to save in our database. This subscription is what we will be using to send push messages from the server.
 
 Here is an example of what the subscription object looks like.
 
@@ -125,7 +125,7 @@ Here is an example of what the subscription object looks like.
   "endpoint": "https://some.pushservice.com/something-unique",
   "keys": {
     "p256dh": "CeXl1dn18gSJ1WAkAPIxr4gK0_dQds4yiI=",
-    "auth":"QyGdcjWInHVndSTdbKFw=="
+    "auth": "QyGdcjWInHVndSTdbKFw=="
   }
 }
 ```
@@ -171,7 +171,7 @@ Through the api route we created above, we are able to receive the subscription 
 
 ## Display Notification
 
-Inside our Service worker we add a push event listener that listens for the `push` event. We need to display the notification to the user, and to tell the event to wait until the browser has shown it before the function can terminate. In the code snippet below we are using the Notification API to display notifications to the user’s device. 
+Inside our Service worker we add a push event listener that listens for the `push` event. We need to display the notification to the user, and to tell the event to wait until the browser has shown it before the function can terminate. In the code snippet below we are using the Notification API to display notifications to the user’s device.
 
 ```js
 self.addEventListener("push", function (event) {
@@ -194,4 +194,4 @@ If you are looking to learn more or dive deeper into this topic. I highly recomm
 ### NB
 
 - As of March 27th [Web Push is now supported in WebKit](https://webkit.org/blog/13966/webkit-features-in-safari-16-4/) in Safari 16.4. At the time of writing the features are still experimental, so you have to dig into Safari settings to enable the Push and Notification APIs. Also worth noting that push notifications are supported in apps that are added to the Home screen.
-- It should also be noted that the `Notification.requestPermission()` is available only in secure contexts (HTTPS).
+- It should also be noted that the `requestPermission()` is available only in secure contexts (HTTPS).
