@@ -21,10 +21,6 @@ export default function Footer() {
             <span className="sr-only">GitHub (opens in a new tab)</span>
             <FaGithub className="text-2xl" />
           </ExternalLink>
-          <ExternalLink link="https://twitter.com/inezabonte">
-            <span className="sr-only">Twitter (opens in a new tab)</span>
-            <FaTwitter className="text-2xl" />
-          </ExternalLink>
           <ExternalLink link="https://www.linkedin.com/in/inezabonte/">
             <span className="sr-only">LinkedIn (opens in a new tab)</span>
             <FaLinkedin className="text-2xl" />
