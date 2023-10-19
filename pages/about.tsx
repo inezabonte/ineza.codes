@@ -3,7 +3,7 @@ import Header from "@components/Header";
 import { parseMDXContent } from "@lib/parseMdxContent";
 import { MDXRemote } from "next-mdx-remote";
 
-export default function about({ mdxSource }) {
+export default function About({ mdxSource }) {
   return (
     <Layout>
       <Header title="About | Ineza Bonté" />

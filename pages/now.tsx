@@ -3,7 +3,7 @@ import Header from "@components/Header";
 import { parseMDXContent } from "@lib/parseMdxContent";
 import { MDXRemote } from "next-mdx-remote";
 
-export default function now({ frontMatter, mdxSource }) {
+export default function Now({ frontMatter, mdxSource }) {
   return (
     <Layout>
       <Header title="Now | Ineza Bonté" description={frontMatter.description} />

@@ -9,7 +9,7 @@ import LatestArticles from "@components/LatestArticles";
 import ProjectsSection from "@components/ProjectsSection";
 import OssContributions from "@components/OssContributions";
 
-export default function index({ starredRepos, contributions, articles }) {
+export default function Home({ starredRepos, contributions, articles }) {
   return (
     <Layout>
       <Header title="Ineza Bonté" />
