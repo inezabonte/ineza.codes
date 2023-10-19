@@ -12,8 +12,7 @@ export default async function generateRssFeed() {
 
   const author = {
     name: "Ineza Bonté",
-    email: "inezabonte@gmail.com",
-    link: "https://twitter.com/inezabonte",
+    email: "ineza@ineza.codes",
   };
 
   const feed = new Feed({
