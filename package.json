@@ -6,7 +6,7 @@
   "author": "inezabonte <ineza@ineza.codes>",
   "license": "MIT",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
