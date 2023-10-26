@@ -2,10 +2,10 @@ import Image from "next/image";
 import profilePic from "../public/Images/me.jpg";
 
 export default function IntroSection() {
-	return (
+  return (
     <section className="flex flex-col justify-center items-center lg:flex-row-reverse  lg:justify-around space-y-8 ">
       <div className="lg:self-end max-w-lg space-y-4 prose dark:prose-dark prose-lg md:prose-xl">
-        <h2>I'm Ineza Bonté,</h2>
+        <h2>I&apos;m Ineza Bonté,</h2>
         <p>
           A Fullstack Developer{" "}
           <a href="https://relevantbits.com">@RelevantBits</a>

@@ -1,7 +1,13 @@
-import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa";
+import { ReactNode } from "react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 
-const ExternalLink = ({ children, link, aria }) => (
+interface ExternalLinkProps {
+  children: ReactNode;
+  link: string;
+}
+
+const ExternalLink = ({ children, link }: ExternalLinkProps) => (
   <a
     target="_blank"
     rel="noopener noreferrer"

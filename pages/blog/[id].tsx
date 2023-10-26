@@ -1,26 +1,14 @@
-import Layout from "../../components/Layout";
-import { getAllArticleIds } from "../../lib/articles";
-import Head from "next/head";
-import { convertDate } from "../../components/date";
+import Layout from "@components/Layout";
+import { getAllArticleIds } from "@lib/articles";
+import { convertDate } from "@components/date";
 import Link from "next/link";
-import Header from "../../components/Header";
+import Header from "@components/Header";
 import { MDXRemote } from "next-mdx-remote";
-import { parseMDXContent } from "../../lib/parseMdxContent";
+import { parseMDXContent } from "@lib/parseMdxContent";
 
 export default function Article({ frontMatter, readTime, mdxSource }) {
-	return (
+  return (
     <Layout>
-      <Head>
-        <link
-          rel="preload"
-          href="https://unpkg.com/prismjs@0.0.1/themes/prism-okaidia.css"
-          as="script"
-        />
-        <link
-          href={`https://unpkg.com/prismjs@0.0.1/themes/prism-okaidia.css`}
-          rel="stylesheet"
-        />
-      </Head>
       <Header
         title={frontMatter.title}
         image={frontMatter.cover_image}
@@ -38,10 +26,12 @@ export default function Article({ frontMatter, readTime, mdxSource }) {
           </div>
           <div className="mb-8 not-prose text-black dark:text-white">
             {frontMatter.tags.map((tag) => (
-              <Link href={`/tags/${tag}`} passHref key={tag} legacyBehavior>
-                <a className="mr-2 bg-gray-300 dark:bg-gray-800 p-2 rounded text-base">
-                  {tag}
-                </a>
+              <Link
+                href={`/tags/${tag}`}
+                key={tag}
+                className="mr-2 bg-gray-300 dark:bg-gray-800 p-2 rounded text-base"
+              >
+                {tag}
               </Link>
             ))}
           </div>
@@ -56,18 +46,18 @@ export default function Article({ frontMatter, readTime, mdxSource }) {
 }
 
 export async function getStaticPaths() {
-	const paths = getAllArticleIds();
-	return {
-		paths,
-		fallback: false,
-	};
+  const paths = getAllArticleIds();
+  return {
+    paths,
+    fallback: false,
+  };
 }
 
 export async function getStaticProps({ params }) {
-	const articleData = await parseMDXContent(params.id, "content/articles");
-	return {
-		props: {
-			...articleData,
-		},
-	};
+  const articleData = await parseMDXContent(params.id, "content/articles");
+  return {
+    props: {
+      ...articleData,
+    },
+  };
 }

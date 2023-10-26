@@ -1,20 +1,21 @@
-import { convertDate } from "../../components/date";
-import Layout from "../../components/Layout";
+import { convertDate } from "@components/date";
+import Layout from "@components/Layout";
 import Link from "next/link";
-import { getAllFilesFrontMatter } from "../../lib/articles";
-import Header from "../../components/Header";
+import { getAllFilesFrontMatter } from "@lib/articles";
+import Header from "@components/Header";
+import { GetStaticProps } from "next";
 
-export default function Blog({ articles }) {
-  let years = [];
-  let uniqueYear;
+interface BlogProps {
+  articles: ReturnType<typeof getAllFilesFrontMatter>;
+}
+
+export default function Blog({ articles }: BlogProps) {
+  let uniqueYears: string[] = [];
   if (articles) {
-    for (let i = 0; i < articles.length; i++) {
-      const year = convertDate(articles[i].date, "y");
-      years.push(year);
-    }
-    uniqueYear = [...new Set(years)];
+    uniqueYears = Array.from(
+      new Set(articles.map((article) => article.date.split("-")[0]))
+    );
   }
-
   return (
     <Layout>
       <Header title="Blog | Ineza Bonté" />
@@ -22,12 +23,12 @@ export default function Blog({ articles }) {
         <div className="max-w-3xl">
           <h1 className="text-4xl font-bold dark:text-white mb-4">Blog</h1>
           <p className="text-xl text-gray-700 dark:text-gray-300">
-            I write articles about concepts I've learnt in Software Development.
-            These are the articles I've written so far.
+            I write articles about concepts I&apos;ve learnt in Software
+            Development. These are the articles I&apos;ve written so far.
           </p>
         </div>
         <div className="space-y-8">
-          {uniqueYear.map((year) => (
+          {uniqueYears.map((year) => (
             <div key={year} className="space-y-8">
               <h2 className="text-2xl font-bold dark:text-white border-gray-500 border-opacity-50 border-b-4">
                 {year}
@@ -61,7 +62,7 @@ export default function Blog({ articles }) {
   );
 }
 
-export async function getStaticProps() {
+export const getStaticProps = (async () => {
   const articlesMeta = getAllFilesFrontMatter("articles");
 
   return {
@@ -69,4 +70,4 @@ export async function getStaticProps() {
       articles: articlesMeta,
     },
   };
-}
+}) satisfies GetStaticProps;
