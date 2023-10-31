@@ -6,18 +6,14 @@ import Header from "@components/Header";
 import generateRssFeed from "lib/rss";
 import IntroSection from "@components/IntroSection";
 import LatestArticles from "@components/LatestArticles";
-import ProjectsSection from "@components/ProjectsSection";
-import OssContributions from "@components/OssContributions";
 
-export default function Home({ starredRepos, contributions, articles }) {
+export default function Home({ articles }) {
   return (
     <Layout>
       <Header title="Ineza Bonté" />
-      <main className="space-y-16 px-6 py-10 flex flex-col self-center">
+      <main className="space-y-16 px-6 py-10 flex flex-col self-center w-full">
         <IntroSection />
         <LatestArticles articles={articles} />
-        <ProjectsSection starredRepos={starredRepos} />
-        <OssContributions contributions={contributions} />
       </main>
     </Layout>
   );
