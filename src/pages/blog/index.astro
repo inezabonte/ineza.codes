@@ -1,0 +1,64 @@
+---
+import Layout from "@layouts/MainLayout.astro";
+import { getCollection } from "astro:content";
+import { convertDate } from "@utils/date";
+
+const articles = await getCollection("article").then((articles) =>
+  articles.sort((a, b) => {
+    if (a.data.date < b.data.date) {
+      return 1;
+    } else {
+      return -1;
+    }
+  })
+);
+
+let uniqueYears: string[] = [];
+uniqueYears = Array.from(
+  new Set(articles.map((article) => article.data.date.split("-")[0]))
+);
+---
+
+<Layout title="Blog | Ineza Bonté">
+  <main class="p-6 space-y-8 self-center">
+    <div class="max-w-3xl">
+      <h1 class="text-4xl font-bold dark:text-white mb-4">Blog</h1>
+      <p class="text-xl text-gray-700 dark:text-gray-300">
+        I write articles about concepts I've learnt in Software Development.
+        These are the articles I've written so far.
+      </p>
+    </div>
+    <div class="space-y-8">
+      {
+        uniqueYears.map((year) => (
+          <div class="space-y-8">
+            <h2 class="text-2xl font-bold dark:text-white border-gray-500 border-opacity-50 border-b-4">
+              {year}
+            </h2>
+
+            {articles
+              .filter((item) => item.data.date.startsWith(year))
+              .map((article) => (
+                <div class="grid grid-cols-5">
+                  <span class="text-sm md:text-lg text-gray-700 dark:text-gray-300 mr-4">
+                    {convertDate(article.data.date, "LLL dd")}
+                  </span>
+                  <div class="col-span-4 space-y-2 flex flex-col">
+                    <a
+                      href={`/blog/${article.slug}`}
+                      class="text-lg font-medium md:text-xl"
+                    >
+                      {article.data.title}
+                    </a>
+                    <span class="text-lg text-gray-700 dark:text-gray-400">
+                      {article.data.description}
+                    </span>
+                  </div>
+                </div>
+              ))}
+          </div>
+        ))
+      }
+    </div>
+  </main>
+</Layout>

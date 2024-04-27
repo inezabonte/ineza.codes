@@ -1,0 +1,41 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import Layout from "@layouts/MainLayout.astro";
+import { convertDate } from "@utils/date";
+
+export async function getStaticPaths() {
+  const articles = await getCollection("article");
+  return articles.map((article) => ({
+    params: {
+      slug: article.slug,
+    },
+    props: article,
+  }));
+}
+type Props = CollectionEntry<"article">;
+const article = Astro.props;
+const { Content } = await article.render();
+---
+
+<Layout
+  title={article.data.title}
+  image={article.data.cover_image}
+  description={article.data.description}
+>
+  <article
+    class="self-center px-6 w-full md:my-4 max-w-2xl lg:max-w-3xl prose prose-xl dark:prose-dark"
+  >
+    <div class="border-b-2 border-gray-400">
+      <h2>{article.data.title}</h2>
+      <div>
+        <p>
+          {convertDate(article.data.date, "PPP")}
+        </p>
+      </div>
+    </div>
+
+    <div class="w-full">
+      <Content />
+    </div>
+  </article>
+</Layout>

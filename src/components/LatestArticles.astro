@@ -1,0 +1,49 @@
+---
+import { convertDate } from "@utils/date";
+import { getCollection } from "astro:content";
+
+interface BlogsType {
+  date: string;
+  title: string;
+  slug: string;
+}
+
+const blogs = await getCollection("article").then((articles) =>
+  articles
+    .sort((a, b) => {
+      if (a.data.date < b.data.date) {
+        return 1;
+      } else {
+        return -1;
+      }
+    })
+    .splice(0, 3)
+);
+---
+
+<section class="space-y-6 self-center lg:self-start w-full">
+  <div class="border-b-2 border-gray-300 pb-4">
+    <h2 class="text-3xl dark:text-white font-bold">Latest Articles</h2>
+  </div>
+
+  <div class="space-y-4">
+    {
+      blogs.map((blog) => (
+        <div class="flex flex-col">
+          <a
+            href={`/blog/${blog.slug}`}
+            class="text-xl font-bold lg:text-xl dark:text-gray-200"
+          >
+            {blog.data.title}
+          </a>
+          <span class="text-gray-700 dark:text-gray-400 text-base lg:text-lg">
+            {convertDate(blog.data.date, "PPP")}
+          </span>
+        </div>
+      ))
+    }
+  </div>
+  <div class="flex justify-end">
+    <a href="/blog" class="font-medium text-lg">Read all blog posts → </a>
+  </div>
+</section>
