@@ -2,12 +2,6 @@
 import { convertDate } from "@utils/date";
 import { getCollection } from "astro:content";
 
-interface BlogsType {
-  date: string;
-  title: string;
-  slug: string;
-}
-
 const blogs = await getCollection("article").then((articles) =>
   articles
     .sort((a, b) => {
