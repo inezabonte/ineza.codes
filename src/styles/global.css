@@ -1,0 +1,163 @@
+@font-face {
+  font-family: "Fira Sans";
+  font-display: swap;
+  font-weight: 400;
+  src: url("/fonts/FiraSans-Regular.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "Fira Sans";
+  font-display: swap;
+  font-weight: 400;
+  font-style: italic;
+  src: url("/fonts/FiraSans-Italic.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "Fira Sans";
+  font-display: swap;
+  font-weight: 100;
+  src: url("/fonts/FiraSans-Thin.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "Fira Sans";
+  font-display: swap;
+  font-weight: 100;
+  font-style: italic;
+  src: url("/fonts/FiraSans-ThinItalic.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "Fira Sans";
+  font-display: swap;
+  font-weight: 200;
+  src: url("/fonts/FiraSans-ExtraLight.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "Fira Sans";
+  font-display: swap;
+  font-weight: 200;
+  font-style: italic;
+  src: url("/fonts/FiraSans-ExtraLightItalic.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "Fira Sans";
+  font-display: swap;
+  font-weight: 300;
+  src: url("/fonts/FiraSans-Light.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "Fira Sans";
+  font-display: swap;
+  font-weight: 300;
+  font-style: italic;
+  src: url("/fonts/FiraSans-LightItalic.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "Fira Sans";
+  font-display: swap;
+  font-weight: 500;
+  src: url("/fonts/FiraSans-Medium.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "Fira Sans";
+  font-display: swap;
+  font-weight: 500;
+  font-style: italic;
+  src: url("/fonts/FiraSans-MediumItalic.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "Fira Sans";
+  font-display: swap;
+  font-weight: 600;
+  src: url("/fonts/FiraSans-SemiBold.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "Fira Sans";
+  font-display: swap;
+  font-weight: 600;
+  font-style: italic;
+  src: url("/fonts/FiraSans-SemiBoldItalic.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "Fira Sans";
+  font-display: swap;
+  font-weight: 700;
+  src: url("/fonts/FiraSans-Bold.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "Fira Sans";
+  font-display: swap;
+  font-weight: 700;
+  font-style: italic;
+  src: url("/fonts/FiraSans-BoldItalic.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "Fira Sans";
+  font-display: swap;
+  font-weight: 800;
+  src: url("/fonts/FiraSans-ExtraBold.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "Fira Sans";
+  font-display: swap;
+  font-weight: 800;
+  font-style: italic;
+  src: url("/fonts/FiraSans-ExtraBoldItalic.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "Fira Sans";
+  font-display: swap;
+  font-weight: 900;
+  src: url("/fonts/FiraSans-Black.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "Fira Sans";
+  font-display: swap;
+  font-weight: 900;
+  font-style: italic;
+  src: url("/fonts/FiraSans-BlackItalic.ttf") format("woff");
+}
+
+body {
+  background-image: radial-gradient(#ddd 1px, transparent 0),
+    radial-gradient(#ddd 1px, transparent 0);
+  background-position: 0 0, 25px 25px;
+  background-size: 50px 50px;
+}
+.dark body {
+  background-image: radial-gradient(#333 1px, transparent 0),
+    radial-gradient(#333 1px, transparent 0);
+}
+
+code {
+  @apply dark:text-white;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  @apply text-gray-800 dark:text-gray-50;
+  text-shadow: none;
+}
+
+.remark-code-title {
+  @apply px-5 py-3 font-mono text-sm font-bold text-gray-800 bg-gray-200  rounded-t-lg dark:text-gray-200  dark:bg-gray-800;
+}
+
+.remark-code-title + pre {
+  @apply mt-0 rounded-t-none;
+}

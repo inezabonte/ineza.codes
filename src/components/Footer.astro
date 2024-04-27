@@ -1,0 +1,28 @@
+---
+import ExternalLink from "./ExternalLink.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<footer
+  class="py-5 mt-auto flex flex-col items-center space-y-4 text-gray-700 dark:text-gray-300 text-sm"
+>
+  <div class="flex flex-col space-y-4 items-center">
+    <div class="space-x-4 flex">
+      <ExternalLink link="https://github.com/inezabonte">
+        <span class="sr-only">GitHub (opens in a new tab)</span>
+        <Icon name="github" class="text-2xl" />
+      </ExternalLink>
+      <ExternalLink link="https://www.linkedin.com/in/inezabonte/">
+        <span class="sr-only">LinkedIn (opens in a new tab)</span>
+        <Icon name="linkedin" class="text-2xl" />
+      </ExternalLink>
+      <a href="mailto:hey@ineza.codes">
+        <span class="sr-only">Mail</span>
+        <Icon name="mail" class="text-2xl" />
+      </a>
+    </div>
+    <div>
+      <a href="/rss.xml">RSS</a>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,28 @@
+---
+import Navigation from "@components/Navigation.astro";
+import Footer from "@components/Footer.astro";
+import Head from "@components/Head.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const { title, description, image } = Astro.props;
+---
+
+<html lang="en">
+  <Head
+    title={title || "Ineza Bonté"}
+    description={description}
+    image={image}
+  />
+  <body class="bg-white dark:bg-dark-body dark:text-white">
+    <div class="max-w-4xl m-auto flex flex-col min-h-screen mt-2 lg:mt-0">
+      <Navigation />
+      <slot />
+      <Footer />
+    </div>
+  </body>
+</html>
