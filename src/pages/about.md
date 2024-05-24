@@ -15,8 +15,7 @@ concepts and sharing the knowledge with others. I hope this website continues
 to be a medium for that and inspire others to do the same.
 
 Away from code you'll probably find me baking banana bread or taking a long walk
-by the Marina. I also serve at my local church in the Media Department
-where I take on the responsibilities of maintaining our livestreams and building the church's website.
+by the Marina. I also serve at my local church in the Media Department.
 
 I work full time with some amazing folks over at [Relevant Bits](https://relevantbits.com/)
 as a Full Stack Developer.
