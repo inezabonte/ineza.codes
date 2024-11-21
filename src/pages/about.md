@@ -14,11 +14,10 @@ this website is a result of. I enjoy the whole aspect of breaking down complex
 concepts and sharing the knowledge with others. I hope this website continues
 to be a medium for that and inspire others to do the same.
 
-Away from code you'll probably find me baking banana bread or taking a long walk
-by the Marina. I also serve at my local church in the Media Department.
+Away from code you'll probably find me baking banana bread or taking a long walk.
+I also serve at my local church in the Media Department.
 
-I work full time with some amazing folks over at [Relevant Bits](https://relevantbits.com/)
-as a Full Stack Developer.
+I'm currently working as a Full Stack developer at [bbox.digital](https://bbox.digital/).
 
 ## Featured 📰
 
