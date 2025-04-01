@@ -17,7 +17,6 @@ to be a medium for that and inspire others to do the same.
 Away from code you'll probably find me baking banana bread or taking a long walk.
 I also serve at my local church in the Media Department.
 
-I'm currently working as a Full Stack developer at [bbox.digital](https://bbox.digital/).
 
 ## Featured 📰
 
