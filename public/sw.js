@@ -22,11 +22,13 @@ async function fetchAllUrls() {
 }
 
 self.addEventListener("install", (event) => {
+  self.skipWaiting();
+
   event.waitUntil(
-    caches.open(CACHE_NAME).then(async (cache) => {
-      await cache.add(SITEMAP_URL);
-      const urlPaths = await fetchAllUrls();
-      return await cache.addAll([...urlPaths]);
+    caches.open(CACHE_NAME).then((cache) => {
+      fetchAllUrls().then((urlPaths) => {
+        return cache.addAll([...urlPaths]);
+      });
     })
   );
 });
@@ -55,7 +57,7 @@ self.addEventListener("activate", (event) => {
 
 self.addEventListener("fetch", (event) => {
   event.respondWith(
-    caches.match(event.target).then((cachedResponse) => {
+    caches.match(event.request).then((cachedResponse) => {
       if (cachedResponse) {
         return cachedResponse;
       }
