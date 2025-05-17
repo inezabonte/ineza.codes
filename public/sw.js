@@ -1,24 +1,26 @@
 const CACHE_NAME = "offline-blog-v1";
-const SITEMAP_URL = "/sitemap-0.xml";
 
 function parseSitemap(text) {
   const urlPaths = [];
-  const locRegex = /<loc>(.*?)<\/loc>/g;
+  const urlRegex = /<a\s+(?:[^>]*?\s+)?href=(["'])(\/blog\/[^"']+)\1/g;
   let match;
 
-  while ((match = locRegex.exec(text)) !== null) {
-    const url = new URL(match[1]);
-    urlPaths.push(url.pathname);
+  while ((match = urlRegex.exec(text))) {
+    const href = match[2];
+    // Filter out non-article links if needed
+    if (href !== "/blog/" && !urlPaths.includes(href)) {
+      urlPaths.push(href);
+    }
   }
 
   return urlPaths;
 }
 
 async function fetchAllUrls() {
-  const response = await fetch(SITEMAP_URL);
+  const response = await fetch("/blog");
   const text = await response.text();
   const urlPaths = parseSitemap(text);
-  return urlPaths;
+  return [...new Set(["/", "/blog", "/about", ...urlPaths])];
 }
 
 self.addEventListener("install", (event) => {
@@ -27,7 +29,8 @@ self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       fetchAllUrls().then((urlPaths) => {
-        return cache.addAll([...urlPaths]);
+        console.log("Caching all requested URLs", urlPaths);
+        return cache.addAll(urlPaths);
       });
     })
   );
