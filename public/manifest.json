@@ -1,0 +1,23 @@
+{
+  "short_name": "Ineza",
+  "name": "Ineza - A technical blog",
+  "description": "A technical blog that covers a wide range of topics in web development",
+  "id": "/",
+  "scope": "/",
+  "start_url": "/",
+  "background_color": "#121212",
+  "display": "standalone",
+  "theme_color": "#121212",
+  "icons": [
+    {
+      "src": "/images/icons/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icons/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -24,5 +24,14 @@ const { title, description, image } = Astro.props;
       <slot />
       <Footer />
     </div>
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/sw.js").catch((error) => {
+            console.log("Serviceworker registration failed", error);
+          });
+        });
+      }
+    </script>
   </body>
 </html>
